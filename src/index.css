@@ -89,6 +89,10 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow);
   }
 
+  .gym-glow-text {
+    text-shadow: 0 0 20px hsl(0 80% 50% / 0.6), 0 0 40px hsl(0 80% 50% / 0.4), 0 0 60px hsl(0 80% 50% / 0.2);
+  }
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }

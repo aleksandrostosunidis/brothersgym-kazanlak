@@ -47,9 +47,14 @@ export const Footer = () => {
                 089 678 0067
               </a>
             </div>
+            <p className="text-muted-foreground text-sm mb-3">
+              {language === 'bg' 
+                ? 'Казанлък ул Искра 12 (до Club Noar), Казанлък, България'
+                : 'Kazanlak ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}
+            </p>
             <div className="flex space-x-4 mt-4">
               <a 
-                href="https://www.facebook.com/profile.php?id=100063529961850" 
+                href="https://www.facebook.com/p/Brothers-GYM-100063529961850/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"

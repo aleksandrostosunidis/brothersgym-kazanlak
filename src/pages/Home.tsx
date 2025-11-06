@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dumbbell, Users, Trophy, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroImage from '@/assets/hero-gym.jpg';
-import trainingImage from '@/assets/training-session.jpg';
-import fitnessImage from '@/assets/fitness-area.jpg';
+import heroImage from '@/assets/hero-banner.png';
+import mmaImage from '@/assets/mma-athlete.jpg';
+import fitnessImage from '@/assets/fitness-gym.jpg';
 
 const Home = () => {
   const { language } = useLanguage();
@@ -57,16 +57,16 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text">
             {language === 'bg' ? 'Brothers Gym' : 'Brothers Gym'}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-foreground/90">
+          <p className="text-xl md:text-2xl mb-8 text-foreground/90 drop-shadow-lg">
             {language === 'bg' 
               ? 'Ставаш част от екип. Тренираш с професионалисти. Печелиш сила, характер и стил.'
               : 'You become part of a team. You train with professionals. You gain strength, character, and style.'}
           </p>
           <Link to="/contact">
-            <Button size="lg" className="text-lg px-8 py-6 gym-shadow hover:gym-glow transition-all">
+            <Button size="lg" className="text-lg px-8 py-6 gym-glow hover:scale-105 transition-all animate-glow-pulse">
               {language === 'bg' ? 'Запиши Тренировка' : 'Book Training'}
             </Button>
           </Link>
@@ -76,7 +76,7 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gradient">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gradient gym-glow-text">
             {language === 'bg' ? 'Защо Brothers Gym?' : 'Why Brothers Gym?'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -96,7 +96,7 @@ const Home = () => {
       {/* Services Preview */}
       <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gradient">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gradient gym-glow-text">
             {language === 'bg' ? 'Нашите Услуги' : 'Our Services'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -126,10 +126,10 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden group cursor-pointer hover:gym-shadow transition-all">
+            <Card className="overflow-hidden group cursor-pointer hover:gym-glow transition-all">
               <div className="relative h-64 overflow-hidden">
                 <img 
-                  src={trainingImage} 
+                  src={mmaImage} 
                   alt="MMA" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -158,7 +158,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gradient">
+          <h2 className="text-4xl font-bold mb-6 text-gradient gym-glow-text">
             {language === 'bg' ? 'Готов да започнеш?' : 'Ready to Start?'}
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

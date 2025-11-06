@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import logo from '@/assets/brothers-gym-logo.jpg';
+import logo from '@/assets/bear-logo.jpg';
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,7 +40,11 @@ export const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <img src={logo} alt="Brothers Gym Logo" className="h-14 w-auto" />
-            <span className="text-xl font-bold text-gradient hidden sm:inline">Brothers Gym</span>
+            <span className="text-xl font-black hidden sm:inline" style={{ 
+              fontFamily: 'Impact, "Arial Black", sans-serif', 
+              color: '#fff',
+              textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8)'
+            }}>Brothers Gym</span>
           </Link>
 
           {/* Desktop Navigation */}
