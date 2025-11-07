@@ -56,18 +56,21 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text">
-            {language === 'bg' ? 'Brothers Gym' : 'Brothers Gym'}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">
+          <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white hero-title-glow tracking-wider">
+            {language === 'bg' ? 'BROTHERS GYM' : 'BROTHERS GYM'}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-foreground/90 drop-shadow-lg">
+          <p className="text-xl md:text-3xl mb-6 text-foreground/90 drop-shadow-lg font-semibold">
             {language === 'bg' 
               ? 'Ставаш част от екип. Тренираш с професионалисти. Печелиш сила, характер и стил.'
               : 'You become part of a team. You train with professionals. You gain strength, character, and style.'}
           </p>
+          <p className="text-2xl md:text-4xl mb-8 text-primary font-bold gym-glow-text tracking-wide">
+            {language === 'bg' ? 'РАБОТИМ С МУЛТИСПОРТ КАРТИ' : 'WE ACCEPT MULTISPORT CARDS'}
+          </p>
           <Link to="/contact">
-            <Button size="lg" className="text-lg px-8 py-6 gym-glow hover:scale-105 transition-all animate-glow-pulse">
-              {language === 'bg' ? 'Запиши Тренировка' : 'Book Training'}
+            <Button size="lg" className="text-xl px-10 py-7 gym-glow hover:scale-105 transition-all animate-glow-pulse font-bold">
+              {language === 'bg' ? 'ЗАПИШИ ТРЕНИРОВКА' : 'BOOK TRAINING'}
             </Button>
           </Link>
         </div>

@@ -73,6 +73,8 @@ All colors MUST be HSL.
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -91,6 +93,14 @@ All colors MUST be HSL.
 
   .gym-glow-text {
     text-shadow: 0 0 20px hsl(0 80% 50% / 0.6), 0 0 40px hsl(0 80% 50% / 0.4), 0 0 60px hsl(0 80% 50% / 0.2);
+  }
+
+  .hero-title-glow {
+    text-shadow: 0 0 30px hsl(200 100% 60% / 0.8), 0 0 60px hsl(200 100% 60% / 0.5), 0 0 90px hsl(200 100% 60% / 0.3);
+  }
+
+  .nav-title-glow {
+    text-shadow: 0 0 15px hsl(200 100% 70% / 0.9), 0 0 30px hsl(200 100% 70% / 0.6), 0 0 45px hsl(200 100% 70% / 0.4);
   }
 
   .transition-smooth {

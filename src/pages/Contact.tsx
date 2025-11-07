@@ -41,10 +41,10 @@ const Contact = () => {
     <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-6 text-gradient">
-            {language === 'bg' ? 'Контакти' : 'Contact'}
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text tracking-wider">
+            {language === 'bg' ? 'КОНТАКТИ' : 'CONTACT'}
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl md:text-2xl text-muted-foreground">
             {language === 'bg' ? 'Свържете се с нас' : 'Get in touch with us'}
           </p>
         </div>
@@ -75,12 +75,20 @@ const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <a 
-                href="tel:+359896780067" 
-                className="text-primary hover:text-accent transition-colors text-lg"
-              >
-                089 678 0067
-              </a>
+              <div className="space-y-2 text-muted-foreground">
+                <a 
+                  href="tel:+359896780067" 
+                  className="text-primary hover:text-accent transition-colors text-lg block"
+                >
+                  089 678 0067 (Дориан)
+                </a>
+                <a 
+                  href="tel:+359894450256" 
+                  className="text-primary hover:text-accent transition-colors text-lg block"
+                >
+                  089 445 0256 (Тенчо)
+                </a>
+              </div>
             </CardContent>
           </Card>
 
@@ -94,7 +102,9 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                {language === 'bg' ? 'Казанлък' : 'Kazanlak'}
+                {language === 'bg' 
+                  ? 'Адрес: ул Искра 12 (до Club Noar), Казанлък, България'
+                  : 'Address: ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}
               </p>
             </CardContent>
           </Card>

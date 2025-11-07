@@ -41,16 +41,22 @@ export const Footer = () => {
           {/* Contact & Social */}
           <div>
             <h4 className="text-lg font-semibold mb-4">{language === 'bg' ? 'Свържете се с нас' : 'Connect With Us'}</h4>
-            <div className="flex items-center space-x-2 mb-3">
+            <div className="flex items-center space-x-2 mb-2">
               <Phone className="h-5 w-5 text-primary" />
               <a href="tel:+359896780067" className="text-muted-foreground hover:text-primary transition-colors">
-                089 678 0067
+                089 678 0067 (Дориан)
+              </a>
+            </div>
+            <div className="flex items-center space-x-2 mb-3">
+              <Phone className="h-5 w-5 text-primary" />
+              <a href="tel:+359894450256" className="text-muted-foreground hover:text-primary transition-colors">
+                089 445 0256 (Тенчо)
               </a>
             </div>
             <p className="text-muted-foreground text-sm mb-3">
               {language === 'bg' 
-                ? 'Казанлък ул Искра 12 (до Club Noar), Казанлък, България'
-                : 'Kazanlak ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}
+                ? 'Адрес: ул Искра 12 (до Club Noar), Казанлък, България'
+                : 'Address: ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}
             </p>
             <div className="flex space-x-4 mt-4">
               <a 

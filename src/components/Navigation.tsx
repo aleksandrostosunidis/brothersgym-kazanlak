@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import logo from '@/assets/bear-logo.jpg';
+import logo from '@/assets/brothers-gym-logo.jpg';
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,13 +38,16 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <img src={logo} alt="Brothers Gym Logo" className="h-14 w-auto" />
-            <span className="text-xl font-black hidden sm:inline" style={{ 
-              fontFamily: 'Impact, "Arial Black", sans-serif', 
-              color: '#fff',
-              textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8)'
-            }}>Brothers Gym</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src={logo} 
+              alt="Brothers Gym Logo" 
+              className="h-16 w-16 object-contain transition-transform group-hover:scale-110"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.4))' }}
+            />
+            <span className="text-3xl font-bold text-white nav-title-glow tracking-wider hidden sm:inline">
+              BROTHERS GYM
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -35,10 +35,10 @@ const About = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-6 text-gradient">
-            {language === 'bg' ? 'За Brothers Gym' : 'About Brothers Gym'}
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text tracking-wider">
+            {language === 'bg' ? 'ЗА BROTHERS GYM' : 'ABOUT BROTHERS GYM'}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             {language === 'bg'
               ? 'Brothers Gym в Казанлък е място, където тренираш с професионалисти и ставаш част от семейство. Печелиш сила, характер и стил.'
               : 'Brothers Gym in Kazanlak is where you train with professionals and become part of a family. You gain strength, character, and style.'}
