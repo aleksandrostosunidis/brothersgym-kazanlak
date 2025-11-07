@@ -1,35 +1,38 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from '@/components/ui/card';
-import heroImage from '@/assets/hero-gym.jpg';
-import trainingImage from '@/assets/training-session.jpg';
-import fitnessImage from '@/assets/fitness-area.jpg';
-import gallery1 from '@/assets/gallery-1.png';
-import gallery2 from '@/assets/gallery-2.jpg';
-import gallery3 from '@/assets/gallery-3.jpg';
-import gallery4 from '@/assets/gallery-4.jpg';
-import gallery5 from '@/assets/gallery-5.jpg';
-import gallery6 from '@/assets/gallery-6.jpg';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useState } from 'react';
+import gallery7 from '@/assets/gallery-7.jpg';
+import gallery8 from '@/assets/gallery-8.jpg';
+import gallery9 from '@/assets/gallery-9.jpg';
+import gallery10 from '@/assets/gallery-10.jpg';
+import gallery11 from '@/assets/gallery-11.jpg';
+import gallery12 from '@/assets/gallery-12.jpg';
+import gallery13 from '@/assets/gallery-13.jpg';
+import gallery14 from '@/assets/gallery-14.jpg';
+import gallery15 from '@/assets/gallery-15.jpg';
 
 const Gallery = () => {
   const { language } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    { src: heroImage, alt: 'Training Session' },
-    { src: trainingImage, alt: 'MMA Training' },
-    { src: fitnessImage, alt: 'Fitness Area' },
-    { src: gallery1, alt: 'Gym Training 1' },
-    { src: gallery2, alt: 'Gym Training 2' },
-    { src: gallery3, alt: 'Gym Training 3' },
-    { src: gallery4, alt: 'Gym Training 4' },
-    { src: gallery5, alt: 'Gym Training 5' },
-    { src: gallery6, alt: 'Gym Training 6' },
+    { src: gallery7, alt: 'Brothers Gym Team Event' },
+    { src: gallery8, alt: 'Young Athlete Training' },
+    { src: gallery9, alt: 'Brothers MMA Team' },
+    { src: gallery10, alt: 'Training at Waterfall' },
+    { src: gallery11, alt: 'Competition Achievement' },
+    { src: gallery12, alt: 'Female Athlete Training' },
+    { src: gallery13, alt: 'Young Champion' },
+    { src: gallery14, alt: 'Junior Champion' },
+    { src: gallery15, alt: 'MMA Training Session' },
   ];
 
   return (
     <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text tracking-wider">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 white-text-outline tracking-wider">
             {language === 'bg' ? 'ГАЛЕРИЯ' : 'GALLERY'}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground">
@@ -41,19 +44,32 @@ const Gallery = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((image, index) => (
-            <Card 
-              key={index} 
-              className="overflow-hidden group cursor-pointer hover:gym-shadow transition-all border-2 border-border hover:border-primary"
-            >
-              <div className="relative h-80 overflow-hidden">
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </Card>
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <Card 
+                  className="overflow-hidden group cursor-pointer hover:gym-shadow transition-all border-2 border-border hover:border-primary"
+                  onClick={() => setSelectedImage(image.src)}
+                >
+                  <div className="relative h-80 overflow-hidden">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-7xl w-full p-0 border-0">
+                <div className="relative w-full h-[90vh]">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
 

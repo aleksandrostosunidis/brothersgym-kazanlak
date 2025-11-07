@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Heart, Award } from 'lucide-react';
-import trainingImage from '@/assets/training-session.jpg';
+import aboutTeamImage from '@/assets/about-team.jpg';
 
 const About = () => {
   const { language } = useLanguage();
@@ -35,7 +35,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text tracking-wider">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 white-text-outline tracking-wider">
             {language === 'bg' ? 'ЗА BROTHERS GYM' : 'ABOUT BROTHERS GYM'}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
@@ -48,8 +48,8 @@ const About = () => {
         {/* Image */}
         <div className="mb-16 rounded-lg overflow-hidden gym-shadow">
           <img 
-            src={trainingImage} 
-            alt="Brothers Gym Training" 
+            src={aboutTeamImage} 
+            alt="Brothers Gym Team" 
             className="w-full h-96 object-cover"
           />
         </div>
@@ -58,8 +58,8 @@ const About = () => {
         <div className="mb-16">
           <Card className="bg-card border-border">
             <CardContent className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-gradient">
-                {language === 'bg' ? 'Нашата История' : 'Our Story'}
+              <h2 className="text-3xl font-bold mb-6 white-text-outline">
+                {language === 'bg' ? 'НАШАТА ИСТОРИЯ' : 'OUR STORY'}
               </h2>
               <div className="space-y-4 text-muted-foreground text-lg">
                 <p>
