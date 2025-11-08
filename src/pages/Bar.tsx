@@ -38,8 +38,8 @@ const Bar = () => {
       icon: Pill,
       title: language === 'bg' ? 'Добавки и Витамини' : 'Supplements & Vitamins',
       items: language === 'bg'
-        ? ['Протеинови буркани (500г, 1кг, 2кг)', 'Витамини', 'BCAA', 'Креатин']
-        : ['Protein jars (500g, 1kg, 2kg)', 'Vitamins', 'BCAA', 'Creatine']
+        ? ['Протеинови кутии (500г, 1кг, 2кг)', 'Витамини', 'BCAA', 'Креатин']
+        : ['Protein containers (500g, 1kg, 2kg)', 'Vitamins', 'BCAA', 'Creatine']
     },
   ];
 
@@ -47,8 +47,8 @@ const Bar = () => {
     <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-6 text-gradient">
-            {language === 'bg' ? 'Бар' : 'Bar'}
+          <h1 className="text-5xl font-bold mb-6 white-text-outline tracking-[0.3em]">
+            {language === 'bg' ? 'БАР' : 'BAR'}
           </h1>
           <p className="text-xl text-muted-foreground">
             {language === 'bg'

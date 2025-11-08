@@ -57,7 +57,7 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white hero-title-glow tracking-wider">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white hero-title-glow tracking-wider">
             {language === 'bg' ? 'BROTHERS GYM' : 'BROTHERS GYM'}
           </h1>
           <p className="text-xl md:text-3xl mb-6 text-foreground/90 drop-shadow-lg font-semibold">

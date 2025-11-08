@@ -11,6 +11,13 @@ import gallery12 from '@/assets/gallery-12.jpg';
 import gallery13 from '@/assets/gallery-13.jpg';
 import gallery14 from '@/assets/gallery-14.jpg';
 import gallery15 from '@/assets/gallery-15.jpg';
+import gallery16 from '@/assets/gallery-16.jpg';
+import gallery17 from '@/assets/gallery-17.jpg';
+import gallery18 from '@/assets/gallery-18.jpg';
+import gallery19 from '@/assets/gallery-19.jpg';
+import gallery20 from '@/assets/gallery-20.jpg';
+import gallery21 from '@/assets/gallery-21.jpg';
+import gallery22 from '@/assets/gallery-22.jpg';
 
 const Gallery = () => {
   const { language } = useLanguage();
@@ -26,6 +33,13 @@ const Gallery = () => {
     { src: gallery13, alt: 'Young Champion' },
     { src: gallery14, alt: 'Junior Champion' },
     { src: gallery15, alt: 'MMA Training Session' },
+    { src: gallery16, alt: 'Championship Winners' },
+    { src: gallery17, alt: 'Competition Medal Winner' },
+    { src: gallery18, alt: 'Brothers MMA Competition Team' },
+    { src: gallery19, alt: 'Double Gold Medal Winner' },
+    { src: gallery20, alt: 'Traditional Workout Demonstration' },
+    { src: gallery21, alt: 'Cultural Event Performance' },
+    { src: gallery22, alt: 'Public MMA Demonstration' },
   ];
 
   return (

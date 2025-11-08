@@ -50,7 +50,7 @@ const About = () => {
           <img 
             src={aboutTeamImage} 
             alt="Brothers Gym Team" 
-            className="w-full h-96 object-cover"
+            className="w-full h-[500px] md:h-[700px] object-cover"
           />
         </div>
 

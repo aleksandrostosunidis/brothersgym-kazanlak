@@ -9,7 +9,7 @@ const Services = () => {
     <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 white-text-outline">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 white-text-outline tracking-[0.3em]">
             {language === 'bg' ? 'УСЛУГИ И ЦЕНИ' : 'SERVICES & PRICING'}
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -109,7 +109,7 @@ const Services = () => {
                   <strong>{language === 'bg' ? 'Детски групи' : 'Kids Groups'}:</strong> {language === 'bg' ? 'Пон/Ср/Пет' : 'Mon/Wed/Fri'} – 17:15–18:15
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  <strong>{language === 'bg' ? 'Юнощи/Възрастни' : 'Teens/Adults'}:</strong> {language === 'bg' ? 'Пон/Ср/Пет' : 'Mon/Wed/Fri'} – 18:00–19:30; {language === 'bg' ? 'Вт/Чет' : 'Tue/Thu'} – 19:30–20:30
+                  <strong>{language === 'bg' ? 'Юноши/Възрастни' : 'Teens/Adults'}:</strong> {language === 'bg' ? 'Пон/Ср/Пет' : 'Mon/Wed/Fri'} – 18:00–19:30; {language === 'bg' ? 'Вт/Чет' : 'Tue/Thu'} – 19:30–20:30
                 </p>
               </div>
             </CardContent>
@@ -188,7 +188,7 @@ const Services = () => {
         <div className="text-center">
           <Card className="bg-secondary/30 border-primary/30 inline-block">
             <CardContent className="p-6">
-              <p className="text-2xl font-bold text-primary">
+              <p className="text-3xl font-extrabold text-primary">
                 ✓ {language === 'bg' ? 'ПРИЕМАМЕ МУЛТИСПОРТ КАРТИ' : 'WE ACCEPT MULTISPORT CARDS'}
               </p>
             </CardContent>
