@@ -64,10 +64,11 @@ const Gallery = () => {
                   className="overflow-hidden group cursor-pointer hover:gym-shadow transition-all border-2 border-border hover:border-primary"
                   onClick={() => setSelectedImage(image.src)}
                 >
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
                     <img 
                       src={image.src} 
                       alt={image.alt}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

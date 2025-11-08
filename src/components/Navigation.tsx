@@ -45,7 +45,7 @@ export const Navigation = () => {
               className="h-16 w-16 object-contain transition-transform group-hover:scale-110"
               style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.4))' }}
             />
-            <span className="text-3xl font-bold text-white nav-title-glow tracking-wider hidden sm:inline">
+            <span className="text-2xl md:text-3xl font-bold text-white nav-title-glow tracking-wider hidden sm:inline">
               BROTHERS GYM
             </span>
           </Link>

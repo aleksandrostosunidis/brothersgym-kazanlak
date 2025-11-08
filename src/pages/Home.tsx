@@ -57,19 +57,19 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white hero-title-glow tracking-wider">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 text-white hero-title-glow tracking-wider">
             {language === 'bg' ? 'BROTHERS GYM' : 'BROTHERS GYM'}
           </h1>
-          <p className="text-xl md:text-3xl mb-6 text-foreground/90 drop-shadow-lg font-semibold">
+          <p className="text-lg sm:text-xl md:text-3xl mb-6 text-foreground/90 drop-shadow-lg font-semibold px-4">
             {language === 'bg' 
               ? 'Ставаш част от екип. Тренираш с професионалисти. Печелиш сила, характер и стил.'
               : 'You become part of a team. You train with professionals. You gain strength, character, and style.'}
           </p>
-          <p className="text-2xl md:text-4xl mb-8 text-primary font-bold gym-glow-text tracking-wide">
+          <p className="text-xl sm:text-2xl md:text-4xl mb-8 text-primary font-bold gym-glow-text tracking-wide px-4">
             {language === 'bg' ? 'РАБОТИМ С МУЛТИСПОРТ КАРТИ' : 'WE ACCEPT MULTISPORT CARDS'}
           </p>
           <Link to="/contact">
-            <Button size="lg" className="text-xl px-10 py-7 gym-glow hover:scale-105 transition-all animate-glow-pulse font-bold">
+            <Button size="lg" className="text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-7 gym-glow hover:scale-105 transition-all animate-glow-pulse font-bold">
               {language === 'bg' ? 'ЗАПИШИ ТРЕНИРОВКА' : 'BOOK TRAINING'}
             </Button>
           </Link>
@@ -104,10 +104,11 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="overflow-hidden group cursor-pointer hover:gym-shadow transition-all">
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img 
                   src={fitnessImage} 
                   alt="Fitness" 
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
@@ -130,10 +131,11 @@ const Home = () => {
             </Card>
 
             <Card className="overflow-hidden group cursor-pointer hover:gym-glow transition-all">
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img 
                   src={mmaImage} 
                   alt="MMA" 
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />

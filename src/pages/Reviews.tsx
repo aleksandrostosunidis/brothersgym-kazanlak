@@ -7,6 +7,7 @@ import { Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { validateTextInput, isValidName } from '@/lib/security';
 
 const Reviews = () => {
   const { language } = useLanguage();
@@ -68,7 +69,20 @@ const Reviews = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (rating === 0 || !name.trim() || !comment.trim()) {
+    // Validate and sanitize inputs
+    const sanitizedName = validateTextInput(name, 100);
+    const sanitizedComment = validateTextInput(comment, 1000);
+    
+    if (!isValidName(sanitizedName)) {
+      toast.error(
+        language === 'bg'
+          ? 'Моля, въведете валидно име (само букви).'
+          : 'Please enter a valid name (letters only).'
+      );
+      return;
+    }
+    
+    if (rating === 0 || !sanitizedName || !sanitizedComment) {
       toast.error(
         language === 'bg'
           ? 'Моля, попълнете всички полета и изберете рейтинг.'
@@ -114,13 +128,13 @@ const Reviews = () => {
       return;
     }
 
-    // Submit review
+    // Submit review with sanitized data
     const { error } = await supabase
       .from('reviews')
       .insert({
-        name: name.trim(),
+        name: sanitizedName,
         rating,
-        comment: comment.trim(),
+        comment: sanitizedComment,
         tags: selectedTags,
         ip_address: ipAddress
       });

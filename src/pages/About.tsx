@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Heart, Award } from 'lucide-react';
-import aboutTeamImage from '@/assets/about-team.jpg';
+import aboutTeamImage from '@/assets/team-parade.jpg';
 
 const About = () => {
   const { language } = useLanguage();

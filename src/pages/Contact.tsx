@@ -41,7 +41,7 @@ const Contact = () => {
     <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 white-text-outline tracking-[0.3em]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 white-text-outline tracking-[0.3em]">
             {language === 'bg' ? 'КОНТАКТИ' : 'CONTACT'}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground">
