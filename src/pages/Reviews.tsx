@@ -49,7 +49,7 @@ const Reviews = () => {
 
   const fetchReviews = async () => {
     const { data, error } = await supabase
-      .from('reviews')
+      .from('public_reviews')
       .select('*')
       .order('created_at', { ascending: false });
 
@@ -93,61 +93,29 @@ const Reviews = () => {
 
     setLoading(true);
 
-    // Get user's IP for rate limiting
-    let ipAddress = 'unknown';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP:', error);
-    }
-
-    // Check if user already submitted in the last 7 days
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-
-    const { data: recentReviews, error: checkError } = await supabase
-      .from('reviews')
-      .select('created_at')
-      .eq('ip_address', ipAddress)
-      .gte('created_at', sevenDaysAgo.toISOString())
-      .limit(1);
-
-    if (checkError) {
-      console.error('Error checking recent reviews:', checkError);
-    }
-
-    if (recentReviews && recentReviews.length > 0) {
-      toast.error(
-        language === 'bg'
-          ? 'Можете да оставите само едно ревю на седмица.'
-          : 'You can only submit one review per week.'
-      );
-      setLoading(false);
-      return;
-    }
-
-    // Submit review with sanitized data
-    const { error } = await supabase
-      .from('reviews')
-      .insert({
+    // Submit review via secure edge function (handles rate limiting server-side)
+    const { data, error } = await supabase.functions.invoke('submit-review', {
+      body: {
         name: sanitizedName,
         rating,
         comment: sanitizedComment,
-        tags: selectedTags,
-        ip_address: ipAddress
-      });
+        tags: selectedTags
+      }
+    });
 
     setLoading(false);
 
-    if (error) {
+    if (error || data?.error) {
+      const errorMessage = data?.error || error?.message;
       toast.error(
-        language === 'bg'
-          ? 'Грешка при изпращане на ревюто. Моля, опитайте отново.'
-          : 'Error submitting review. Please try again.'
+        errorMessage === 'You have already submitted a review recently. Please try again later.'
+          ? (language === 'bg' 
+            ? 'Можете да оставите само едно ревю на седмица.'
+            : errorMessage)
+          : (language === 'bg'
+            ? 'Грешка при изпращане на ревюто. Моля, опитайте отново.'
+            : 'Error submitting review. Please try again.')
       );
-      console.error('Error submitting review:', error);
     } else {
       toast.success(
         language === 'bg'
