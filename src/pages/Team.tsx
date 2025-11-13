@@ -10,6 +10,7 @@ const Team = () => {
     {
       name: 'Дориан Аниев Дерменджиев',
       nameEn: 'Dorian Aniev Dermendzhiev',
+      gradientClass: 'text-gradient-dorian',
       role: language === 'bg' ? 'Треньор по ММА и Фитнес' : 'MMA & Fitness Coach',
       experience: language === 'bg' ? '8+ години треньорски опит' : '8+ years coaching experience',
       quote: language === 'bg' 
@@ -32,6 +33,7 @@ const Team = () => {
     {
       name: 'Тенчо Караенев',
       nameEn: 'Tencho Karaenev',
+      gradientClass: 'text-gradient-tencho',
       role: language === 'bg' ? 'Треньор по ММА' : 'MMA Coach',
       experience: language === 'bg' ? '23 години в спорта' : '23 years in sports',
       quote: language === 'bg'
@@ -55,6 +57,7 @@ const Team = () => {
     {
       name: 'Йордан Кукушев',
       nameEn: 'Yordan Kukushev',
+      gradientClass: 'text-gradient-yordan',
       role: language === 'bg' ? 'Старши Треньор' : 'Senior Coach',
       experience: language === 'bg' ? '20 години треньорска практика' : '20 years coaching practice',
       quote: language === 'bg'
@@ -108,7 +111,7 @@ const Team = () => {
                   <div className="p-8 space-y-6">
                     {/* Header */}
                     <div className="space-y-2">
-                      <h2 className="text-3xl md:text-4xl font-bold text-gradient">
+                      <h2 className={`text-3xl md:text-4xl font-bold ${member.gradientClass}`}>
                         {language === 'bg' ? member.name : member.nameEn}
                       </h2>
                       <p className="text-xl text-primary font-semibold">{member.role}</p>
