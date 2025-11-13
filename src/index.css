@@ -180,4 +180,170 @@ All colors MUST be HSL.
   .transition-smooth {
     transition: var(--transition-smooth);
   }
+
+  /* Achievement Tier Glows - RLCS Style */
+  .achievement-world {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, hsl(45 100% 50% / 0.15), hsl(35 100% 45% / 0.1));
+    border: 1px solid hsl(45 100% 60% / 0.4);
+    border-radius: 0.5rem;
+    box-shadow: 
+      0 0 20px hsl(45 100% 50% / 0.3),
+      0 0 40px hsl(45 100% 50% / 0.15),
+      inset 0 0 20px hsl(45 100% 50% / 0.1);
+    animation: pulse-gold 3s ease-in-out infinite;
+  }
+
+  .achievement-european {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, hsl(200 20% 70% / 0.12), hsl(200 20% 60% / 0.08));
+    border: 1px solid hsl(200 30% 70% / 0.35);
+    border-radius: 0.5rem;
+    box-shadow: 
+      0 0 15px hsl(200 30% 70% / 0.25),
+      0 0 30px hsl(200 30% 70% / 0.12),
+      inset 0 0 15px hsl(200 30% 70% / 0.08);
+    animation: pulse-silver 3.5s ease-in-out infinite;
+  }
+
+  .achievement-balkan {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, hsl(30 60% 50% / 0.12), hsl(20 60% 45% / 0.08));
+    border: 1px solid hsl(30 60% 55% / 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 
+      0 0 12px hsl(30 60% 50% / 0.2),
+      0 0 25px hsl(30 60% 50% / 0.1),
+      inset 0 0 12px hsl(30 60% 50% / 0.06);
+    animation: pulse-bronze 4s ease-in-out infinite;
+  }
+
+  .achievement-national {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, hsl(210 80% 60% / 0.1), hsl(210 80% 50% / 0.06));
+    border: 1px solid hsl(210 80% 60% / 0.25);
+    border-radius: 0.5rem;
+    box-shadow: 
+      0 0 10px hsl(210 80% 60% / 0.18),
+      0 0 20px hsl(210 80% 60% / 0.09),
+      inset 0 0 10px hsl(210 80% 60% / 0.05);
+    animation: pulse-blue 4.5s ease-in-out infinite;
+  }
+
+  .achievement-national-elite {
+    background: linear-gradient(135deg, hsl(210 80% 60% / 0.15), hsl(210 80% 50% / 0.1));
+    border: 1px solid hsl(210 80% 60% / 0.35);
+    box-shadow: 
+      0 0 15px hsl(210 80% 60% / 0.25),
+      0 0 30px hsl(210 80% 60% / 0.12),
+      inset 0 0 15px hsl(210 80% 60% / 0.08);
+    animation: pulse-blue-elite 3s ease-in-out infinite;
+  }
+
+  .achievement-honor {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, hsl(280 60% 60% / 0.12), hsl(280 60% 50% / 0.08));
+    border: 1px solid hsl(280 60% 60% / 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 
+      0 0 12px hsl(280 60% 60% / 0.2),
+      0 0 25px hsl(280 60% 60% / 0.1),
+      inset 0 0 12px hsl(280 60% 60% / 0.06);
+    animation: pulse-purple 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { 
+      box-shadow: 
+        0 0 20px hsl(45 100% 50% / 0.3),
+        0 0 40px hsl(45 100% 50% / 0.15),
+        inset 0 0 20px hsl(45 100% 50% / 0.1);
+    }
+    50% { 
+      box-shadow: 
+        0 0 30px hsl(45 100% 50% / 0.4),
+        0 0 60px hsl(45 100% 50% / 0.2),
+        inset 0 0 30px hsl(45 100% 50% / 0.15);
+    }
+  }
+
+  @keyframes pulse-silver {
+    0%, 100% { 
+      box-shadow: 
+        0 0 15px hsl(200 30% 70% / 0.25),
+        0 0 30px hsl(200 30% 70% / 0.12),
+        inset 0 0 15px hsl(200 30% 70% / 0.08);
+    }
+    50% { 
+      box-shadow: 
+        0 0 22px hsl(200 30% 70% / 0.32),
+        0 0 45px hsl(200 30% 70% / 0.16),
+        inset 0 0 22px hsl(200 30% 70% / 0.12);
+    }
+  }
+
+  @keyframes pulse-bronze {
+    0%, 100% { 
+      box-shadow: 
+        0 0 12px hsl(30 60% 50% / 0.2),
+        0 0 25px hsl(30 60% 50% / 0.1),
+        inset 0 0 12px hsl(30 60% 50% / 0.06);
+    }
+    50% { 
+      box-shadow: 
+        0 0 18px hsl(30 60% 50% / 0.28),
+        0 0 35px hsl(30 60% 50% / 0.14),
+        inset 0 0 18px hsl(30 60% 50% / 0.09);
+    }
+  }
+
+  @keyframes pulse-blue {
+    0%, 100% { 
+      box-shadow: 
+        0 0 10px hsl(210 80% 60% / 0.18),
+        0 0 20px hsl(210 80% 60% / 0.09),
+        inset 0 0 10px hsl(210 80% 60% / 0.05);
+    }
+    50% { 
+      box-shadow: 
+        0 0 15px hsl(210 80% 60% / 0.25),
+        0 0 30px hsl(210 80% 60% / 0.12),
+        inset 0 0 15px hsl(210 80% 60% / 0.08);
+    }
+  }
+
+  @keyframes pulse-blue-elite {
+    0%, 100% { 
+      box-shadow: 
+        0 0 15px hsl(210 80% 60% / 0.25),
+        0 0 30px hsl(210 80% 60% / 0.12),
+        inset 0 0 15px hsl(210 80% 60% / 0.08);
+    }
+    50% { 
+      box-shadow: 
+        0 0 25px hsl(210 80% 60% / 0.35),
+        0 0 50px hsl(210 80% 60% / 0.18),
+        inset 0 0 25px hsl(210 80% 60% / 0.12);
+    }
+  }
+
+  @keyframes pulse-purple {
+    0%, 100% { 
+      box-shadow: 
+        0 0 12px hsl(280 60% 60% / 0.2),
+        0 0 25px hsl(280 60% 60% / 0.1),
+        inset 0 0 12px hsl(280 60% 60% / 0.06);
+    }
+    50% { 
+      box-shadow: 
+        0 0 18px hsl(280 60% 60% / 0.28),
+        0 0 35px hsl(280 60% 60% / 0.14),
+        inset 0 0 18px hsl(280 60% 60% / 0.09);
+    }
+  }
 }
