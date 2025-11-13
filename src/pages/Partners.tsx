@@ -1,15 +1,17 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Handshake } from 'lucide-react';
+import damascenaLogo from '@/assets/partner-damascena.jpg';
+import sesameLogo from '@/assets/partner-sesame.jpg';
+import sdnLogo from '@/assets/partner-sdn.png';
 
 const Partners = () => {
   const { language } = useLanguage();
 
   const partners = [
-    'Damascena Complex',
-    'Sesame Casino Kazanlak',
-    'SDN Estates LTD Bulgaria',
-    'Motox Bulgaria',
+    { name: 'Damascena Complex', logo: damascenaLogo },
+    { name: 'Sesame Casino Kazanlak', logo: sesameLogo },
+    { name: 'SDN Estates LTD Bulgaria', logo: sdnLogo },
+    { name: 'Motox Bulgaria', logo: null },
   ];
 
   return (
@@ -28,13 +30,25 @@ const Partners = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {partners.map((partner, index) => (
-            <Card key={index} className="bg-card border-border hover:gym-shadow transition-all">
+            <Card key={index} className="bg-card border-border hover:gym-shadow transition-all group">
               <CardContent className="pt-6">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-32 h-32 bg-secondary rounded-full flex items-center justify-center mb-4">
-                    <Handshake className="h-16 w-16 text-muted-foreground" />
+                  <div className="relative w-full aspect-square mb-6 p-1 rounded-lg bg-gradient-to-br from-primary via-accent to-primary/50 animate-glow-pulse">
+                    <div className="w-full h-full bg-background rounded-lg overflow-hidden flex items-center justify-center p-4">
+                      {partner.logo ? (
+                        <img 
+                          src={partner.logo} 
+                          alt={partner.name}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-secondary/50 rounded-lg flex items-center justify-center">
+                          <span className="text-4xl font-bold text-muted-foreground opacity-50">?</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold">{partner}</h3>
+                  <h3 className="text-lg font-semibold">{partner.name}</h3>
                 </div>
               </CardContent>
             </Card>
