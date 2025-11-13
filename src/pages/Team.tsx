@@ -1,7 +1,10 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { User, Award, Trophy, Medal } from 'lucide-react';
+import { Award, Trophy, Medal } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import coachDorian from '@/assets/coach-dorian.jpg';
+import coachTencho from '@/assets/coach-tencho.jpg';
+import coachYordan from '@/assets/coach-yordan.jpg';
 
 const Team = () => {
   const { language } = useLanguage();
@@ -11,6 +14,7 @@ const Team = () => {
       name: 'Дориан Аниев Дерменджиев',
       nameEn: 'Dorian Aniev Dermendzhiev',
       gradientClass: 'text-gradient-dorian',
+      photo: coachDorian,
       role: language === 'bg' ? 'Треньор по ММА и Фитнес' : 'MMA & Fitness Coach',
       experience: language === 'bg' ? '8+ години треньорски опит' : '8+ years coaching experience',
       quote: language === 'bg' 
@@ -34,6 +38,7 @@ const Team = () => {
       name: 'Тенчо Караенев',
       nameEn: 'Tencho Karaenev',
       gradientClass: 'text-gradient-tencho',
+      photo: coachTencho,
       role: language === 'bg' ? 'Треньор по ММА' : 'MMA Coach',
       experience: language === 'bg' ? '23 години в спорта' : '23 years in sports',
       quote: language === 'bg'
@@ -58,6 +63,7 @@ const Team = () => {
       name: 'Йордан Кукушев',
       nameEn: 'Yordan Kukushev',
       gradientClass: 'text-gradient-yordan',
+      photo: coachYordan,
       role: language === 'bg' ? 'Старши Треньор' : 'Senior Coach',
       experience: language === 'bg' ? '20 години треньорска практика' : '20 years coaching practice',
       quote: language === 'bg'
@@ -96,15 +102,19 @@ const Team = () => {
             <Card key={index} className="bg-card border-border hover:gym-shadow transition-all overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-[300px,1fr] gap-0">
-                  {/* Profile Picture Placeholder */}
-                  <div className="relative bg-secondary/20 flex items-center justify-center min-h-[300px] md:min-h-[400px]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-                    <User className="h-32 w-32 text-muted-foreground/30" />
-                    <div className="absolute bottom-4 left-4 right-4 text-center">
-                      <p className="text-xs text-muted-foreground italic">
-                        {language === 'bg' ? 'Снимка ще бъде добавена скоро' : 'Photo coming soon'}
-                      </p>
-                    </div>
+                  {/* Coach Photo */}
+                  <div className="relative bg-secondary/20 flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-10" />
+                    <div className="absolute inset-0 border-4 border-primary/30 z-20" />
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent z-20" />
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent z-20" />
+                    <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-transparent via-primary to-transparent z-20" />
+                    <div className="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-transparent via-primary to-transparent z-20" />
+                    <img 
+                      src={member.photo} 
+                      alt={language === 'bg' ? member.name : member.nameEn}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Biography Content */}
