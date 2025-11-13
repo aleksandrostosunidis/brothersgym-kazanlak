@@ -24,11 +24,11 @@ const Team = () => {
         ? 'Посветен на бойните спортове от 13-годишен. Започнал с волейбол, преминал през фитнес и ММА. С над 22 години тренировъчен опит и 8 години професионална треньорска практика. В Brothers Gym води групи по ММА и индивидуални тренировки, специализиран във фитнес и кондиционна подготовка на спортисти.'
         : 'Dedicated to combat sports since age 13. Started with volleyball, progressed through fitness and MMA. With over 22 years of training experience and 8 years of professional coaching. At Brothers Gym, leads MMA groups and individual training sessions, specialized in fitness and athletic conditioning.',
       achievements: [
-        { icon: Medal, text: language === 'bg' ? 'Вицеевропейска титла по ММА' : 'European Vice Champion in MMA' },
-        { icon: Trophy, text: language === 'bg' ? 'Балканска титла' : 'Balkan Champion' },
-        { icon: Award, text: language === 'bg' ? '8-кратен републикански шампион' : '8-time National Champion' },
-        { icon: Award, text: language === 'bg' ? 'Майстор на спорта (2015)' : 'Master of Sport (2015)' },
-        { icon: Award, text: language === 'bg' ? 'Заслужил треньор (2021)' : 'Honored Coach (2021)' },
+        { icon: Medal, text: language === 'bg' ? 'Вицеевропейска титла по ММА' : 'European Vice Champion in MMA', tier: 'european' },
+        { icon: Trophy, text: language === 'bg' ? 'Балканска титла' : 'Balkan Champion', tier: 'balkan' },
+        { icon: Award, text: language === 'bg' ? '8-кратен републикански шампион' : '8-time National Champion', tier: 'national-elite' },
+        { icon: Award, text: language === 'bg' ? 'Майстор на спорта (2015)' : 'Master of Sport (2015)', tier: 'honor' },
+        { icon: Award, text: language === 'bg' ? 'Заслужил треньор (2021)' : 'Honored Coach (2021)', tier: 'honor' },
       ],
       highlights: language === 'bg'
         ? ['ММА', 'Фитнес', 'Граплинг', 'Кондиция', 'Индивидуален подход']
@@ -48,12 +48,12 @@ const Team = () => {
         ? '31 години, родом от Стара Загора. Завършил НВУ през 2017 г. С 23 години опит в спорта - таекуондо, баскетбол, футбол, традиционен фитнес. Активен състезател по ММА (2013-2016) със златни медали от всички републикански първенства. Национален треньор и съдия по ММА.'
         : '31 years old, from Stara Zagora. Graduated from National Military University in 2017. With 23 years of sports experience - taekwondo, basketball, football, traditional fitness. Active MMA competitor (2013-2016) with gold medals from all national championships. National MMA coach and referee.',
       achievements: [
-        { icon: Medal, text: language === 'bg' ? '2x Световен Вицешампион' : '2x World Vice Champion' },
-        { icon: Medal, text: language === 'bg' ? '2x Бронз от Европейско първенство' : '2x European Bronze Medalist' },
-        { icon: Trophy, text: language === 'bg' ? 'Само златни медали на национално ниво' : 'Only gold medals at national level' },
-        { icon: Award, text: language === 'bg' ? 'Майстор на спорта (2015)' : 'Master of Sport (2015)' },
-        { icon: Award, text: language === 'bg' ? 'Заслужил треньор (2021)' : 'Honored Coach (2021)' },
-        { icon: Award, text: language === 'bg' ? 'Спортист на годината (2015)' : 'Athlete of the Year (2015)' },
+        { icon: Medal, text: language === 'bg' ? '2x Световен Вицешампион' : '2x World Vice Champion', tier: 'world' },
+        { icon: Medal, text: language === 'bg' ? '2x Бронз от Европейско първенство' : '2x European Bronze Medalist', tier: 'european' },
+        { icon: Trophy, text: language === 'bg' ? 'Само златни медали на национално ниво' : 'Only gold medals at national level', tier: 'national-elite' },
+        { icon: Award, text: language === 'bg' ? 'Майстор на спорта (2015)' : 'Master of Sport (2015)', tier: 'honor' },
+        { icon: Award, text: language === 'bg' ? 'Заслужил треньор (2021)' : 'Honored Coach (2021)', tier: 'honor' },
+        { icon: Award, text: language === 'bg' ? 'Спортист на годината (2015)' : 'Athlete of the Year (2015)', tier: 'honor' },
       ],
       highlights: language === 'bg'
         ? ['ММА', 'Граплинг', 'Таекуондо', 'Състезателна подготовка', 'Национален треньор']
@@ -73,9 +73,9 @@ const Team = () => {
         ? '51 години, с 40 години спортен опит и 20 години треньорска практика. Богато състезателно минало в борба, джудо, бокс, тай бокс, силов трибой, кикбокс и множество други дисциплини. В Brothers Gym се стараe да върне доброто усещане за живот в хората чрез тренировъчните практики.'
         : '51 years old, with 40 years of sports experience and 20 years of coaching practice. Rich competitive background in wrestling, judo, boxing, Thai boxing, powerlifting, kickboxing, and many other disciplines. At Brothers Gym, strives to restore people\'s good feeling for life through training practices.',
       achievements: [
-        { icon: Trophy, text: language === 'bg' ? 'Многостранен спортен опит' : 'Versatile sports experience' },
-        { icon: Award, text: language === 'bg' ? 'Успешна подготовка на състезатели' : 'Successful athlete preparation' },
-        { icon: Medal, text: language === 'bg' ? 'Експерт в 10+ дисциплини' : 'Expert in 10+ disciplines' },
+        { icon: Trophy, text: language === 'bg' ? 'Многостранен спортен опит' : 'Versatile sports experience', tier: 'honor' },
+        { icon: Award, text: language === 'bg' ? 'Успешна подготовка на състезатели' : 'Successful athlete preparation', tier: 'honor' },
+        { icon: Medal, text: language === 'bg' ? 'Експерт в 10+ дисциплини' : 'Expert in 10+ disciplines', tier: 'honor' },
       ],
       highlights: language === 'bg'
         ? ['Борба', 'Джудо', 'Бокс', 'Тай Бокс', 'Кикбокс', 'Силов Трибой', 'Холистичен подход']
@@ -151,13 +151,19 @@ const Team = () => {
                         <Trophy className="h-5 w-5 text-primary" />
                         {language === 'bg' ? 'Постижения' : 'Achievements'}
                       </h3>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         {member.achievements.map((achievement, idx) => {
                           const Icon = achievement.icon;
                           return (
-                            <div key={idx} className="flex items-start gap-3 text-sm">
-                              <Icon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                              <span className="text-foreground">{achievement.text}</span>
+                            <div key={idx} className={`achievement-${achievement.tier} flex items-start gap-3`}>
+                              <Icon className="h-5 w-5 flex-shrink-0 mt-0.5" style={{
+                                color: achievement.tier === 'world' ? 'hsl(45 100% 60%)' :
+                                       achievement.tier === 'european' ? 'hsl(200 30% 80%)' :
+                                       achievement.tier === 'balkan' ? 'hsl(30 60% 60%)' :
+                                       achievement.tier === 'national-elite' || achievement.tier === 'national' ? 'hsl(210 80% 70%)' :
+                                       'hsl(280 60% 70%)'
+                              }} />
+                              <span className="font-medium text-foreground leading-relaxed">{achievement.text}</span>
                             </div>
                           );
                         })}
