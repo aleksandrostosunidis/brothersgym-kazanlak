@@ -38,18 +38,18 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 white-text-outline tracking-[0.3em]">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 white-text-outline tracking-[0.2em] sm:tracking-[0.3em]">
             {language === 'bg' ? 'КОНТАКТИ' : 'CONTACT'}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground px-4">
             {language === 'bg' ? 'Свържете се с нас' : 'Get in touch with us'}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {/* Working Hours */}
           <Card className="bg-card border-border hover:gym-shadow transition-all">
             <CardHeader>
