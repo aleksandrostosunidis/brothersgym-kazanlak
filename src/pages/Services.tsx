@@ -6,13 +6,13 @@ const Services = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 white-text-outline tracking-[0.3em]">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 white-text-outline tracking-[0.2em] sm:tracking-[0.3em]">
             {language === 'bg' ? 'УСЛУГИ И ЦЕНИ' : 'SERVICES & PRICING'}
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
             {language === 'bg'
               ? 'Изберете най-подходящия за вас план'
               : 'Choose the plan that suits you best'}
@@ -20,29 +20,29 @@ const Services = () => {
         </div>
 
         {/* Fitness Section */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <Card className="bg-card border-primary/50">
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <Dumbbell className="h-8 w-8 text-primary" />
-                <CardTitle className="text-3xl">{language === 'bg' ? 'Фитнес' : 'Fitness'}</CardTitle>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Dumbbell className="h-6 w-6 sm:h-8 sm:w-8 text-primary flex-shrink-0" />
+                <CardTitle className="text-xl sm:text-2xl md:text-3xl">{language === 'bg' ? 'Фитнес' : 'Fitness'}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-6 sm:mx-0">
+                <table className="w-full min-w-[500px] sm:min-w-full">
                   <thead>
                     <tr className="border-b border-border">
-                      <th className="text-left p-3">{language === 'bg' ? 'Услуга' : 'Service'}</th>
-                      <th className="text-center p-3">{language === 'bg' ? 'До 18 години' : 'Under 18'}</th>
-                      <th className="text-center p-3">{language === 'bg' ? 'Над 18 години' : 'Over 18'}</th>
+                      <th className="text-left p-2 sm:p-3 text-sm sm:text-base">{language === 'bg' ? 'Услуга' : 'Service'}</th>
+                      <th className="text-center p-2 sm:p-3 text-sm sm:text-base">{language === 'bg' ? 'До 18 г.' : 'Under 18'}</th>
+                      <th className="text-center p-2 sm:p-3 text-sm sm:text-base">{language === 'bg' ? 'Над 18 г.' : 'Over 18'}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border/50">
-                      <td className="p-3">{language === 'bg' ? 'Еднократно посещение' : 'Single Visit'}</td>
-                      <td className="text-center p-3">7 лв (~3.57 €)</td>
-                      <td className="text-center p-3">7 лв (~3.57 €)</td>
+                      <td className="p-2 sm:p-3 text-sm sm:text-base">{language === 'bg' ? 'Еднократно' : 'Single Visit'}</td>
+                      <td className="text-center p-2 sm:p-3 text-sm sm:text-base">7 лв</td>
+                      <td className="text-center p-2 sm:p-3 text-sm sm:text-base">7 лв</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="p-3">{language === 'bg' ? '12 посещения' : '12-Visit Card'}</td>

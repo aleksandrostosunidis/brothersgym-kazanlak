@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -56,20 +56,20 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 text-white hero-title-glow tracking-wider">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
+          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 text-white hero-title-glow tracking-wider">
             {language === 'bg' ? 'BROTHERS GYM' : 'BROTHERS GYM'}
           </h1>
-          <p className="text-lg sm:text-xl md:text-3xl mb-6 text-foreground/90 drop-shadow-lg font-semibold px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 sm:mb-6 text-foreground/90 drop-shadow-lg font-semibold px-2 sm:px-4 max-w-3xl mx-auto">
             {language === 'bg' 
               ? 'Ставаш част от екип. Тренираш с професионалисти. Печелиш сила, характер и стил.'
               : 'You become part of a team. You train with professionals. You gain strength, character, and style.'}
           </p>
-          <p className="text-xl sm:text-2xl md:text-4xl mb-8 text-primary font-bold gym-glow-text tracking-wide px-4">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-6 sm:mb-8 text-primary font-bold gym-glow-text tracking-wide px-2 sm:px-4">
             {language === 'bg' ? 'РАБОТИМ С МУЛТИСПОРТ КАРТИ' : 'WE ACCEPT MULTISPORT CARDS'}
           </p>
           <Link to="/contact">
-            <Button size="lg" className="text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-7 gym-glow hover:scale-105 transition-all animate-glow-pulse font-bold">
+            <Button size="lg" className="text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-6 md:py-7 gym-glow hover:scale-105 transition-all animate-glow-pulse font-bold">
               {language === 'bg' ? 'ЗАПИШИ ТРЕНИРОВКА' : 'BOOK TRAINING'}
             </Button>
           </Link>
@@ -77,18 +77,18 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gradient gym-glow-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gradient gym-glow-text">
             {language === 'bg' ? 'Защо Brothers Gym?' : 'Why Brothers Gym?'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <Card key={index} className="bg-card border-border hover:border-primary transition-all hover:gym-shadow">
                 <CardContent className="pt-6">
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <feature.icon className="h-10 w-10 sm:h-12 sm:w-12 text-primary mb-4 mx-auto" />
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-center">{feature.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground text-center">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -97,14 +97,14 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 px-4 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gradient gym-glow-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gradient gym-glow-text">
             {language === 'bg' ? 'Нашите Услуги' : 'Our Services'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <Card className="overflow-hidden group cursor-pointer hover:gym-shadow transition-all">
-              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+              <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img 
                   src={fitnessImage} 
                   alt="Fitness" 
@@ -112,18 +112,18 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-3xl font-bold">
+                <h3 className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-2xl sm:text-3xl font-bold">
                   {language === 'bg' ? 'Фитнес' : 'Fitness'}
                 </h3>
               </div>
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4">
+              <CardContent className="p-4 sm:p-6">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4">
                   {language === 'bg'
                     ? 'Модерна фитнес зала с пълно оборудване за всички нива на подготовка.'
                     : 'Modern gym with full equipment for all fitness levels.'}
                 </p>
                 <Link to="/services">
-                  <Button variant="outline">
+                  <Button variant="outline" className="w-full sm:w-auto">
                     {language === 'bg' ? 'Виж Цени' : 'View Pricing'}
                   </Button>
                 </Link>
@@ -131,7 +131,7 @@ const Home = () => {
             </Card>
 
             <Card className="overflow-hidden group cursor-pointer hover:gym-glow transition-all">
-              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+              <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img 
                   src={mmaImage} 
                   alt="MMA" 
@@ -139,18 +139,18 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-3xl font-bold">
+                <h3 className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-2xl sm:text-3xl font-bold">
                   {language === 'bg' ? 'ММА' : 'MMA'}
                 </h3>
               </div>
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4">
+              <CardContent className="p-4 sm:p-6">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4">
                   {language === 'bg'
                     ? 'Професионални тренировки по ММА с опитни инструктори.'
                     : 'Professional MMA training with experienced coaches.'}
                 </p>
                 <Link to="/services">
-                  <Button variant="outline">
+                  <Button variant="outline" className="w-full sm:w-auto">
                     {language === 'bg' ? 'Виж Цени' : 'View Pricing'}
                   </Button>
                 </Link>

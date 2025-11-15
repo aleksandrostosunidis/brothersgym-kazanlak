@@ -84,26 +84,26 @@ const Team = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-6 text-gradient">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gradient">
             {language === 'bg' ? 'Нашият Екип' : 'Our Team'}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             {language === 'bg'
               ? 'Запознайте се с нашите професионални треньори.'
               : 'Meet our professional coaches.'}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card key={index} className="bg-card border-border hover:gym-shadow transition-all overflow-hidden">
               <CardContent className="p-0">
-                <div className="grid md:grid-cols-[300px,1fr] gap-0">
+                <div className="grid grid-cols-1 md:grid-cols-[280px,1fr] lg:grid-cols-[300px,1fr] gap-0">
                   {/* Coach Photo */}
-                  <div className="relative bg-secondary/20 flex items-center justify-center overflow-hidden">
+                  <div className="relative bg-secondary/20 flex items-center justify-center overflow-hidden min-h-[300px] sm:min-h-[350px] md:min-h-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-10" />
                     <div className="absolute inset-0 border-4 border-primary/30 z-20" />
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent z-20" />
@@ -118,15 +118,15 @@ const Team = () => {
                   </div>
 
                   {/* Biography Content */}
-                  <div className="p-8 space-y-6">
+                  <div className="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
                     {/* Header */}
                     <div className="space-y-2">
-                      <h2 className={`text-3xl md:text-4xl font-bold ${member.gradientClass}`}>
+                      <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold ${member.gradientClass}`}>
                         {language === 'bg' ? member.name : member.nameEn}
                       </h2>
-                      <p className="text-xl text-primary font-semibold">{member.role}</p>
-                      <p className="text-sm text-muted-foreground flex items-center gap-2">
-                        <Award className="h-4 w-4" />
+                      <p className="text-lg sm:text-xl text-primary font-semibold">{member.role}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2">
+                        <Award className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
                         {member.experience}
                       </p>
                     </div>
@@ -141,29 +141,30 @@ const Team = () => {
                     </div>
 
                     {/* Biography */}
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {member.bio}
                     </p>
 
                     {/* Achievements */}
                     <div className="space-y-3">
-                      <h3 className="text-lg font-semibold flex items-center gap-2">
-                        <Trophy className="h-5 w-5 text-primary" />
+                      <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2">
+                        <Trophy className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
                         {language === 'bg' ? 'Постижения' : 'Achievements'}
                       </h3>
-                      <div className="space-y-3">
+                      <div className="space-y-2 sm:space-y-3">
                         {member.achievements.map((achievement, idx) => {
                           const Icon = achievement.icon;
                           return (
-                            <div key={idx} className={`achievement-${achievement.tier} flex items-start gap-3`}>
-                              <Icon className="h-5 w-5 flex-shrink-0 mt-0.5" style={{
+                            <div key={idx} className={`achievement-${achievement.tier} flex items-start gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg`}>
+                              <Icon className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 mt-0.5" style={{
                                 color: achievement.tier === 'world' ? 'hsl(45 100% 60%)' :
-                                       achievement.tier === 'european' ? 'hsl(200 30% 80%)' :
-                                       achievement.tier === 'balkan' ? 'hsl(30 60% 60%)' :
-                                       achievement.tier === 'national-elite' || achievement.tier === 'national' ? 'hsl(210 80% 70%)' :
+                                       achievement.tier === 'european' ? 'hsl(215 85% 65%)' :
+                                       achievement.tier === 'balkan' ? 'hsl(145 65% 55%)' :
+                                       achievement.tier === 'national-elite' ? 'hsl(280 60% 70%)' :
+                                       achievement.tier === 'national' ? 'hsl(25 85% 60%)' :
                                        'hsl(280 60% 70%)'
                               }} />
-                              <span className="font-medium text-foreground leading-relaxed">{achievement.text}</span>
+                              <span className="font-medium text-foreground leading-relaxed text-sm sm:text-base">{achievement.text}</span>
                             </div>
                           );
                         })}
@@ -172,10 +173,10 @@ const Team = () => {
 
                     {/* Quote */}
                     <div className="pt-4 border-t border-border">
-                      <blockquote className="italic text-muted-foreground">
+                      <blockquote className="italic text-sm sm:text-base text-muted-foreground">
                         "{member.quote}"
                       </blockquote>
-                      <p className="text-sm text-primary font-semibold mt-2">
+                      <p className="text-xs sm:text-sm text-primary font-semibold mt-2">
                         — {language === 'bg' ? member.name : member.nameEn}
                       </p>
                     </div>

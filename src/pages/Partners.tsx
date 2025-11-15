@@ -15,26 +15,26 @@ const Partners = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-6 text-gradient">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gradient">
             {language === 'bg' ? 'Партньори и Спонсори' : 'Partners & Sponsors'}
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
             {language === 'bg'
               ? 'Нашите партньори и спонсори'
               : 'Our partners and sponsors'}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {partners.map((partner, index) => (
             <Card key={index} className="bg-card border-border hover:gym-shadow transition-all group">
-              <CardContent className="pt-6">
+              <CardContent className="pt-4 sm:pt-6">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative w-full aspect-square mb-6 p-1 rounded-lg bg-gradient-to-br from-primary via-accent to-primary/50 animate-glow-pulse">
-                    <div className="w-full h-full bg-background rounded-lg overflow-hidden flex items-center justify-center p-4">
+                  <div className="relative w-full aspect-square mb-4 sm:mb-6 p-1 rounded-lg bg-gradient-to-br from-primary via-accent to-primary/50 animate-glow-pulse">
+                    <div className="w-full h-full bg-background rounded-lg overflow-hidden flex items-center justify-center p-3 sm:p-4">
                       {partner.logo ? (
                         <img 
                           src={partner.logo} 
@@ -43,12 +43,12 @@ const Partners = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-secondary/50 rounded-lg flex items-center justify-center">
-                          <span className="text-4xl font-bold text-muted-foreground opacity-50">?</span>
+                          <span className="text-3xl sm:text-4xl font-bold text-muted-foreground opacity-50">?</span>
                         </div>
                       )}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold">{partner.name}</h3>
+                  <h3 className="text-base sm:text-lg font-semibold px-2">{partner.name}</h3>
                 </div>
               </CardContent>
             </Card>
