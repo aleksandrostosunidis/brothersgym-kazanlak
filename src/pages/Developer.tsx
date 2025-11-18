@@ -14,14 +14,14 @@ export default function Developer() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-secondary rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-glow" />
               <img 
                 src={developerImage} 
-                alt="Александър Тосунидис"
+                alt="Александрос Тосунидис"
                 className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl object-cover border-4 border-background shadow-2xl"
               />
             </div>
             
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-fade-in tracking-wide white-text-outline">
-                Александър Тосунидис
+                Александрос Тосунидис
               </h1>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-4">
                 <span className="px-4 py-2 bg-primary/20 border border-primary rounded-lg text-primary font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
@@ -38,7 +38,7 @@ export default function Developer() {
                 </span>
               </div>
               <p className="text-lg md:text-xl text-foreground font-semibold mb-2 white-text-outline">
-                20-годишен киберсигурност ентусиаст, който комбинира{' '}
+                21-годишен киберсигурност ентусиаст, който комбинира{' '}
                 <span className="text-primary font-bold">творческо кодиране</span> с{' '}
                 <span className="text-accent font-bold">robust security практики</span>
               </p>
@@ -269,7 +269,7 @@ export default function Developer() {
             <div className="pt-6">
               <p className="text-lg font-semibold text-muted-foreground italic white-text-outline">
                 "Когато страстта към спорта среща технологията, магията се случва." 
-                <span className="text-primary font-bold"> - Александър Тосунидис</span>
+                <span className="text-primary font-bold"> - Александрос Тосунидис</span>
               </p>
             </div>
           </div>
