@@ -38,7 +38,7 @@ const About = () => {
           <h1 className="text-6xl md:text-7xl font-bold mb-6 white-text-outline tracking-wider">
             {language === 'bg' ? 'ЗА BROTHERS GYM' : 'ABOUT BROTHERS GYM'}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-semibold">
             {language === 'bg'
               ? 'Brothers Gym в Казанлък е място, където тренираш с професионалисти и ставаш част от семейство. Печелиш сила, характер и стил.'
               : 'Brothers Gym in Kazanlak is where you train with professionals and become part of a family. You gain strength, character, and style.'}
@@ -61,7 +61,7 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-6 white-text-outline">
                 {language === 'bg' ? 'НАШАТА ИСТОРИЯ' : 'OUR STORY'}
               </h2>
-              <div className="space-y-4 text-muted-foreground text-lg">
+              <div className="space-y-4 text-muted-foreground text-lg font-semibold">
                 <p>
                   {language === 'bg'
                     ? 'Brothers Gym започна като мечта на група приятели, обединени от страстта към спорта и желанието да създадат нещо специално в Казанлък.'
