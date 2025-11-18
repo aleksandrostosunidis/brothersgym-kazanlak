@@ -20,27 +20,27 @@ export default function Developer() {
             </div>
             
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-fade-in tracking-wide white-text-outline">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-fade-in tracking-wide white-text-outline">
                 Александрос Тосунидис
               </h1>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-4">
-                <span className="px-4 py-2 bg-primary/20 border border-primary rounded-lg text-primary font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 rounded-lg text-cyan-400 font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
                   <Shield className="w-4 h-4" />
                   Cybersecurity Junior
                 </span>
-                <span className="px-4 py-2 bg-accent/20 border border-accent rounded-lg text-accent font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                <span className="px-4 py-2 bg-blue-500/20 border border-blue-500 rounded-lg text-blue-400 font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
                   <Code className="w-4 h-4" />
                   Full Stack Developer
                 </span>
-                <span className="px-4 py-2 bg-secondary/20 border border-secondary rounded-lg text-secondary font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 rounded-lg text-purple-400 font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
                   <Dumbbell className="w-4 h-4" />
                   Fitness Enthusiast
                 </span>
               </div>
               <p className="text-lg md:text-xl text-foreground font-semibold mb-2 white-text-outline">
                 21-годишен киберсигурност ентусиаст, който комбинира{' '}
-                <span className="text-primary font-bold">творческо кодиране</span> с{' '}
-                <span className="text-accent font-bold">robust security практики</span>
+                <span className="text-cyan-400 font-bold">творческо кодиране</span> с{' '}
+                <span className="text-blue-400 font-bold">robust security практики</span>
               </p>
               <div className="text-muted-foreground font-medium">
                 <Terminal className="inline w-5 h-5 mr-2 text-primary animate-pulse" />
@@ -54,39 +54,39 @@ export default function Developer() {
 
         {/* Mission Statement */}
         <div className="mb-16">
-          <Card className="border-2 border-primary/50 bg-card/50 backdrop-blur-sm hover:shadow-glow transition-all duration-300">
+          <Card className="border-2 border-cyan-500/50 bg-card/50 backdrop-blur-sm hover:shadow-glow transition-all duration-300">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Target className="w-8 h-8 text-primary animate-pulse" />
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent white-text-outline tracking-wide">
+                <Target className="w-8 h-8 text-cyan-400 animate-pulse" />
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent white-text-outline tracking-wide">
                   Защо Създадох Този Сайт?
                 </h2>
               </div>
               <div className="space-y-4 text-lg leading-relaxed">
                 <p className="text-foreground font-medium white-text-outline">
-                  Този уебсайт е създаден с <span className="text-primary font-bold">❤️ СТРАСТ</span> и{' '}
-                  <span className="text-accent font-bold">💪 ОТДАДЕНОСТ</span> за да подкрепя{' '}
-                  <span className="text-secondary font-bold text-xl">Brothers Gym</span> - 
+                  Този уебсайт е създаден с <span className="text-cyan-400 font-bold">❤️ СТРАСТ</span> и{' '}
+                  <span className="text-blue-400 font-bold">💪 ОТДАДЕНОСТ</span> за да подкрепя{' '}
+                  <span className="text-purple-400 font-bold text-xl">Brothers Gym</span> - 
                   залата, която не е просто място за тренировка, а е{' '}
-                  <span className="text-primary font-bold">СЕМЕЙСТВО, ОБЩНОСТ и ДОМ</span> за всички бойци и атлети!
+                  <span className="text-cyan-400 font-bold">СЕМЕЙСТВО, ОБЩНОСТ и ДОМ</span> за всички бойци и атлети!
                 </p>
                 
-                <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border-l-4 border-primary p-6 rounded-lg">
+                <div className="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border-l-4 border-cyan-500 p-6 rounded-lg">
                   <p className="text-foreground font-semibold italic white-text-outline">
-                    "Вярвам, че <span className="text-primary font-bold">технологията</span> може да усили{' '}
-                    <span className="text-accent font-bold">спортния дух</span>. 
+                    "Вярвам, че <span className="text-cyan-400 font-bold">технологията</span> може да усили{' '}
+                    <span className="text-blue-400 font-bold">спортния дух</span>. 
                     Този проект е моят начин да дам обратно на общността, която ме вдъхновява, 
-                    като създам <span className="text-secondary font-bold">модерна дигитална платформа</span>, 
+                    като създам <span className="text-purple-400 font-bold">модерна дигитална платформа</span>, 
                     която представя Brothers Gym пред света!"
                   </p>
                 </div>
 
                 <p className="text-foreground font-medium white-text-outline">
-                  Моята <span className="text-primary font-bold text-xl">МИСИЯ</span>: 
-                  Да изградя <span className="text-accent font-bold">сигурен, бърз и красив</span> уебсайт, 
-                  който показва <span className="text-secondary font-bold">професионализма</span>, 
-                  <span className="text-primary font-bold"> енергията</span> и{' '}
-                  <span className="text-accent font-bold">постиженията</span> на залата и нейните спортисти!
+                  Моята <span className="text-cyan-400 font-bold text-xl">МИСИЯ</span>: 
+                  Да изградя <span className="text-blue-400 font-bold">сигурен, бърз и красив</span> уебсайт, 
+                  който показва <span className="text-purple-400 font-bold">професионализма</span>, 
+                  <span className="text-cyan-400 font-bold"> енергията</span> и{' '}
+                  <span className="text-blue-400 font-bold">постиженията</span> на залата и нейните спортисти!
                 </p>
               </div>
             </CardContent>
@@ -95,79 +95,79 @@ export default function Developer() {
 
         {/* Skills Grid */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent white-text-outline tracking-wide">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-cyan-500 to-blue-500 bg-clip-text text-transparent white-text-outline tracking-wide">
             Технически Умения & Експертиза
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="border-2 border-primary/50 hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-glow group">
+            <Card className="border-2 border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 hover:scale-105 hover:shadow-glow group">
               <CardContent className="p-6">
-                <Shield className="w-12 h-12 text-primary mb-4 group-hover:animate-pulse" />
-                <h3 className="text-xl font-bold text-primary mb-3 white-text-outline tracking-wide">Cybersecurity</h3>
+                <Shield className="w-12 h-12 text-cyan-400 mb-4 group-hover:animate-pulse" />
+                <h3 className="text-xl font-bold text-cyan-400 mb-3 white-text-outline tracking-wide">Cybersecurity</h3>
                 <ul className="space-y-2 text-sm text-foreground font-medium">
                   <li className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-accent" />
+                    <Zap className="w-4 h-4 text-blue-400" />
                     <span className="white-text-outline">ВВМУ Варна - Киберсигурност</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-accent" />
+                    <Zap className="w-4 h-4 text-blue-400" />
                     <span className="white-text-outline">ThinkCyber Bulgaria - XE Program</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-accent" />
+                    <Zap className="w-4 h-4 text-blue-400" />
                     <span className="white-text-outline">Penetration Testing & Security Audits</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-accent" />
+                    <Zap className="w-4 h-4 text-blue-400" />
                     <span className="white-text-outline">Secure Coding & Database Security</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-accent/50 hover:border-accent transition-all duration-300 hover:scale-105 hover:shadow-glow group">
+            <Card className="border-2 border-blue-500/50 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:shadow-glow group">
               <CardContent className="p-6">
-                <Code className="w-12 h-12 text-accent mb-4 group-hover:animate-pulse" />
-                <h3 className="text-xl font-bold text-accent mb-3 white-text-outline tracking-wide">Development</h3>
+                <Code className="w-12 h-12 text-blue-400 mb-4 group-hover:animate-pulse" />
+                <h3 className="text-xl font-bold text-blue-400 mb-3 white-text-outline tracking-wide">Development</h3>
                 <ul className="space-y-2 text-sm text-foreground font-medium">
                   <li className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-primary" />
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">React, TypeScript, Vite</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-primary" />
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">Three.js & Interactive 3D</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-primary" />
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">Supabase & Backend Development</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-primary" />
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">QA Testing & Automation</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-secondary/50 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-glow group">
+            <Card className="border-2 border-purple-500/50 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-glow group">
               <CardContent className="p-6">
-                <Brain className="w-12 h-12 text-secondary mb-4 group-hover:animate-pulse" />
-                <h3 className="text-xl font-bold text-secondary mb-3 white-text-outline tracking-wide">AI & Innovation</h3>
+                <Brain className="w-12 h-12 text-purple-400 mb-4 group-hover:animate-pulse" />
+                <h3 className="text-xl font-bold text-purple-400 mb-3 white-text-outline tracking-wide">AI & Innovation</h3>
                 <ul className="space-y-2 text-sm text-foreground font-medium">
                   <li className="flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-primary" />
+                    <Lock className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">TU Sofia - Intelligent Systems & AI</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-primary" />
+                    <Lock className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">Python Programming</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-primary" />
+                    <Lock className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">Creative Problem Solving</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-primary" />
+                    <Lock className="w-4 h-4 text-cyan-400" />
                     <span className="white-text-outline">Vibe Coding Philosophy</span>
                   </li>
                 </ul>
@@ -256,20 +256,20 @@ export default function Developer() {
             <div className="flex justify-center mb-4">
               <Sparkles className="w-16 h-16 text-accent animate-pulse" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent white-text-outline tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent white-text-outline tracking-wide">
               Моята Визия
             </h2>
             <p className="text-xl md:text-2xl font-bold text-foreground max-w-4xl mx-auto leading-relaxed white-text-outline">
-              Да <span className="text-primary text-2xl">ОБЕДИНЯ</span> креативната разработка с{' '}
-              <span className="text-accent text-2xl">КИБЕРСИГУРНОСТ</span>, за да{' '}
-              <span className="text-secondary text-2xl">ЗАЩИТЯ</span> иновативни проекти от уязвимости 
-              и да създам <span className="text-primary text-2xl">ДИГИТАЛНИ ПРЕЖИВЯВАНИЯ</span>, 
-              които вдъхновяват, защитават и <span className="text-accent text-2xl">ПРОМЕНЯТ ЖИВОТА</span> на хората!
+              Да <span className="text-cyan-400 text-2xl">ОБЕДИНЯ</span> креативната разработка с{' '}
+              <span className="text-blue-400 text-2xl">КИБЕРСИГУРНОСТ</span>, за да{' '}
+              <span className="text-purple-400 text-2xl">ЗАЩИТЯ</span> иновативни проекти от уязвимости 
+              и да създам <span className="text-cyan-400 text-2xl">ДИГИТАЛНИ ПРЕЖИВЯВАНИЯ</span>, 
+              които вдъхновяват, защитават и <span className="text-blue-400 text-2xl">ПРОМЕНЯТ ЖИВОТА</span> на хората!
             </p>
             <div className="pt-6">
               <p className="text-lg font-semibold text-muted-foreground italic white-text-outline">
                 "Когато страстта към спорта среща технологията, магията се случва." 
-                <span className="text-primary font-bold"> - Александрос Тосунидис</span>
+                <span className="text-cyan-400 font-bold"> - Александрос Тосунидis</span>
               </p>
             </div>
           </div>
@@ -277,18 +277,18 @@ export default function Developer() {
 
         {/* Footer CTA */}
         <div className="mt-16 text-center">
-          <Card className="border-2 border-secondary/50 bg-card/50 backdrop-blur-sm">
+          <Card className="border-2 border-purple-500/50 bg-card/50 backdrop-blur-sm">
             <CardContent className="p-8">
               <p className="text-lg text-foreground font-semibold mb-4 white-text-outline">
-                Има идеи за подобрения или искаш да работим заедно?
+                Имаш идея, която искаш да развиеш, или искаш да работим заедно?
               </p>
               <p className="text-muted-foreground font-medium white-text-outline">
-                Свържи се с <span className="text-primary font-bold">Brothers Gym</span> екипа или посети{' '}
+                Свържи се с <span className="text-cyan-400 font-bold">Brothers Gym</span> екипа или посети{' '}
                 <a 
                   href="https://a-tosunidis-cs.lovable.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-accent font-bold hover:text-primary transition-colors underline"
+                  className="text-blue-400 font-bold hover:text-cyan-400 transition-colors underline"
                 >
                   моят портфолио сайт
                 </a>
