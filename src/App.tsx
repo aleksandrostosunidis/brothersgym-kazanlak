@@ -18,6 +18,7 @@ import WallOfFame from "./pages/WallOfFame";
 import Reviews from "./pages/Reviews";
 import Partners from "./pages/Partners";
 import Bar from "./pages/Bar";
+import Developer from "./pages/Developer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/partners" element={<Partners />} />
                 <Route path="/bar" element={<Bar />} />
+                <Route path="/developer" element={<Developer />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

@@ -25,6 +25,7 @@ const translations = {
     'nav.resources': 'Ресурси',
     'nav.bar': 'Бар',
     'nav.faq': 'Въпроси',
+    'nav.developer': 'За Разработчика',
     
     // Hero
     'hero.title': 'Brothers Gym - Казанлък',
@@ -68,6 +69,7 @@ const translations = {
     'nav.resources': 'Resources',
     'nav.bar': 'Bar',
     'nav.faq': 'FAQ',
+    'nav.developer': 'About Developer',
     
     // Hero
     'hero.title': 'Brothers Gym - Kazanlak',

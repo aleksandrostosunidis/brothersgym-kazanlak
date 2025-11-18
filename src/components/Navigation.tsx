@@ -31,6 +31,7 @@ export const Navigation = () => {
     { label: t('nav.reviews'), path: '/reviews' },
     { label: t('nav.partners'), path: '/partners' },
     { label: t('nav.bar'), path: '/bar' },
+    { label: t('nav.developer'), path: '/developer' },
   ];
 
   return (
