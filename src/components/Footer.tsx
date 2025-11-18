@@ -53,6 +53,9 @@ export const Footer = () => {
               <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                 {language === 'bg' ? 'Контакти' : 'Contact'}
               </Link></li>
+              <li><Link to="/developer" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'За Разработчика' : 'About Developer'}
+              </Link></li>
             </ul>
           </div>
 
