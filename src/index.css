@@ -346,4 +346,17 @@ All colors MUST be HSL.
         inset 0 0 18px hsl(280 60% 60% / 0.09);
     }
   }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
