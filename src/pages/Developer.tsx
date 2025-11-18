@@ -268,8 +268,8 @@ export default function Developer() {
             </p>
             <div className="pt-6">
               <p className="text-lg font-semibold text-muted-foreground italic white-text-outline">
-                "Когато страстта към спорта среща технологията, магията се случва." 
-                <span className="text-cyan-400 font-bold"> - Александрос Тосунидis</span>
+              "Когато страстта към спорта среща технологията, магията се случва." 
+              <span className="text-cyan-400 font-bold"> - Александрос Тосунидис</span>
               </p>
             </div>
           </div>
