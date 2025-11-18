@@ -101,9 +101,9 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <Card key={index} className="bg-card border-border hover:gym-shadow transition-all overflow-hidden">
               <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-[280px,1fr] lg:grid-cols-[300px,1fr] gap-0">
+                <div className="grid grid-cols-1 md:grid-cols-[300px,1fr] lg:grid-cols-[350px,1fr] gap-0">
                   {/* Coach Photo */}
-                  <div className="relative bg-secondary/20 flex items-center justify-center overflow-hidden h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px]">
+                  <div className="relative bg-secondary/20 overflow-hidden h-[450px] md:h-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent z-10" />
                     <div className="absolute inset-0 border-4 border-primary/30 z-20" />
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent z-20" />
@@ -113,7 +113,7 @@ const Team = () => {
                     <img 
                       src={member.photo} 
                       alt={language === 'bg' ? member.name : member.nameEn}
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-[center_20%]"
                     />
                   </div>
 
