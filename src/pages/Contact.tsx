@@ -59,9 +59,9 @@ const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2 text-muted-foreground">
-                <p><strong>{language === 'bg' ? 'Пон-Пет:' : 'Mon-Fri:'}</strong> 07:30 – 21:30</p>
-                <p><strong>{language === 'bg' ? 'Съб-Нед:' : 'Sat-Sun:'}</strong> 09:00 – 20:00</p>
+              <div className="space-y-2 text-muted-foreground font-semibold">
+                <p><strong className="font-bold">{language === 'bg' ? 'Пон-Пет:' : 'Mon-Fri:'}</strong> 07:30 – 21:30</p>
+                <p><strong className="font-bold">{language === 'bg' ? 'Съб-Нед:' : 'Sat-Sun:'}</strong> 09:00 – 20:00</p>
               </div>
             </CardContent>
           </Card>
@@ -75,16 +75,16 @@ const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2 text-muted-foreground">
+              <div className="space-y-2 text-muted-foreground font-semibold">
                 <a 
                   href="tel:+359896780067" 
-                  className="text-primary hover:text-accent transition-colors text-lg block"
+                  className="text-primary hover:text-accent transition-colors text-lg block font-bold"
                 >
                   089 678 0067 (Дориан)
                 </a>
                 <a 
                   href="tel:+359894450256" 
-                  className="text-primary hover:text-accent transition-colors text-lg block"
+                  className="text-primary hover:text-accent transition-colors text-lg block font-bold"
                 >
                   089 445 0256 (Тенчо)
                 </a>
@@ -101,7 +101,7 @@ const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground font-semibold">
                 {language === 'bg' 
                   ? 'Адрес: ул Искра 12 (до Club Noar), Казанлък, България'
                   : 'Address: ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}

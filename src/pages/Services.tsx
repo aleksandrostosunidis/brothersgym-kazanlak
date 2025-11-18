@@ -12,7 +12,7 @@ const Services = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 white-text-outline tracking-[0.2em] sm:tracking-[0.3em]">
             {language === 'bg' ? 'УСЛУГИ И ЦЕНИ' : 'SERVICES & PRICING'}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4 font-semibold">
             {language === 'bg'
               ? 'Изберете най-подходящия за вас план'
               : 'Choose the plan that suits you best'}
@@ -40,29 +40,29 @@ const Services = () => {
                   </thead>
                   <tbody>
                     <tr className="border-b border-border/50">
-                      <td className="p-2 sm:p-3 text-sm sm:text-base">{language === 'bg' ? 'Еднократно' : 'Single Visit'}</td>
-                      <td className="text-center p-2 sm:p-3 text-sm sm:text-base">7 лв</td>
-                      <td className="text-center p-2 sm:p-3 text-sm sm:text-base">7 лв</td>
+                      <td className="p-2 sm:p-3 text-sm sm:text-base font-semibold">{language === 'bg' ? 'Еднократно' : 'Single Visit'}</td>
+                      <td className="text-center p-2 sm:p-3 text-sm sm:text-base font-semibold">7 лв</td>
+                      <td className="text-center p-2 sm:p-3 text-sm sm:text-base font-semibold">7 лв</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-3">{language === 'bg' ? '12 посещения' : '12-Visit Card'}</td>
-                      <td className="text-center p-3">-</td>
-                      <td className="text-center p-3">50 лв (~25.51 €)</td>
+                      <td className="p-3 font-semibold">{language === 'bg' ? '12 посещения' : '12-Visit Card'}</td>
+                      <td className="text-center p-3 font-semibold">-</td>
+                      <td className="text-center p-3 font-semibold">50 лв (~25.51 €)</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-3">{language === 'bg' ? '16 посещения' : '16-Visit Card'}</td>
-                      <td className="text-center p-3">-</td>
-                      <td className="text-center p-3">55 лв (~28.06 €)</td>
+                      <td className="p-3 font-semibold">{language === 'bg' ? '16 посещения' : '16-Visit Card'}</td>
+                      <td className="text-center p-3 font-semibold">-</td>
+                      <td className="text-center p-3 font-semibold">55 лв (~28.06 €)</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-3">{language === 'bg' ? 'Безлимитна месечна карта' : 'Unlimited Monthly'}</td>
-                      <td className="text-center p-3">-</td>
-                      <td className="text-center p-3">60 лв (~30.61 €)</td>
+                      <td className="p-3 font-semibold">{language === 'bg' ? 'Безлимитна месечна карта' : 'Unlimited Monthly'}</td>
+                      <td className="text-center p-3 font-semibold">-</td>
+                      <td className="text-center p-3 font-semibold">60 лв (~30.61 €)</td>
                     </tr>
                     <tr className="border-b border-border/50">
-                      <td className="p-3">{language === 'bg' ? 'Студентска карта' : 'Student Card'}</td>
-                      <td className="text-center p-3">50 лв (~25.51 €)</td>
-                      <td className="text-center p-3">-</td>
+                      <td className="p-3 font-semibold">{language === 'bg' ? 'Студентска карта' : 'Student Card'}</td>
+                      <td className="text-center p-3 font-semibold">50 лв (~25.51 €)</td>
+                      <td className="text-center p-3 font-semibold">-</td>
                     </tr>
                   </tbody>
                 </table>

@@ -12,7 +12,7 @@ export const Footer = () => {
           {/* About */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-gradient">Brothers Gym</h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-4 font-semibold">
               {language === 'bg' 
                 ? 'Тренираш с професионалисти. Печелиш сила, характер и стил.'
                 : 'Train with professionals. Gain strength, character, and style.'}
@@ -61,17 +61,17 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">{language === 'bg' ? 'Свържете се с нас' : 'Connect With Us'}</h4>
             <div className="flex items-center space-x-2 mb-2">
               <Phone className="h-5 w-5 text-primary" />
-              <a href="tel:+359896780067" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+359896780067" className="text-muted-foreground hover:text-primary transition-colors font-semibold">
                 089 678 0067 (Дориан)
               </a>
             </div>
             <div className="flex items-center space-x-2 mb-3">
               <Phone className="h-5 w-5 text-primary" />
-              <a href="tel:+359894450256" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+359894450256" className="text-muted-foreground hover:text-primary transition-colors font-semibold">
                 089 445 0256 (Тенчо)
               </a>
             </div>
-            <p className="text-muted-foreground text-sm mb-3">
+            <p className="text-muted-foreground text-sm mb-3 font-semibold">
               {language === 'bg' 
                 ? 'Адрес: ул Искра 12 (до Club Noar), Казанлък, България'
                 : 'Address: ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}

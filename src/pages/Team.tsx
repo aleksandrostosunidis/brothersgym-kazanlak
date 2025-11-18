@@ -4,7 +4,7 @@ import { Award, Trophy, Medal } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import coachDorian from '@/assets/coach-dorian.jpg';
 import coachTencho from '@/assets/coach-tencho.jpg';
-import coachYordan from '@/assets/coach-yordan.jpg';
+import coachYordan from '@/assets/coach-yordan-new.jpg';
 
 const Team = () => {
   const { language } = useLanguage();
@@ -113,7 +113,7 @@ const Team = () => {
                     <img 
                       src={member.photo} 
                       alt={language === 'bg' ? member.name : member.nameEn}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain p-2"
                     />
                   </div>
 
@@ -141,7 +141,7 @@ const Team = () => {
                     </div>
 
                     {/* Biography */}
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-semibold">
                       {member.bio}
                     </p>
 
