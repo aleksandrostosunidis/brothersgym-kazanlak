@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dumbbell, Swords, Zap, User } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Dumbbell, Swords, Zap, User, Info } from 'lucide-react';
 
 const Services = () => {
   const { language } = useLanguage();
@@ -159,9 +160,39 @@ const Services = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 border-b border-border/50">
-                  <span>{language === 'bg' ? 'VIP Треньорска сесия' : 'VIP Coaching Session'}</span>
-                  <span className="font-semibold text-primary">15 лв (~7.65 €)</span>
+                <div className="p-3 border-b border-border/50">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-semibold">{language === 'bg' ? 'VIP Треньорска сесия' : 'VIP Coaching Session'}</span>
+                    <span className="font-semibold text-primary">15 лв (~7.65 €)</span>
+                  </div>
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="vip-details" className="border-none">
+                      <AccordionTrigger className="py-2 hover:no-underline">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Info className="h-4 w-4" />
+                          <span>{language === 'bg' ? 'Какво включва?' : 'What\'s included?'}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 text-sm text-muted-foreground pl-6 list-disc marker:text-primary">
+                          <li>{language === 'bg' ? 'Бокс' : 'Boxing'}</li>
+                          <li>{language === 'bg' ? 'Кикбокс' : 'Kickboxing'}</li>
+                          <li>{language === 'bg' ? 'ММА' : 'MMA'}</li>
+                          <li>{language === 'bg' ? 'Борба и Граплинг' : 'Wrestling and Grappling'}</li>
+                          <li>{language === 'bg' ? 'Кондиционна подготовка за различни спортове' : 'Conditioning for various sports'}</li>
+                          <li>{language === 'bg' ? 'Силова подготовка' : 'Strength training'}</li>
+                          <li>{language === 'bg' ? 'Кросфит' : 'CrossFit'}</li>
+                          <li>{language === 'bg' ? 'Възстановяване след различни видове операции' : 'Recovery after various types of surgeries'}</li>
+                          <li>{language === 'bg' ? 'Възстановяване след различни травми по опорно-двигателната система' : 'Recovery after musculoskeletal injuries'}</li>
+                          <li className="font-medium">
+                            {language === 'bg' 
+                              ? 'НФК (Невро-физически комплекс) за изграждане и поддържане на фината мускулатура на гръбначния стълб и в близост до него. Препоръчва се за хора с проблеми в кръста, във врата или въобще по гръбначния стълб.'
+                              : 'NPC (Neuro-Physical Complex) for building and maintaining the fine musculature of the spinal column and surrounding areas. Recommended for people with lower back, neck, or general spinal problems.'}
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
                 <div className="flex justify-between items-center p-3 border-b border-border/50">
                   <span>{language === 'bg' ? 'Индивидуална тренировка' : 'Individual Training'}</span>
