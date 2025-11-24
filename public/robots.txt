@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://brothersgym.eu/sitemap.xml
+Sitemap: https://brothersgym-kazanlak.bg/sitemap.xml
