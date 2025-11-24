@@ -13,5 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://a8717019-4073-4f75-9189-7f279aec9779.lovableproject.com/sitemap.xml
-Allow: /
+Sitemap: https://brothersgym.eu/sitemap.xml
