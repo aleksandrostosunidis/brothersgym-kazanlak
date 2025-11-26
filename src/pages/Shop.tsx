@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import { ShoppingBag } from 'lucide-react';
 
@@ -24,7 +26,20 @@ const Shop = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Магазин - Brothers Gym Казанлък' : 'Shop - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Официални Brothers Gym продукти: тениски, суичъри, шапки и други. Закупете в залата или се свържете с нас.'
+          : 'Official Brothers Gym merchandise: t-shirts, hoodies, caps, and more. Purchase in-gym or contact us.'}
+        keywords="Brothers Gym магазин, мърчандайз, тениски, суичъри, Brothers Gym продукти"
+        canonicalUrl="/shop"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Магазин', url: '/shop' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl font-bold mb-6 text-gradient">
@@ -64,7 +79,8 @@ const Shop = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

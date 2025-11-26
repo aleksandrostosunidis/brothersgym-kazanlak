@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy } from 'lucide-react';
 
@@ -6,7 +8,20 @@ const WallOfFame = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Стена на славата - Brothers Gym Казанлък' : 'Wall of Fame - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Постижения, медали и успехи на нашите спортисти от Brothers Gym Казанлък. Вижте нашите шампиони и техните победи.'
+          : 'Achievements, medals, and successes of our athletes from Brothers Gym Kazanlak. See our champions and their victories.'}
+        keywords="Brothers Gym шампиони, ММА медалисти Казанлък, постижения, победи, спортни успехи"
+        canonicalUrl="/wall-of-fame"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Стена на славата', url: '/wall-of-fame' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl font-bold mb-6 text-gradient">
@@ -30,7 +45,8 @@ const WallOfFame = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

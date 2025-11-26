@@ -1,10 +1,23 @@
 import { Shield, Code, Dumbbell, Sparkles, Rocket, Target, Zap, Terminal, Lock, Brain } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import developerImage from '@/assets/developer-alex.png';
 
 export default function Developer() {
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-background">
+    <>
+      <SEO 
+        title="За Разработчика - Александрос Тосунидис | Brothers Gym Казанлък"
+        description="Запознайте се с Александрос Тосунидис - създателя на Brothers Gym уебсайт. Специалист по киберсигурност и уеб разработка с фокус върху сигурност и производителност."
+        keywords="Александрос Тосунидис, уеб разработчик Казанлък, киберсигурност, Brothers Gym разработка"
+        canonicalUrl="/developer"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'За Разработчика', url: '/developer' }
+        ])}
+      />
+      <div className="min-h-screen pt-24 pb-16 bg-background">
       <div className="container mx-auto px-4">
         {/* Hero Section with Cyber Effects */}
         <div className="relative mb-16 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 p-8 md:p-12 border-2 border-primary/50 shadow-glow">
@@ -297,6 +310,7 @@ export default function Developer() {
           </Card>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
