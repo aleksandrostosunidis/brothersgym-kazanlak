@@ -14,6 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author_name: string
+          category: string
+          content: string
+          created_at: string
+          excerpt: string
+          id: string
+          ip_address: string
+          rating_count: number | null
+          rating_sum: number | null
+          tags: string[] | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_name: string
+          category: string
+          content: string
+          created_at?: string
+          excerpt: string
+          id?: string
+          ip_address: string
+          rating_count?: number | null
+          rating_sum?: number | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_name?: string
+          category?: string
+          content?: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          ip_address?: string
+          rating_count?: number | null
+          rating_sum?: number | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blog_ratings: {
+        Row: {
+          blog_post_id: string
+          created_at: string
+          id: string
+          ip_address: string
+          rating: number
+        }
+        Insert: {
+          blog_post_id: string
+          created_at?: string
+          id?: string
+          ip_address: string
+          rating: number
+        }
+        Update: {
+          blog_post_id?: string
+          created_at?: string
+          id?: string
+          ip_address?: string
+          rating?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_ratings_blog_post_id_fkey"
+            columns: ["blog_post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "blog_ratings_blog_post_id_fkey"
+            columns: ["blog_post_id"]
+            isOneToOne: false
+            referencedRelation: "public_blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reviews: {
         Row: {
           comment: string
@@ -46,6 +130,51 @@ export type Database = {
       }
     }
     Views: {
+      public_blog_posts: {
+        Row: {
+          author_name: string | null
+          average_rating: number | null
+          category: string | null
+          content: string | null
+          created_at: string | null
+          excerpt: string | null
+          id: string | null
+          rating_count: number | null
+          rating_sum: number | null
+          tags: string[] | null
+          title: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          author_name?: string | null
+          average_rating?: never
+          category?: string | null
+          content?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string | null
+          rating_count?: number | null
+          rating_sum?: number | null
+          tags?: string[] | null
+          title?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          author_name?: string | null
+          average_rating?: never
+          category?: string | null
+          content?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string | null
+          rating_count?: number | null
+          rating_sum?: number | null
+          tags?: string[] | null
+          title?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       public_reviews: {
         Row: {
           comment: string | null

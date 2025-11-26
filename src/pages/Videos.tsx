@@ -14,55 +14,43 @@ import videoThumb6 from "@/assets/video-thumb-6.jpg";
 
 const videoContent = [
   {
-    title: "Интензивна ММА Тренировка",
-    description: "Мощни ММА техники и комбинации в действие",
+    title: "Видео №1",
     platform: "Facebook",
-    type: "ММА",
     videoUrl: "/videos/video-1.mp4",
     thumbnail: videoThumb1,
     titleColor: "text-red-500"
   },
   {
-    title: "Кикбокс Майсторски Клас",
-    description: "Усъвършенствай техниката си с нашите професионални треньори",
+    title: "Видео №2",
     platform: "Facebook",
-    type: "Кикбокс",
     videoUrl: "/videos/video-2.mp4",
     thumbnail: videoThumb2,
     titleColor: "text-orange-500"
   },
   {
-    title: "Борба и Грапълинг",
-    description: "Техники за контрол и доминация на земята",
+    title: "Видео №3",
     platform: "Facebook",
-    type: "Грапълинг",
     videoUrl: "/videos/video-3.mp4",
     thumbnail: videoThumb3,
     titleColor: "text-blue-400"
   },
   {
-    title: "Бокс - Скорост и Точност",
-    description: "Перфектни удари и комбинации от нашите боксьори",
+    title: "Видео №4",
     platform: "Facebook",
-    type: "Бокс",
     videoUrl: "/videos/video-4.mp4",
     thumbnail: videoThumb4,
     titleColor: "text-red-600"
   },
   {
-    title: "Груповa Треньорскa Сесия",
-    description: "Енергията на екипа и братството в залата",
+    title: "Видео №5",
     platform: "Facebook",
-    type: "Група",
     videoUrl: "/videos/video-5.mp4",
     thumbnail: videoThumb5,
     titleColor: "text-amber-500"
   },
   {
-    title: "Силова Подготовка",
-    description: "Изгради сила и мускулна маса в Brothers Gym",
+    title: "Видео №6",
     platform: "Facebook",
-    type: "Сила",
     videoUrl: "/videos/video-6.mp4",
     thumbnail: videoThumb6,
     titleColor: "text-cyan-400"
@@ -174,21 +162,17 @@ export default function Videos() {
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Badge>{video.type}</Badge>
-                        <Badge variant="outline" className="text-xs flex items-center gap-1">
-                          <Facebook className="w-3 h-3" />
-                          Facebook
-                        </Badge>
-                      </div>
-                      <CardTitle className={`mb-2 text-lg font-bold ${video.titleColor}`}>
-                        {video.title}
-                      </CardTitle>
-                      <CardDescription className="text-muted-foreground">
-                        {video.description}
-                      </CardDescription>
-                    </CardContent>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge variant="outline" className="text-xs flex items-center gap-1">
+                        <Facebook className="w-3 h-3" />
+                        Facebook
+                      </Badge>
+                    </div>
+                    <CardTitle className={`text-lg font-bold ${video.titleColor}`}>
+                      {video.title}
+                    </CardTitle>
+                  </CardContent>
                   </Card>
                 </div>
               ))}
