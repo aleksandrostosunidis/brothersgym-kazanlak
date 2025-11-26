@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Trophy, Medal } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -84,7 +86,20 @@ const Team = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Екип - Brothers Gym Казанлък' : 'Team - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Запознайте се с нашите професионални треньори: Дориан Дерменджиев - Вицеевропейски шампион по ММА, Тенчо Караенев - 2-кратен Световен вицешампион, Йордан Кукушев - 20 години треньорски опит.'
+          : 'Meet our professional coaches: Dorian Dermendzhiev - European MMA Vice Champion, Tencho Karaenev - 2-time World Vice Champion, Yordan Kukushev - 20 years coaching experience.'}
+        keywords="треньори Brothers Gym Казанлък, ММА треньори, фитнес треньори Казанлък, Дориан Дерменджиев, Тенчо Караенев, професионални бойци"
+        canonicalUrl="/team"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Екип', url: '/team' }
+        ])}
+      />
+      <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gradient">
@@ -187,7 +202,8 @@ const Team = () => {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
@@ -43,7 +45,20 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Галерия - Brothers Gym Казанлък' : 'Gallery - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Галерия със снимки от Brothers Gym Казанлък: тренировки по фитнес и ММА, състезания, събития, нашата зала и екип. Вижте как изглежда да си част от нашето семейство.'
+          : 'Brothers Gym Kazanlak photo gallery: fitness and MMA training, competitions, events, our gym and team. See what it\'s like to be part of our family.'}
+        keywords="Brothers Gym снимки, фитнес зала Казанлък снимки, ММА тренировки снимки, Brothers Gym галерия"
+        canonicalUrl="/gallery"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Галерия', url: '/gallery' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 white-text-outline tracking-wider">
@@ -96,7 +111,8 @@ const Gallery = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
