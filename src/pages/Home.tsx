@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dumbbell, Users, Trophy, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getLocalBusinessSchema, getGymPageSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-banner.png';
 import mmaImage from '@/assets/mma-athlete.jpg';
 import fitnessImage from '@/assets/fitness-gym.jpg';
@@ -42,8 +44,18 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Фитнес зала и ММА център в Казанлък' : 'Fitness Gym and MMA Center in Kazanlak'}
+        description={language === 'bg' 
+          ? 'Brothers Gym Казанлък - професионална фитнес зала и ММА център. Модерно оборудване, експертни треньори, персонални тренировки. Приемаме Мултиспорт карти. Телефон: 089 678 0067, 089 445 0256'
+          : 'Brothers Gym Kazanlak - professional fitness gym and MMA center. Modern equipment, expert coaches, personal training. We accept Multisport cards. Phone: 089 678 0067, 089 445 0256'}
+        keywords="Brothers Gym Казанлък, фитнес зала Казанлък, ММА Казанлък, спортна зала Казанлък, фитнес Казанлък, мултиспорт Казанлък, персонални тренировки Казанлък, Brothers GYM"
+        canonicalUrl="/"
+        structuredData={[getLocalBusinessSchema(), getGymPageSchema()]}
+      />
+      <div className="min-h-screen">
+        {/* Hero Section */}
       <section className="relative min-h-[100svh] h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 z-0"
@@ -178,7 +190,8 @@ const Home = () => {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -139,7 +141,20 @@ const Reviews = () => {
   };
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Ревюта - Brothers Gym Казанлък' : 'Reviews - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Прочетете отзиви за Brothers Gym Казанлък и оставете свое мнение. Споделете вашето преживяване с нашата фитнес зала и ММА център. Вашият глас е важен за нас!'
+          : 'Read reviews about Brothers Gym Kazanlak and share your opinion. Tell us about your experience with our gym and MMA center. Your voice matters to us!'}
+        keywords="ревюта Brothers Gym Казанлък, отзиви фитнес зала Казанлък, мнения за Brothers Gym, клиентски преживявания"
+        canonicalUrl="/reviews"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Ревюта', url: '/reviews' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 white-text-outline tracking-[0.3em]">
@@ -303,7 +318,8 @@ const Reviews = () => {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

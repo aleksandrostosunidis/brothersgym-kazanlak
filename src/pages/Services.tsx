@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Dumbbell, Swords, Zap, User, Info } from 'lucide-react';
@@ -7,8 +9,24 @@ const Services = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
-      <div className="container mx-auto px-4">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Услуги и Цени - Фитнес и ММА' : 'Services & Pricing - Fitness and MMA'}
+        description={language === 'bg'
+          ? 'Цени на услуги в Brothers Gym Казанлък: Фитнес карти от 50 лв, ММА тренировки от 80 лв, персонални тренировки, хранителни планове. Приемаме Мултиспорт карти. Телефон: 089 678 0067'
+          : 'Brothers Gym Kazanlak prices: Fitness cards from 50 BGN, MMA training from 80 BGN, personal training, nutrition plans. We accept Multisport cards. Phone: 089 678 0067'}
+        keywords="цени фитнес Казанлък, ММА цени Казанлък, абонамент фитнес Казанлък, персонални тренировки цени, мултиспорт Казанлък, Brothers Gym цени"
+        canonicalUrl="/services"
+        structuredData={[
+          getLocalBusinessSchema(),
+          getBreadcrumbSchema([
+            { name: 'Начало', url: '/' },
+            { name: 'Услуги и Цени', url: '/services' }
+          ])
+        ]}
+      />
+      <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
+        <div className="container mx-auto px-4">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 white-text-outline tracking-[0.2em] sm:tracking-[0.3em]">
             {language === 'bg' ? 'УСЛУГИ И ЦЕНИ' : 'SERVICES & PRICING'}
@@ -225,8 +243,9 @@ const Services = () => {
             </CardContent>
           </Card>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Heart, Award } from 'lucide-react';
 import aboutTeamImage from '@/assets/team-parade.jpg';
@@ -31,7 +33,20 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'За нас - Brothers Gym Казанлък' : 'About Us - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Brothers Gym Казанлък е професионална фитнес зала и ММА център. Тренирай с професионалисти, стани част от семейство. Модерно оборудване, опитни треньори, мотивираща атмосфера.'
+          : 'Brothers Gym Kazanlak is a professional fitness gym and MMA center. Train with professionals, become part of a family. Modern equipment, experienced coaches, motivating atmosphere.'}
+        keywords="Brothers Gym история, за нас Brothers Gym, фитнес екип Казанлък, ММА треньори Казанлък, спортна общност Казанлък"
+        canonicalUrl="/about"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'За нас', url: '/about' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -95,7 +110,8 @@ const About = () => {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
