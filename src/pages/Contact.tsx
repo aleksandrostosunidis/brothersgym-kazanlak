@@ -48,8 +48,8 @@ const Contact = () => {
       <SEO 
         title={language === 'bg' ? 'Контакти - Brothers Gym Казанлък' : 'Contact - Brothers Gym Kazanlak'}
         description={language === 'bg'
-          ? 'Свържете се с Brothers Gym Казанлък 📍 Адрес: ул. Искра 12 (до Club Noar), Казанлък 6100. ☎ Телефон: 089 678 0067 (Дориан), 089 445 0256 (Тенчо). ⏰ Работно време: Пон-Пет 07:30-21:30, Съб-Нед 09:00-20:00. Приемаме Мултиспорт карти.'
-          : 'Contact Brothers Gym Kazanlak 📍 Address: ul. Iskra 12 (near Club Noar), Kazanlak 6100. ☎ Phone: 089 678 0067 (Dorian), 089 445 0256 (Tencho). ⏰ Hours: Mon-Fri 07:30-21:30, Sat-Sun 09:00-20:00. We accept Multisport cards.'}
+          ? 'Свържете се с Brothers Gym Казанлък 📍 Адрес: ул. Искра 12 (до Club Noir), Казанлък 6100. ☎ Телефон: 089 678 0067 (Дориан), 089 445 0256 (Тенчо). ⏰ Работно време: Пон-Пет 07:30-21:30, Съб-Нед 09:00-20:00. Приемаме Мултиспорт карти.'
+          : 'Contact Brothers Gym Kazanlak 📍 Address: ul. Iskra 12 (near Club Noir), Kazanlak 6100. ☎ Phone: 089 678 0067 (Dorian), 089 445 0256 (Tencho). ⏰ Hours: Mon-Fri 07:30-21:30, Sat-Sun 09:00-20:00. We accept Multisport cards.'}
         keywords="контакти Brothers Gym Казанлък, адрес Brothers Gym, телефон фитнес зала Казанлък, работно време Brothers Gym, ул. Искра 12 Казанлък, спортна зала Казанлък адрес, Brothers Gym contact, Казанлък gym phone"
         canonicalUrl="/contact"
         structuredData={[
@@ -131,8 +131,8 @@ const Contact = () => {
             <CardContent>
               <p className="text-muted-foreground font-semibold">
                 {language === 'bg' 
-                  ? 'Адрес: ул Искра 12 (до Club Noar), Казанлък, България'
-                  : 'Address: ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}
+                  ? 'Адрес: ул Искра 12 (до Club Noir), Казанлък, България'
+                  : 'Address: ul. Iskra 12 (next to Club Noir), Kazanlak, Bulgaria'}
               </p>
             </CardContent>
           </Card>

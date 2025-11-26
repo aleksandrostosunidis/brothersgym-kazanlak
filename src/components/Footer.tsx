@@ -23,38 +23,38 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">{language === 'bg' ? 'Бързи Връзки' : 'Quick Links'}</h4>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'За Нас' : 'About Us'}
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'Услуги и Цени' : 'Services & Pricing'}
+              </Link></li>
+              <li><Link to="/schedule" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'График' : 'Schedule'}
               </Link></li>
               <li><Link to="/team" className="text-muted-foreground hover:text-primary transition-colors">
                 {language === 'bg' ? 'Екип' : 'Team'}
               </Link></li>
-              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'Услуги и Цени' : 'Services & Pricing'}
+              <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'Блог' : 'Blog'}
+              </Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'Въпроси' : 'FAQ'}
+              </Link></li>
+              <li><Link to="/guides" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'Програми' : 'Guides'}
+              </Link></li>
+              <li><Link to="/videos" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'Видео' : 'Videos'}
+              </Link></li>
+              <li><Link to="/tools" className="text-muted-foreground hover:text-primary transition-colors">
+                {language === 'bg' ? 'Инструменти' : 'Tools'}
               </Link></li>
               <li><Link to="/gallery" className="text-muted-foreground hover:text-primary transition-colors">
                 {language === 'bg' ? 'Галерия' : 'Gallery'}
               </Link></li>
-              <li><Link to="/events" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'Събития' : 'Events'}
-              </Link></li>
-              <li><Link to="/wall-of-fame" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'Стена на Славата' : 'Wall of Fame'}
-              </Link></li>
               <li><Link to="/reviews" className="text-muted-foreground hover:text-primary transition-colors">
                 {language === 'bg' ? 'Ревюта' : 'Reviews'}
               </Link></li>
-              <li><Link to="/bar" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'Бар' : 'Bar'}
-              </Link></li>
-              <li><Link to="/shop" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'Магазин' : 'Shop'}
-              </Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                 {language === 'bg' ? 'Контакти' : 'Contact'}
-              </Link></li>
-              <li><Link to="/developer" className="text-muted-foreground hover:text-primary transition-colors">
-                {language === 'bg' ? 'За Разработчика' : 'About Developer'}
               </Link></li>
             </ul>
           </div>
@@ -76,8 +76,8 @@ export const Footer = () => {
             </div>
             <p className="text-muted-foreground text-sm mb-3 font-semibold">
               {language === 'bg' 
-                ? 'Адрес: ул Искра 12 (до Club Noar), Казанлък, България'
-                : 'Address: ul. Iskra 12 (next to Club Noar), Kazanlak, Bulgaria'}
+                ? 'Адрес: ул Искра 12 (до Club Noir), Казанлък, България'
+                : 'Address: ul. Iskra 12 (next to Club Noir), Kazanlak, Bulgaria'}
             </p>
             <div className="flex space-x-4 mt-4">
               <a 

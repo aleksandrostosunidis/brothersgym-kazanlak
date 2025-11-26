@@ -16,7 +16,7 @@ export const getOrganizationSchema = () => ({
   "email": "contact@brothersgym-kazanlak.bg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "ул. Искра 12 (до Club Noar)",
+    "streetAddress": "ул. Искра 12 (до Club Noir)",
     "addressLocality": "Казанлък",
     "addressRegion": "Стара Загора",
     "postalCode": "6100",
@@ -61,7 +61,7 @@ export const getLocalBusinessSchema = () => ({
   "email": "contact@brothersgym-kazanlak.bg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "ул. Искра 12 (до Club Noar)",
+    "streetAddress": "ул. Искра 12 (до Club Noir)",
     "addressLocality": "Казанлък",
     "addressRegion": "Стара Загора",
     "postalCode": "6100",

@@ -151,7 +151,7 @@ export default function Guides() {
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-muted-foreground">Продължителност:</span>
-                        <span className="font-semibold text-foreground">{guide.duration}</span>
+                        <Badge variant="secondary">Скоро</Badge>
                       </div>
                     </div>
 
