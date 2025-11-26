@@ -55,9 +55,14 @@ const Bar = () => {
         keywords="Brothers Gym бар, протеинови шейкове Казанлък, добавки фитнес, енергийни напитки"
         canonicalUrl="/bar"
         structuredData={getBreadcrumbSchema([
-          { name: 'Начало', url: '/' },
-          { name: 'Бар', url: '/bar' }
+          { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
+          { name: language === 'bg' ? 'Бар' : 'Bar', url: '/bar' }
         ])}
+        alternateLanguages={[
+          { lang: 'bg', url: '/bar' },
+          { lang: 'en', url: '/bar' },
+          { lang: 'x-default', url: '/bar' }
+        ]}
       />
       <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">

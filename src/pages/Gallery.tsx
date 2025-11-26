@@ -54,9 +54,14 @@ const Gallery = () => {
         keywords="Brothers Gym снимки, фитнес зала Казанлък снимки, ММА тренировки снимки, Brothers Gym галерия"
         canonicalUrl="/gallery"
         structuredData={getBreadcrumbSchema([
-          { name: 'Начало', url: '/' },
-          { name: 'Галерия', url: '/gallery' }
+          { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
+          { name: language === 'bg' ? 'Галерия' : 'Gallery', url: '/gallery' }
         ])}
+        alternateLanguages={[
+          { lang: 'bg', url: '/gallery' },
+          { lang: 'en', url: '/gallery' },
+          { lang: 'x-default', url: '/gallery' }
+        ]}
       />
       <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">

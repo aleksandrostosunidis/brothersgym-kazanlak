@@ -22,6 +22,7 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [showSuccessBanner, setShowSuccessBanner] = useState(false);
   
   const [formData, setFormData] = useState({
     title: "",
@@ -85,6 +86,8 @@ export default function Blog() {
       }
 
       toast.success('Статията е публикувана успешно!');
+      setShowSuccessBanner(true);
+      setTimeout(() => setShowSuccessBanner(false), 5000);
       setShowForm(false);
       setFormData({
         title: "",
@@ -133,9 +136,19 @@ export default function Blog() {
     }));
   };
 
-  const filteredPosts = selectedCategory === "Всички" 
+  const filteredPosts = (selectedCategory === "Всички" 
     ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+    : blogPosts.filter(post => post.category === selectedCategory))
+    .sort((a, b) => {
+      // Sort by average rating (highest first)
+      const avgA = a.rating_count > 0 ? (a.rating_sum / a.rating_count) : 0;
+      const avgB = b.rating_count > 0 ? (b.rating_sum / b.rating_count) : 0;
+      if (avgB !== avgA) return avgB - avgA;
+      // If ratings are equal, sort by rating count
+      if (b.rating_count !== a.rating_count) return b.rating_count - a.rating_count;
+      // If both are equal, sort by date
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    });
 
   const articleSchemas = filteredPosts.map(post => 
     getArticleSchema(
@@ -157,6 +170,25 @@ export default function Blog() {
 
       <div className="min-h-screen bg-background py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-7xl">
+          {/* Success Banner */}
+          {showSuccessBanner && (
+            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
+              <Card className="bg-green-900/90 border-green-500 backdrop-blur-lg shadow-2xl">
+                <CardContent className="p-6 flex items-center gap-4">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">Благодарим за отзива!</h3>
+                    <p className="text-green-100 text-sm">Вашата статия беше публикувана успешно</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+          
           {/* Header */}
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.05em' }}>
