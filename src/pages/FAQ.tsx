@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { HelpCircle, CreditCard, Dumbbell, Clock, Phone } from "lucide-react";
 import { getBreadcrumbSchema, getFAQSchema } from "@/lib/structuredData";
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const faqCategories = [
   {
@@ -141,8 +140,6 @@ const faqCategories = [
 ];
 
 export default function FAQ() {
-  const { language } = useLanguage();
-  
   const allQuestions = faqCategories.flatMap(cat => 
     cat.questions.map(q => ({ question: q.q, answer: q.a }))
   );
