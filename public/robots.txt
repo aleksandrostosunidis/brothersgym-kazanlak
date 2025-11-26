@@ -56,6 +56,9 @@ User-agent: Googlebot-Image
 Allow: /assets/
 Allow: /gallery/
 
+# AI/LLM Crawlers - Allow access to llms.txt
+Allow: /llms.txt
+
 # Disallow admin or sensitive paths (if any in future)
 # User-agent: *
 # Disallow: /admin/

@@ -89,10 +89,10 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Фитнес зала и ММА център в Казанлък' : 'Fitness Gym and MMA Center in Kazanlak'}
+        title={language === 'bg' ? 'Brothers Gym Казанлък - Фитнес зала и ММА център' : 'Brothers Gym Kazanlak - Fitness Gym and MMA Center'}
         description={language === 'bg' 
-          ? 'Brothers Gym Казанлък - №1 професионална фитнес зала и ММА център в региона. Модерно оборудване, шампионски треньори, персонални тренировки. Приемаме Мултиспорт карти. ☎ 089 678 0067, 089 445 0256. Адрес: ул. Искра 12, Казанлък'
-          : 'Brothers Gym Kazanlak - #1 professional fitness gym and MMA center in the region. Modern equipment, champion coaches, personal training. We accept Multisport cards. ☎ 089 678 0067, 089 445 0256. Address: ul. Iskra 12, Kazanlak'}
+          ? 'Професионална фитнес зала и ММА център в Казанлък с шампионски треньори. Модерно оборудване, персонални тренировки. Приемаме Мултиспорт карти.'
+          : 'Professional fitness gym and MMA center in Kazanlak with champion coaches. Modern equipment, personal training. We accept Multisport cards.'}
         keywords="Brothers Gym Казанлък, фитнес зала Казанлък, ММА Казанлък, спортна зала Казанлък, фитнес Казанлък, мултиспорт Казанлък, персонални тренировки Казанлък, кикбокс Казанлък, бокс Казанлък, кросфит Казанлък, gym kazanlak, mma kazanlak, fitness kazanlak, Brothers GYM, спортна зала Стара Загора, тренировки Казанлък"
         canonicalUrl="/"
         structuredData={[
@@ -142,11 +142,37 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Section with Keywords */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-secondary/20">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 sm:mb-8 text-gradient gym-glow-text">
+            {language === 'bg' ? 'Brothers Gym Казанлък - Вашият фитнес център' : 'Brothers Gym Kazanlak - Your Fitness Center'}
+          </h2>
+          <div className="prose prose-invert max-w-none text-center space-y-4">
+            <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
+              {language === 'bg' 
+                ? 'Brothers Gym е водеща фитнес зала в Казанлък, специализирана в ММА тренировки, фитнес и персонални тренировки. Нашият екип от професионални треньори включва шампиони с над 20 години опит в различни бойни спортове.'
+                : 'Brothers Gym is a leading fitness center in Kazanlak, specializing in MMA training, fitness, and personal training. Our team of professional coaches includes champions with over 20 years of experience in various combat sports.'}
+            </p>
+            <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
+              {language === 'bg'
+                ? 'Предлагаме широка гама от услуги включително кикбокс, бокс, кросфит, групови тренировки и хранителни планове. Нашата спортна зала разполага с най-модерно оборудване за фитнес и ММА тренировки.'
+                : 'We offer a wide range of services including kickboxing, boxing, CrossFit, group training, and nutrition plans. Our sports facility features the most modern equipment for fitness and MMA training.'}
+            </p>
+            <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
+              {language === 'bg'
+                ? 'Приемаме Мултиспорт карти и предлагаме гъвкави абонаменти за всички нива на подготовка. Независимо дали търсите персонални тренировки с опитен треньор или групови занимания, Brothers Gym Казанлък е мястото за вас.'
+                : 'We accept Multisport cards and offer flexible memberships for all fitness levels. Whether you are looking for personal training with an experienced coach or group classes, Brothers Gym Kazanlak is the place for you.'}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gradient gym-glow-text">
-            {language === 'bg' ? 'Защо Brothers Gym?' : 'Why Brothers Gym?'}
+            {language === 'bg' ? 'Защо да изберете Brothers Gym?' : 'Why Choose Brothers Gym?'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {features.map((feature, index) => (
