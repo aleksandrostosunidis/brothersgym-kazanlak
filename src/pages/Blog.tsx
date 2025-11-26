@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Calendar, Clock, User, ArrowRight, Star, PenSquare } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight, Star, PenSquare, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getArticleSchema, getBreadcrumbSchema } from "@/lib/structuredData";
 import { useState, useEffect } from "react";
@@ -120,6 +120,35 @@ export default function Blog() {
       }
 
       toast.success('Благодарим за оценката!');
+      fetchBlogPosts();
+    } catch (error: any) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleDelete = async (postId: string) => {
+    if (!confirm("Сигурни ли сте, че искате да изтриете този пост?")) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/delete-blog`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
+        },
+        body: JSON.stringify({ post_id: postId })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Грешка при изтриване');
+      }
+
+      toast.success('Постът е изтрит успешно!');
+      setExpandedPost(null);
       fetchBlogPosts();
     } catch (error: any) {
       toast.error(error.message);
@@ -378,9 +407,20 @@ export default function Blog() {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <DialogTitle className="text-2xl sm:text-3xl text-white mb-4" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
-                        {post.title}
-                      </DialogTitle>
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <DialogTitle className="text-2xl sm:text-3xl text-white flex-1" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
+                          {post.title}
+                        </DialogTitle>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => handleDelete(post.id)}
+                          className="text-destructive hover:text-destructive hover:bg-destructive/10 shrink-0"
+                          title="Изтрий пост"
+                        >
+                          <Trash2 className="h-5 w-5" />
+                        </Button>
+                      </div>
                       <div className="flex flex-wrap gap-3 sm:gap-4 text-sm text-muted-foreground mb-4">
                         <div className="flex items-center gap-1">
                           <User className="w-4 h-4" />
