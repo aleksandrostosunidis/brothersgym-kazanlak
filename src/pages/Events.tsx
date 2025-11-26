@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, MapPin, Clock } from 'lucide-react';
 import christmasEvent from '@/assets/christmas-event.jpg';
@@ -7,7 +9,20 @@ const Events = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Събития - Brothers Gym Казанлък' : 'Events - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Предстоящи събития, състезания и семинари в Brothers Gym Казанлък. Присъединете се към нашите тренировки, демонстрации и спортни събития.'
+          : 'Upcoming events, competitions, and seminars at Brothers Gym Kazanlak. Join our training sessions, demonstrations, and sports events.'}
+        keywords="Brothers Gym събития, ММА състезания Казанлък, фитнес събития, спортни семинари Казанлък"
+        canonicalUrl="/events"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Събития', url: '/events' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 text-gradient gym-glow-text tracking-wider">
@@ -75,7 +90,8 @@ const Events = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

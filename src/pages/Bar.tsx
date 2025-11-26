@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Coffee, Milk, Candy, Dumbbell, Pill } from 'lucide-react';
 
@@ -44,7 +46,20 @@ const Bar = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Бар - Brothers Gym Казанлък' : 'Bar - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Brothers Gym бар: Протеинови шейкове, енергийни напитки, протеинови барове, добавки и витамини. Всичко необходимо за тренировките ви.'
+          : 'Brothers Gym bar: Protein shakes, energy drinks, protein bars, supplements and vitamins. Everything you need for your training.'}
+        keywords="Brothers Gym бар, протеинови шейкове Казанлък, добавки фитнес, енергийни напитки"
+        canonicalUrl="/bar"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Бар', url: '/bar' }
+        ])}
+      />
+      <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl font-bold mb-6 white-text-outline tracking-[0.3em]">
@@ -90,7 +105,8 @@ const Bar = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { Card, CardContent } from '@/components/ui/card';
 import damascenaLogo from '@/assets/partner-damascena.jpg';
 import sesameLogo from '@/assets/partner-sesame.jpg';
@@ -15,7 +17,20 @@ const Partners = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
+    <>
+      <SEO 
+        title={language === 'bg' ? 'Партньори - Brothers Gym Казанлък' : 'Partners - Brothers Gym Kazanlak'}
+        description={language === 'bg'
+          ? 'Нашите партньори и спонсори: Damascena Complex, Sesame Casino Kazanlak, SDN Estates, Motox Bulgaria. Станете партньор на Brothers Gym.'
+          : 'Our partners and sponsors: Damascena Complex, Sesame Casino Kazanlak, SDN Estates, Motox Bulgaria. Become a Brothers Gym partner.'}
+        keywords="Brothers Gym партньори, спонсори фитнес Казанлък, сътрудничество, бизнес партньорство"
+        canonicalUrl="/partners"
+        structuredData={getBreadcrumbSchema([
+          { name: 'Начало', url: '/' },
+          { name: 'Партньори', url: '/partners' }
+        ])}
+      />
+      <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gradient">
@@ -68,7 +83,8 @@ const Partners = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
