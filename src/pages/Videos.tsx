@@ -19,13 +19,13 @@ const socialLinks = [
   {
     name: "Facebook",
     icon: Facebook,
-    url: "https://facebook.com/p/Brothers-GYM-100063529961850",
+    url: "https://www.facebook.com/p/Brothers-GYM-100063529961850/?locale=bg_BG",
     description: "Вижте всички наши видеа и актуализации във Facebook"
   },
   {
     name: "Instagram",
     icon: Instagram,
-    url: "https://instagram.com/brothers_gym_kazanlak",
+    url: "https://www.instagram.com/brothers_gym_kazanlak/",
     description: "Следете ни в Instagram за ежедневни клипове и истории"
   }
 ];

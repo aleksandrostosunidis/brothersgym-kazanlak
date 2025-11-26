@@ -32,7 +32,7 @@ export const getOrganizationSchema = () => ({
     "name": "Казанлък"
   },
   "sameAs": [
-    "https://www.facebook.com/p/Brothers-GYM-100063529961850/",
+    "https://www.facebook.com/p/Brothers-GYM-100063529961850/?locale=bg_BG",
     "https://www.instagram.com/brothers_gym_kazanlak/",
     "https://www.tiktok.com/@brothersgymkz"
   ],
@@ -92,7 +92,7 @@ export const getLocalBusinessSchema = () => ({
   "description": "Професионална фитнес зала и ММА център в Казанлък с над 20 години опит. Предлагаме MMA тренировки, фитнес, персонални тренировки, кикбокс, бокс, кросфит и хранителни планове. Приемаме Мултиспорт карти.",
   "hasMap": "https://www.google.com/maps/search/?api=1&query=42.6167,25.4000",
   "sameAs": [
-    "https://www.facebook.com/p/Brothers-GYM-100063529961850/",
+    "https://www.facebook.com/p/Brothers-GYM-100063529961850/?locale=bg_BG",
     "https://www.instagram.com/brothers_gym_kazanlak/",
     "https://www.tiktok.com/@brothersgymkz"
   ],

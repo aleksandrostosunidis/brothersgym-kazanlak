@@ -81,7 +81,7 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-4 mt-4">
               <a 
-                href="https://www.facebook.com/p/Brothers-GYM-100063529961850/" 
+                href="https://www.facebook.com/p/Brothers-GYM-100063529961850/?locale=bg_BG" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
