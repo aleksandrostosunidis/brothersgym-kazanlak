@@ -20,6 +20,12 @@ import Reviews from "./pages/Reviews";
 import Partners from "./pages/Partners";
 import Bar from "./pages/Bar";
 import Developer from "./pages/Developer";
+import Blog from "./pages/Blog";
+import Schedule from "./pages/Schedule";
+import FAQ from "./pages/FAQ";
+import Guides from "./pages/Guides";
+import Videos from "./pages/Videos";
+import Tools from "./pages/Tools";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -54,6 +60,12 @@ const App = () => (
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/bar" element={<Bar />} />
                   <Route path="/developer" element={<Developer />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/schedule" element={<Schedule />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/guides" element={<Guides />} />
+                  <Route path="/videos" element={<Videos />} />
+                  <Route path="/tools" element={<Tools />} />
                   <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
