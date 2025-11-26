@@ -31,13 +31,6 @@ const translations = {
     developer: 'Създател',
     blog: 'Блог',
     more: 'Още',
-    // Common
-    learnMore: 'Научи повече',
-    viewAll: 'Виж всички',
-    backToHome: 'Обратно към начало',
-    pageNotFound: 'Страницата не е намерена',
-    pageNotFoundDesc: 'Съжаляваме, но страницата, която търсите, не съществува.',
-    thankYouForFeedback: 'Благодарим за отзива!',
   },
   en: {
     // Navigation
@@ -61,13 +54,6 @@ const translations = {
     developer: 'Developer',
     blog: 'Blog',
     more: 'More',
-    // Common
-    learnMore: 'Learn More',
-    viewAll: 'View All',
-    backToHome: 'Back to Home',
-    pageNotFound: 'Page Not Found',
-    pageNotFoundDesc: 'Sorry, the page you are looking for does not exist.',
-    thankYouForFeedback: 'Thank you for your feedback!',
   }
 };
 

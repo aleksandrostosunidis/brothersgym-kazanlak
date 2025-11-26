@@ -42,14 +42,9 @@ const About = () => {
         keywords="Brothers Gym история, за нас Brothers Gym, фитнес екип Казанлък, ММА треньори Казанлък, спортна общност Казанлък"
         canonicalUrl="/about"
         structuredData={getBreadcrumbSchema([
-          { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
-          { name: language === 'bg' ? 'За нас' : 'About', url: '/about' }
+          { name: 'Начало', url: '/' },
+          { name: 'За нас', url: '/about' }
         ])}
-        alternateLanguages={[
-          { lang: 'bg', url: '/about' },
-          { lang: 'en', url: '/about' },
-          { lang: 'x-default', url: '/about' }
-        ]}
       />
       <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
