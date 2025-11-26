@@ -438,90 +438,88 @@ export default function Blog() {
                       </CardContent>
                     </Card>
                   </DialogTrigger>
-                  <DialogContent className="max-w-3xl w-[95vw] max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                      <div className="h-48 sm:h-64 w-full rounded-lg overflow-hidden mb-4">
-                        <img 
-                          src={blogBanner} 
-                          alt="Brothers Gym Blog" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex items-start justify-between gap-4 mb-4">
-                        <DialogTitle className="text-2xl sm:text-3xl text-white flex-1" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
+                  <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] overflow-y-auto">
+                    <DialogHeader className="space-y-0">
+                      {/* Compact Header with Title and Actions */}
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <DialogTitle className="text-xl sm:text-2xl text-white flex-1 leading-tight" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
                           {post.title}
                         </DialogTitle>
-                        <div className="flex gap-2 shrink-0">
+                        <div className="flex gap-1 shrink-0">
                           <Button
                             variant="ghost"
                             size="icon"
+                            className="h-8 w-8 text-orange-500 hover:text-orange-600 hover:bg-orange-500/10"
                             onClick={() => {
                               setReportPostId(post.id);
                               setShowReportDialog(true);
                             }}
-                            className="text-orange-500 hover:text-orange-600 hover:bg-orange-500/10"
-                            title="Докладвай неуместен пост"
+                            title="Докладвай"
                           >
-                            <Flag className="h-5 w-5" />
+                            <Flag className="h-4 w-4" />
                           </Button>
                           <Button
                             variant="ghost"
                             size="icon"
+                            className="h-8 w-8 text-destructive hover:text-destructive hover:bg-destructive/10"
                             onClick={() => handleDelete(post.id)}
-                            className="text-destructive hover:text-destructive hover:bg-destructive/10"
-                            title="Изтрий пост (само ако сте автор)"
+                            title="Изтрий"
                           >
-                            <Trash2 className="h-5 w-5" />
+                            <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
                       </div>
-                      <div className="flex flex-wrap gap-3 sm:gap-4 text-sm text-muted-foreground mb-4">
-                        <div className="flex items-center gap-1">
-                          <User className="w-4 h-4" />
+
+                      {/* Compact Metadata Row */}
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-muted-foreground pb-3 border-b border-border">
+                        <div className="flex items-center gap-1.5">
+                          <User className="w-3.5 h-3.5" />
                           <span>{post.author_name}</span>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5" />
                           <span>{new Date(post.created_at).toLocaleDateString('bg-BG')}</span>
                         </div>
-                        <Badge>{post.category}</Badge>
-                      </div>
-                      <div className="flex items-center gap-2 mb-4">
-                        <span className="text-sm text-muted-foreground">Оценка:</span>
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            className={`w-5 h-5 cursor-pointer transition-colors ${
-                              star <= (post.average_rating || 0)
-                                ? 'fill-yellow-400 text-yellow-400'
-                                : 'text-muted-foreground'
-                            }`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleRating(post.id, star);
-                            }}
-                          />
-                        ))}
-                        <span className="text-sm text-muted-foreground ml-1">
-                          ({post.rating_count || 0} гласа)
-                        </span>
+                        <Badge variant="outline" className="text-xs">{post.category}</Badge>
+                        <div className="flex items-center gap-1 ml-auto">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star
+                              key={star}
+                              className={`w-4 h-4 cursor-pointer transition-colors ${
+                                star <= (post.average_rating || 0)
+                                  ? 'fill-yellow-400 text-yellow-400'
+                                  : 'text-muted-foreground'
+                              }`}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleRating(post.id, star);
+                              }}
+                            />
+                          ))}
+                          <span className="text-xs ml-1">({post.rating_count || 0})</span>
+                        </div>
                       </div>
                     </DialogHeader>
-                    <div className="prose prose-invert max-w-none">
-                      <p className="text-muted-foreground whitespace-pre-wrap leading-relaxed">
-                        {post.content}
-                      </p>
-                    </div>
-                    {post.tags && post.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-border">
-                        <span className="text-sm text-muted-foreground">Тагове:</span>
-                        {post.tags.map((tag: string, idx: number) => (
-                          <Badge key={idx} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
+
+                    {/* Content Section - Compact Spacing */}
+                    <div className="mt-4">
+                      <div className="prose prose-sm prose-invert max-w-none">
+                        <p className="text-sm sm:text-base text-foreground/90 whitespace-pre-wrap leading-relaxed">
+                          {post.content}
+                        </p>
                       </div>
-                    )}
+
+                      {/* Tags - Inline at Bottom */}
+                      {post.tags && post.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-border">
+                          {post.tags.map((tag: string, idx: number) => (
+                            <Badge key={idx} variant="secondary" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </DialogContent>
                 </Dialog>
               ))}
