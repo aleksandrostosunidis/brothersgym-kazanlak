@@ -293,7 +293,7 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-3 pb-3">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label htmlFor="weight">Тегло (кг)</Label>
@@ -320,7 +320,7 @@ export default function Tools() {
                   Изчисли BMI
                 </Button>
                 {bmi.result && (
-                  <div className="p-3 bg-muted/30 rounded-md text-center">
+                  <div className="p-3 bg-muted/30 rounded-md text-center mb-0">
                     <p className="text-3xl font-bold mb-2">{bmi.result}</p>
                     <p className={`text-lg font-semibold ${getBMICategory(bmi.result).color}`}>
                       {getBMICategory(bmi.result).text}
@@ -345,7 +345,7 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 pb-3">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="cal-age">Възраст</Label>
@@ -422,7 +422,7 @@ export default function Tools() {
                   Изчисли Калории
                 </Button>
                 {calories.result && (
-                  <div className="p-4 bg-muted/30 rounded-md space-y-2">
+                  <div className="p-4 bg-muted/30 rounded-md space-y-2 mb-0">
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-1">Поддържане</p>
                       <p className="text-2xl font-bold text-green-400">{calories.result.maintenance} cal</p>
@@ -451,7 +451,7 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-3 pb-3">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label htmlFor="hr-age">Възраст</Label>
@@ -478,7 +478,7 @@ export default function Tools() {
                   Изчисли Зони
                 </Button>
                 {heartRate.result && (
-                  <div className="space-y-2">
+                  <div className="space-y-2 mb-0">
                     <div className="p-2.5 bg-orange-500/10 rounded-md">
                       <p className="text-xs sm:text-sm text-orange-400 mb-1 font-semibold">Горене на мазнини (50-60%)</p>
                       <p className="text-base sm:text-lg font-bold">{heartRate.result.fatBurn.min} - {heartRate.result.fatBurn.max} bpm</p>
@@ -511,7 +511,7 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 pb-3">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="bf-weight">Тегло (кг)</Label>
@@ -584,7 +584,7 @@ export default function Tools() {
                   Изчисли
                 </Button>
                 {bodyFat.result && (
-                  <div className="p-4 bg-muted/30 rounded-md text-center">
+                  <div className="p-4 bg-muted/30 rounded-md text-center mb-0">
                     <p className="text-3xl font-bold mb-2">{bodyFat.result}%</p>
                     <p className={`text-lg font-semibold ${getBodyFatCategory(bodyFat.result, bodyFat.gender).color}`}>
                       {getBodyFatCategory(bodyFat.result, bodyFat.gender).text}
@@ -609,7 +609,7 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-3 pb-3">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label htmlFor="1rm-weight">Тегло (кг)</Label>
@@ -637,7 +637,7 @@ export default function Tools() {
                   Изчисли 1RM
                 </Button>
                 {oneRM.result && (
-                  <div className="space-y-2">
+                  <div className="space-y-2 mb-0">
                     <div className="p-3 bg-muted/30 rounded-md text-center">
                       <p className="text-xs sm:text-sm text-muted-foreground mb-1">Твоят 1RM</p>
                       <p className="text-2xl sm:text-3xl font-bold text-yellow-400">{oneRM.result.oneRM} кг</p>
@@ -670,7 +670,7 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 pb-3">
                 <div>
                   <Label htmlFor="protein-weight">Тегло (кг)</Label>
                   <Input
@@ -711,7 +711,7 @@ export default function Tools() {
                   Изчисли Протеин
                 </Button>
                 {protein.result && (
-                  <div className="p-4 bg-muted/30 rounded-md text-center">
+                  <div className="p-4 bg-muted/30 rounded-md text-center mb-0">
                     <p className="text-sm text-muted-foreground mb-2">Дневна нужда</p>
                     <p className="text-3xl font-bold text-cyan-400">
                       {protein.result.min} - {protein.result.max}г
