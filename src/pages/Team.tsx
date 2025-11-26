@@ -13,8 +13,8 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: 'Дориан Аниев Дерменджиев',
-      nameEn: 'Dorian Aniev Dermendzhiev',
+      name: 'Дориан Анев Дерменджиев',
+      nameEn: 'Dorian Anev Dermendzhiev',
       gradientClass: 'text-gradient-dorian',
       photo: coachDorian,
       role: language === 'bg' ? 'Треньор по ММА и Фитнес' : 'MMA & Fitness Coach',
