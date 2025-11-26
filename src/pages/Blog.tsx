@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Calendar, Clock, User, ArrowRight, Star, PenSquare, Trash2 } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight, Star, PenSquare, Trash2, Flag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getArticleSchema, getBreadcrumbSchema } from "@/lib/structuredData";
 import { useState, useEffect } from "react";
@@ -24,6 +24,9 @@ export default function Blog() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [expandedPost, setExpandedPost] = useState<string | null>(null);
+  const [showReportDialog, setShowReportDialog] = useState(false);
+  const [reportPostId, setReportPostId] = useState<string | null>(null);
+  const [reportData, setReportData] = useState({ reason: '', details: '' });
   
   const [formData, setFormData] = useState({
     title: "",
@@ -150,6 +153,43 @@ export default function Blog() {
       toast.success('Постът е изтрит успешно!');
       setExpandedPost(null);
       fetchBlogPosts();
+    } catch (error: any) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleReport = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!reportPostId || !reportData.reason.trim()) {
+      toast.error('Моля изберете причина');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/report-blog`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
+        },
+        body: JSON.stringify({
+          blog_post_id: reportPostId,
+          reason: reportData.reason,
+          details: reportData.details
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Грешка при докладване');
+      }
+
+      toast.success('Благодарим! Докладът е подаден.');
+      setShowReportDialog(false);
+      setReportPostId(null);
+      setReportData({ reason: '', details: '' });
     } catch (error: any) {
       toast.error(error.message);
     }
@@ -411,15 +451,29 @@ export default function Blog() {
                         <DialogTitle className="text-2xl sm:text-3xl text-white flex-1" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
                           {post.title}
                         </DialogTitle>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          onClick={() => handleDelete(post.id)}
-                          className="text-destructive hover:text-destructive hover:bg-destructive/10 shrink-0"
-                          title="Изтрий пост"
-                        >
-                          <Trash2 className="h-5 w-5" />
-                        </Button>
+                        <div className="flex gap-2 shrink-0">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => {
+                              setReportPostId(post.id);
+                              setShowReportDialog(true);
+                            }}
+                            className="text-orange-500 hover:text-orange-600 hover:bg-orange-500/10"
+                            title="Докладвай неуместен пост"
+                          >
+                            <Flag className="h-5 w-5" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => handleDelete(post.id)}
+                            className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                            title="Изтрий пост (само ако сте автор)"
+                          >
+                            <Trash2 className="h-5 w-5" />
+                          </Button>
+                        </div>
                       </div>
                       <div className="flex flex-wrap gap-3 sm:gap-4 text-sm text-muted-foreground mb-4">
                         <div className="flex items-center gap-1">
@@ -474,6 +528,58 @@ export default function Blog() {
             </div>
           )}
         </div>
+
+        {/* Report Dialog */}
+        <Dialog open={showReportDialog} onOpenChange={setShowReportDialog}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle>Докладване на неуместно съдържание</DialogTitle>
+            </DialogHeader>
+            <form onSubmit={handleReport} className="space-y-4">
+              <div>
+                <Label htmlFor="reason">Причина *</Label>
+                <select
+                  id="reason"
+                  value={reportData.reason}
+                  onChange={(e) => setReportData({ ...reportData, reason: e.target.value })}
+                  className="w-full h-10 px-3 rounded-md border border-input bg-background"
+                  required
+                >
+                  <option value="">Изберете причина</option>
+                  <option value="Спам">Спам</option>
+                  <option value="Оскърбително съдържание">Оскърбително съдържание</option>
+                  <option value="Неприлична реклама">Неприлична реклама</option>
+                  <option value="Неточна информация">Неточна информация</option>
+                  <option value="Друго">Друго</option>
+                </select>
+              </div>
+              <div>
+                <Label htmlFor="details">Детайли (опционално)</Label>
+                <Textarea
+                  id="details"
+                  value={reportData.details}
+                  onChange={(e) => setReportData({ ...reportData, details: e.target.value })}
+                  placeholder="Допълнителна информация..."
+                  maxLength={500}
+                  rows={3}
+                />
+              </div>
+              <div className="flex gap-2">
+                <Button type="submit" className="flex-1">Изпрати доклад</Button>
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={() => {
+                    setShowReportDialog(false);
+                    setReportData({ reason: '', details: '' });
+                  }}
+                >
+                  Отказ
+                </Button>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
       </div>
     </>
   );

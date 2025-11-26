@@ -12,5 +12,11 @@ verify_jwt = false
 [functions.delete-blog]
 verify_jwt = false
 
+[functions.report-blog]
+verify_jwt = false
+
+[functions.moderate-blog]
+verify_jwt = false
+
 [functions.generate-sitemap]
 verify_jwt = false
