@@ -1,8 +1,14 @@
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Play, ExternalLink, Facebook, Instagram } from "lucide-react";
+import { ExternalLink, Facebook, Instagram } from "lucide-react";
 import { getBreadcrumbSchema } from "@/lib/structuredData";
+import trainingImg from "@/assets/training-session.jpg";
+import mmaAthleteImg from "@/assets/mma-athlete.jpg";
+import fitnessAreaImg from "@/assets/fitness-area.jpg";
+import heroGymImg from "@/assets/hero-gym.jpg";
+import gallery1 from "@/assets/gallery-1.png";
+import gallery2 from "@/assets/gallery-2.jpg";
 
 const videoContent = [
   {
@@ -10,48 +16,48 @@ const videoContent = [
     description: "Дориан Анев демонстрира основни ММА техники и комбинации",
     platform: "Facebook",
     type: "Техника",
-    duration: "12:34",
-    thumbnail: "🥋"
+    url: "https://www.facebook.com/p/Brothers-GYM-100063529961850/",
+    thumbnail: trainingImg
   },
   {
-    title: "Груповa Тренировка - Кикбокс",
+    title: "Групова Тренировка - Кикбокс",
     description: "Интензивна кикбокс тренировка с нашата юношеска група",
     platform: "Instagram",
     type: "Тренировка",
-    duration: "8:15",
-    thumbnail: "🥊"
+    url: "https://www.instagram.com/brothers_gym_kazanlak/",
+    thumbnail: mmaAthleteImg
   },
   {
     title: "Спаринг Сесия",
     description: "Професионални спаринг сесии от нашите възрастни групи",
     platform: "Facebook",
     type: "Спаринг",
-    duration: "15:42",
-    thumbnail: "⚔️"
+    url: "https://www.facebook.com/p/Brothers-GYM-100063529961850/",
+    thumbnail: gallery1
   },
   {
     title: "Conditioning Training",
     description: "Кондиционна тренировка за издръжливост и сила",
     platform: "Instagram",
     type: "Кондиция",
-    duration: "10:20",
-    thumbnail: "💪"
+    url: "https://www.instagram.com/brothers_gym_kazanlak/",
+    thumbnail: fitnessAreaImg
   },
   {
     title: "Детска Група в Действие",
     description: "Нашите най-малки състезатели на тренировка",
     platform: "Facebook",
     type: "Деца",
-    duration: "6:45",
-    thumbnail: "👦"
+    url: "https://www.facebook.com/p/Brothers-GYM-100063529961850/",
+    thumbnail: gallery2
   },
   {
     title: "Зад Кулисите на Brothers Gym",
     description: "Екскурзия из нашата зала и оборудване",
     platform: "Instagram",
     type: "Зала",
-    duration: "4:30",
-    thumbnail: "🏋️"
+    url: "https://www.instagram.com/brothers_gym_kazanlak/",
+    thumbnail: heroGymImg
   }
 ];
 
@@ -91,9 +97,9 @@ export default function Videos() {
           {/* Header */}
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
-              <Play className="w-20 h-20 text-primary" />
+              <ExternalLink className="w-20 h-20 text-primary" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.05em' }}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Видео Галерия
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -120,7 +126,7 @@ export default function Videos() {
                           <Icon className="w-6 h-6 text-primary" />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="flex items-center gap-2 text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
+                          <CardTitle className="flex items-center gap-2">
                             {social.name}
                             <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                           </CardTitle>
@@ -134,47 +140,56 @@ export default function Videos() {
             })}
           </div>
 
-          {/* Video Grid (Placeholders) */}
+          {/* Video Grid */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-center text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
+            <h2 className="text-3xl font-bold mb-8 text-center">
               Популярни Видеа
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {videoContent.map((video, idx) => (
-                <Card key={idx} className="bg-card/80 backdrop-blur border-border/50 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <CardHeader className="p-0">
-                    <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative rounded-t-lg group cursor-pointer">
-                      <span className="text-6xl">{video.thumbnail}</span>
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Play className="w-16 h-16 text-white" />
+                <a
+                  key={idx}
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Card className="bg-card/80 backdrop-blur border-border/50 hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden">
+                    <CardHeader className="p-0">
+                      <div className="h-48 relative overflow-hidden">
+                        <img 
+                          src={video.thumbnail} 
+                          alt={video.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <ExternalLink className="w-16 h-16 text-white" />
+                        </div>
                       </div>
-                      <div className="absolute bottom-2 right-2">
-                        <Badge variant="secondary">{video.duration}</Badge>
+                    </CardHeader>
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Badge>{video.type}</Badge>
+                        <Badge variant="outline" className="text-xs">
+                          {video.platform === "Facebook" ? <Facebook className="w-3 h-3" /> : <Instagram className="w-3 h-3" />}
+                        </Badge>
                       </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Badge>{video.type}</Badge>
-                      <Badge variant="outline" className="text-xs">
-                        {video.platform === "Facebook" ? <Facebook className="w-3 h-3" /> : <Instagram className="w-3 h-3" />}
-                      </Badge>
-                    </div>
-                    <CardTitle className="mb-2 text-lg text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
-                      {video.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground">
-                      {video.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                      <CardTitle className="mb-2 text-lg">
+                        {video.title}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground">
+                        {video.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
 
           {/* CTA */}
           <Card className="p-8 bg-primary/10 border-primary/30 text-center">
-            <h3 className="text-2xl font-bold mb-4 text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
+            <h3 className="text-2xl font-bold mb-4">
               Искате да Видите Повече?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
