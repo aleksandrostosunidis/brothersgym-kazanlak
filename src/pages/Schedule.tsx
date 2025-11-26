@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Clock, User, Calendar } from "lucide-react";
 import { getBreadcrumbSchema, getEventSchema } from "@/lib/structuredData";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const schedule = {
   "Понеделник": [
@@ -61,9 +62,11 @@ const typeColors = {
 };
 
 export default function Schedule() {
+  const { language } = useLanguage();
+  
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Начало", url: "/" },
-    { name: "График", url: "/schedule" }
+    { name: language === 'bg' ? "Начало" : "Home", url: "/" },
+    { name: language === 'bg' ? "График" : "Schedule", url: "/schedule" }
   ]);
 
   const eventSchemas = Object.entries(schedule).flatMap(([day, sessions]) =>

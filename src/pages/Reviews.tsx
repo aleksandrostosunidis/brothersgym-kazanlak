@@ -150,9 +150,14 @@ const Reviews = () => {
         keywords="ревюта Brothers Gym Казанлък, отзиви фитнес зала Казанлък, мнения за Brothers Gym, клиентски преживявания"
         canonicalUrl="/reviews"
         structuredData={getBreadcrumbSchema([
-          { name: 'Начало', url: '/' },
-          { name: 'Ревюта', url: '/reviews' }
+          { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
+          { name: language === 'bg' ? 'Ревюта' : 'Reviews', url: '/reviews' }
         ])}
+        alternateLanguages={[
+          { lang: 'bg', url: '/reviews' },
+          { lang: 'en', url: '/reviews' },
+          { lang: 'x-default', url: '/reviews' }
+        ]}
       />
       <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4 max-w-4xl">
