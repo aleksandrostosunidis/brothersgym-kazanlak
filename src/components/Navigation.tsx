@@ -25,6 +25,12 @@ export const Navigation = () => {
   ];
 
   const dropdownItems = [
+    { label: language === 'bg' ? 'Блог' : 'Blog', path: '/blog' },
+    { label: language === 'bg' ? 'График' : 'Schedule', path: '/schedule' },
+    { label: t('nav.faq'), path: '/faq' },
+    { label: language === 'bg' ? 'Програми' : 'Guides', path: '/guides' },
+    { label: language === 'bg' ? 'Видеа' : 'Videos', path: '/videos' },
+    { label: language === 'bg' ? 'Калкулатори' : 'Tools', path: '/tools' },
     { label: t('nav.shop'), path: '/shop' },
     { label: t('nav.gallery'), path: '/gallery' },
     { label: t('nav.walloffame'), path: '/wall-of-fame' },
