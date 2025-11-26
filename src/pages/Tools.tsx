@@ -279,8 +279,8 @@ export default function Tools() {
           {/* Calculators Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {/* BMI Calculator */}
-            <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all">
-              <CardHeader>
+            <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all h-full">
+              <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <Activity className="w-6 h-6 text-blue-400" />
@@ -293,8 +293,8 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              <CardContent className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label htmlFor="weight">Тегло (кг)</Label>
                     <Input
@@ -320,7 +320,7 @@ export default function Tools() {
                   Изчисли BMI
                 </Button>
                 {bmi.result && (
-                  <div className="p-4 bg-muted/30 rounded-md text-center">
+                  <div className="p-3 bg-muted/30 rounded-md text-center">
                     <p className="text-3xl font-bold mb-2">{bmi.result}</p>
                     <p className={`text-lg font-semibold ${getBMICategory(bmi.result).color}`}>
                       {getBMICategory(bmi.result).text}
@@ -437,8 +437,8 @@ export default function Tools() {
             </Card>
 
             {/* Enhanced Heart Rate Zone Calculator */}
-            <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all">
-              <CardHeader>
+            <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all h-full">
+              <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
                     <Heart className="w-6 h-6 text-red-400" />
@@ -451,8 +451,8 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              <CardContent className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label htmlFor="hr-age">Възраст</Label>
                     <Input
@@ -478,18 +478,18 @@ export default function Tools() {
                   Изчисли Зони
                 </Button>
                 {heartRate.result && (
-                  <div className="space-y-3">
-                    <div className="p-3 bg-orange-500/10 rounded-md">
-                      <p className="text-sm text-orange-400 mb-1 font-semibold">Горене на мазнини (50-60%)</p>
-                      <p className="text-lg font-bold">{heartRate.result.fatBurn.min} - {heartRate.result.fatBurn.max} bpm</p>
+                  <div className="space-y-2">
+                    <div className="p-2.5 bg-orange-500/10 rounded-md">
+                      <p className="text-xs sm:text-sm text-orange-400 mb-1 font-semibold">Горене на мазнини (50-60%)</p>
+                      <p className="text-base sm:text-lg font-bold">{heartRate.result.fatBurn.min} - {heartRate.result.fatBurn.max} bpm</p>
                     </div>
-                    <div className="p-3 bg-red-500/10 rounded-md">
-                      <p className="text-sm text-red-400 mb-1 font-semibold">Кардио (70-85%)</p>
-                      <p className="text-lg font-bold">{heartRate.result.cardio.min} - {heartRate.result.cardio.max} bpm</p>
+                    <div className="p-2.5 bg-red-500/10 rounded-md">
+                      <p className="text-xs sm:text-sm text-red-400 mb-1 font-semibold">Кардио (70-85%)</p>
+                      <p className="text-base sm:text-lg font-bold">{heartRate.result.cardio.min} - {heartRate.result.cardio.max} bpm</p>
                     </div>
-                    <div className="p-3 bg-purple-500/10 rounded-md">
-                      <p className="text-sm text-purple-400 mb-1 font-semibold">Пик (85-100%)</p>
-                      <p className="text-lg font-bold">{heartRate.result.peak.min} - {heartRate.result.peak.max} bpm</p>
+                    <div className="p-2.5 bg-purple-500/10 rounded-md">
+                      <p className="text-xs sm:text-sm text-purple-400 mb-1 font-semibold">Пик (85-100%)</p>
+                      <p className="text-base sm:text-lg font-bold">{heartRate.result.peak.min} - {heartRate.result.peak.max} bpm</p>
                     </div>
                   </div>
                 )}
@@ -595,8 +595,8 @@ export default function Tools() {
             </Card>
 
             {/* One Rep Max Calculator */}
-            <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all">
-              <CardHeader>
+            <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all h-full">
+              <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
                     <Zap className="w-6 h-6 text-yellow-400" />
@@ -609,8 +609,8 @@ export default function Tools() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              <CardContent className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label htmlFor="1rm-weight">Тегло (кг)</Label>
                     <Input
@@ -637,16 +637,16 @@ export default function Tools() {
                   Изчисли 1RM
                 </Button>
                 {oneRM.result && (
-                  <div className="space-y-3">
-                    <div className="p-4 bg-muted/30 rounded-md text-center">
-                      <p className="text-sm text-muted-foreground mb-1">Твоят 1RM</p>
-                      <p className="text-3xl font-bold text-yellow-400">{oneRM.result.oneRM} кг</p>
+                  <div className="space-y-2">
+                    <div className="p-3 bg-muted/30 rounded-md text-center">
+                      <p className="text-xs sm:text-sm text-muted-foreground mb-1">Твоят 1RM</p>
+                      <p className="text-2xl sm:text-3xl font-bold text-yellow-400">{oneRM.result.oneRM} кг</p>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-sm">
+                    <div className="grid grid-cols-4 gap-1.5 sm:gap-2 text-xs sm:text-sm">
                       {Object.entries(oneRM.result.percentages).map(([percent, weight]) => (
-                        <div key={percent} className="p-2 bg-muted/20 rounded text-center">
+                        <div key={percent} className="p-1.5 sm:p-2 bg-muted/20 rounded text-center">
                           <p className="text-xs text-muted-foreground">{percent}%</p>
-                          <p className="font-bold">{weight}кг</p>
+                          <p className="font-bold text-xs sm:text-sm">{weight}кг</p>
                         </div>
                       ))}
                     </div>

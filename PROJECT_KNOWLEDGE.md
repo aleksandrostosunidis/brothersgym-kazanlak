@@ -278,7 +278,7 @@ All pages with:
 - **Address:** ул Искра 12 (до Club Noar), Казанлък, България
 - **Phone 1:** 089 678 0067 (Дориан)
 - **Phone 2:** 089 445 0256 (Тенчо)
-- **Facebook:** https://www.facebook.com/p/Brothers-GYM-100063529961850/
+- **Facebook:** https://www.facebook.com/p/Brothers-GYM-100063529961850/?locale=bg_BG
 - **Instagram:** https://www.instagram.com/brothers_gym_kazanlak/
 - **TikTok:** https://www.tiktok.com/@brothersgymkz
 
