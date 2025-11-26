@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Calendar, Clock, User, ArrowRight, Star, PenSquare } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight, Star, PenSquare, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getArticleSchema, getBreadcrumbSchema } from "@/lib/structuredData";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import heroImage from '@/assets/hero-banner.png';
 
 const categories = ["Всички", "ММА", "Фитнес", "Съвети", "VIP Тренировки", "Тренировки"];
 const availableTags = ["ММА", "Фитнес", "Тренировки", "Казанлък", "Отслабване", "Здраве", "Съвети", "Персонални", "Ефективност", "Кондиция", "Издръжливост", "Сила", "VIP", "Избор"];
@@ -23,6 +24,7 @@ export default function Blog() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [showSuccessBanner, setShowSuccessBanner] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<any | null>(null);
   
   const [formData, setFormData] = useState({
     title: "",
@@ -170,22 +172,32 @@ export default function Blog() {
 
       <div className="min-h-screen bg-background py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-7xl">
-          {/* Success Banner */}
+          {/* Success Banner with Background Image */}
           {showSuccessBanner && (
-            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
-              <Card className="bg-green-900/90 border-green-500 backdrop-blur-lg shadow-2xl">
-                <CardContent className="p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in w-[90vw] max-w-2xl">
+              <div 
+                className="relative overflow-hidden rounded-xl border-4 border-green-500 shadow-2xl"
+                style={{
+                  backgroundImage: `url(${heroImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/95 via-green-800/90 to-primary/85 backdrop-blur-sm" />
+                <div className="relative p-8 flex items-center justify-center gap-4">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h2 className="text-3xl font-bold text-white mb-2 tracking-wider" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                      БЛАГОДАРИМ ЗА ОТЗИВА!
+                    </h2>
+                    <p className="text-green-100 text-lg font-semibold">Вашата статия беше публикувана успешно</p>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Благодарим за отзива!</h3>
-                    <p className="text-green-100 text-sm">Вашата статия беше публикувана успешно</p>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           )}
           
@@ -352,7 +364,10 @@ export default function Blog() {
                                 ? 'fill-yellow-400 text-yellow-400'
                                 : 'text-muted-foreground'
                             }`}
-                            onClick={() => handleRating(post.id, star)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleRating(post.id, star);
+                            }}
                           />
                         ))}
                         <span className="text-xs text-muted-foreground ml-1">
@@ -393,12 +408,93 @@ export default function Blog() {
                         )}
                       </div>
                     )}
+
+                    <Button 
+                      variant="outline" 
+                      className="w-full gap-2 mt-2"
+                      onClick={() => setSelectedPost(post)}
+                    >
+                      <Eye className="w-4 h-4" />
+                      Прочети пълната статия
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
           )}
         </div>
+
+        {/* Expandable Post Dialog */}
+        <Dialog open={!!selectedPost} onOpenChange={() => setSelectedPost(null)}>
+          <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] overflow-y-auto">
+            {selectedPost && (
+              <>
+                <DialogHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge>{selectedPost.category}</Badge>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                          key={star}
+                          className={`w-4 h-4 cursor-pointer transition-colors ${
+                            star <= (selectedPost.average_rating || 0)
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'text-muted-foreground'
+                          }`}
+                          onClick={() => {
+                            handleRating(selectedPost.id, star);
+                            setSelectedPost(null);
+                          }}
+                        />
+                      ))}
+                      <span className="text-sm text-muted-foreground ml-1">
+                        ({selectedPost.rating_count || 0})
+                      </span>
+                    </div>
+                  </div>
+                  <DialogTitle className="text-2xl sm:text-3xl text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.03em' }}>
+                    {selectedPost.title}
+                  </DialogTitle>
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mt-3">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      <span>{selectedPost.author_name}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{new Date(selectedPost.created_at).toLocaleDateString('bg-BG')}</span>
+                    </div>
+                  </div>
+                </DialogHeader>
+                
+                <div className="mt-6 space-y-4">
+                  <p className="text-lg text-muted-foreground italic border-l-4 border-primary pl-4">
+                    {selectedPost.excerpt}
+                  </p>
+                  
+                  <div className="prose prose-invert max-w-none">
+                    <p className="text-foreground leading-relaxed whitespace-pre-line text-base">
+                      {selectedPost.content}
+                    </p>
+                  </div>
+
+                  {selectedPost.tags && selectedPost.tags.length > 0 && (
+                    <div className="pt-4 border-t border-border">
+                      <p className="text-sm text-muted-foreground mb-2">Тагове:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedPost.tags.map((tag: string, idx: number) => (
+                          <Badge key={idx} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </>
   );
