@@ -29,6 +29,8 @@ export default function Moderation() {
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // Moderation panel for blog posts
+
   const fetchReports = async (key: string) => {
     setLoading(true);
     try {
