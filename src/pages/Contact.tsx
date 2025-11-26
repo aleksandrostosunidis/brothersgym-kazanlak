@@ -1,6 +1,10 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
-import { getLocalBusinessSchema, getBreadcrumbSchema } from '@/lib/structuredData';
+import { 
+  getLocalBusinessSchema, 
+  getBreadcrumbSchema,
+  getFAQSchema 
+} from '@/lib/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Clock, Phone, MapPin, Facebook, Instagram, Music } from 'lucide-react';
@@ -44,16 +48,22 @@ const Contact = () => {
       <SEO 
         title={language === 'bg' ? 'Контакти - Brothers Gym Казанлък' : 'Contact - Brothers Gym Kazanlak'}
         description={language === 'bg'
-          ? 'Свържете се с Brothers Gym Казанлък: Адрес: ул. Искра 12, Казанлък. Телефон: 089 678 0067 (Дориан), 089 445 0256 (Тенчо). Работно време: Пон-Пет 07:30-21:30, Съб-Нед 09:00-20:00'
-          : 'Contact Brothers Gym Kazanlak: Address: ul. Iskra 12, Kazanlak. Phone: 089 678 0067 (Dorian), 089 445 0256 (Tencho). Hours: Mon-Fri 07:30-21:30, Sat-Sun 09:00-20:00'}
-        keywords="контакти Brothers Gym Казанлък, адрес Brothers Gym, телефон фитнес зала Казанлък, работно време Brothers Gym, ул. Искра 12 Казанлък"
+          ? 'Свържете се с Brothers Gym Казанлък 📍 Адрес: ул. Искра 12 (до Club Noar), Казанлък 6100. ☎ Телефон: 089 678 0067 (Дориан), 089 445 0256 (Тенчо). ⏰ Работно време: Пон-Пет 07:30-21:30, Съб-Нед 09:00-20:00. Приемаме Мултиспорт карти.'
+          : 'Contact Brothers Gym Kazanlak 📍 Address: ul. Iskra 12 (near Club Noar), Kazanlak 6100. ☎ Phone: 089 678 0067 (Dorian), 089 445 0256 (Tencho). ⏰ Hours: Mon-Fri 07:30-21:30, Sat-Sun 09:00-20:00. We accept Multisport cards.'}
+        keywords="контакти Brothers Gym Казанлък, адрес Brothers Gym, телефон фитнес зала Казанлък, работно време Brothers Gym, ул. Искра 12 Казанлък, спортна зала Казанлък адрес, Brothers Gym contact, Казанлък gym phone"
         canonicalUrl="/contact"
         structuredData={[
           getLocalBusinessSchema(),
           getBreadcrumbSchema([
-            { name: 'Начало', url: '/' },
-            { name: 'Контакти', url: '/contact' }
-          ])
+            { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
+            { name: language === 'bg' ? 'Контакти' : 'Contact', url: '/contact' }
+          ]),
+          getFAQSchema(faqItems)
+        ]}
+        alternateLanguages={[
+          { lang: 'bg', url: '/contact' },
+          { lang: 'en', url: '/contact' },
+          { lang: 'x-default', url: '/contact' }
         ]}
       />
       <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
