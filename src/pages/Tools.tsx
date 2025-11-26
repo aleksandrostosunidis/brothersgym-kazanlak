@@ -261,23 +261,23 @@ export default function Tools() {
         structuredData={breadcrumbSchema}
       />
 
-      <div className="min-h-screen bg-background py-20 px-4">
+      <div className="min-h-screen bg-background py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="flex justify-center mb-6">
-              <Calculator className="w-20 h-20 text-primary" />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <Calculator className="w-16 h-16 sm:w-20 sm:h-20 text-primary" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.05em' }}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)', letterSpacing: '0.05em' }}>
               Фитнес Калкулатори
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
               Професионални инструменти за проследяване на напредък и планиране на тренировки
             </p>
           </div>
 
           {/* Calculators Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {/* BMI Calculator */}
             <Card className="bg-card/80 backdrop-blur border-border/50 hover:border-primary/50 transition-all">
               <CardHeader>
@@ -726,8 +726,8 @@ export default function Tools() {
           </div>
 
           {/* Disclaimer */}
-          <Card className="mt-12 p-6 bg-muted/30 border-border/50">
-            <p className="text-sm text-muted-foreground text-center">
+          <Card className="mt-8 sm:mt-12 p-4 sm:p-6 bg-muted/30 border-border/50">
+            <p className="text-xs sm:text-sm text-muted-foreground text-center px-2">
               <strong>Забележка:</strong> Тези калкулатори са за информационни цели. За професионални съвети относно вашето здраве и фитнес програма, моля консултирайте се с нашите треньори или медицински специалист.
             </p>
           </Card>
