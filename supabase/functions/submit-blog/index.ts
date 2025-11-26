@@ -14,6 +14,101 @@ serve(async (req) => {
   try {
     const { title, content, excerpt, author_name, category, tags } = await req.json()
 
+    // Comprehensive input validation
+    if (!title || typeof title !== 'string' || title.trim().length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Title is required' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (!content || typeof content !== 'string' || content.trim().length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Content is required' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (!excerpt || typeof excerpt !== 'string' || excerpt.trim().length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Excerpt is required' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (!author_name || typeof author_name !== 'string' || author_name.trim().length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Author name is required' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (!category || typeof category !== 'string' || category.trim().length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Category is required' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    // Validate string lengths
+    if (title.length > 200) {
+      return new Response(
+        JSON.stringify({ error: 'Title must be less than 200 characters' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (content.length > 10000) {
+      return new Response(
+        JSON.stringify({ error: 'Content must be less than 10000 characters' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (excerpt.length > 500) {
+      return new Response(
+        JSON.stringify({ error: 'Excerpt must be less than 500 characters' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (author_name.length > 100) {
+      return new Response(
+        JSON.stringify({ error: 'Author name must be less than 100 characters' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    // Validate tags array
+    if (tags && !Array.isArray(tags)) {
+      return new Response(
+        JSON.stringify({ error: 'Tags must be an array' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (tags && tags.length > 10) {
+      return new Response(
+        JSON.stringify({ error: 'Maximum 10 tags allowed' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (tags && tags.some((tag: any) => typeof tag !== 'string' || tag.length > 50)) {
+      return new Response(
+        JSON.stringify({ error: 'Each tag must be a string with maximum 50 characters' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    // Sanitize inputs (trim whitespace)
+    const sanitizedTitle = title.trim()
+    const sanitizedContent = content.trim()
+    const sanitizedExcerpt = excerpt.trim()
+    const sanitizedAuthorName = author_name.trim()
+    const sanitizedCategory = category.trim()
+    const sanitizedTags = tags ? tags.map((tag: string) => tag.trim()) : []
+
     // Get client IP address
     const forwarded = req.headers.get("x-forwarded-for")
     const ip_address = forwarded ? forwarded.split(',')[0] : req.headers.get("x-real-ip") || "unknown"
@@ -47,17 +142,17 @@ serve(async (req) => {
       )
     }
 
-    // Insert blog post
+    // Insert blog post with sanitized data
     const { data, error } = await supabase
       .from('blog_posts')
       .insert([
         {
-          title,
-          content,
-          excerpt,
-          author_name,
-          category,
-          tags,
+          title: sanitizedTitle,
+          content: sanitizedContent,
+          excerpt: sanitizedExcerpt,
+          author_name: sanitizedAuthorName,
+          category: sanitizedCategory,
+          tags: sanitizedTags,
           ip_address
         }
       ])

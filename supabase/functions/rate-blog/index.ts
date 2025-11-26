@@ -14,9 +14,17 @@ serve(async (req) => {
   try {
     const { blog_post_id, rating } = await req.json()
 
-    if (!blog_post_id || !rating || rating < 1 || rating > 5) {
+    // Comprehensive input validation
+    if (!blog_post_id || typeof blog_post_id !== 'string') {
       return new Response(
-        JSON.stringify({ error: 'Invalid input' }),
+        JSON.stringify({ error: 'Valid blog post ID is required' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
+      )
+    }
+
+    if (!rating || typeof rating !== 'number' || !Number.isInteger(rating) || rating < 1 || rating > 5) {
+      return new Response(
+        JSON.stringify({ error: 'Rating must be an integer between 1 and 5' }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
       )
     }
