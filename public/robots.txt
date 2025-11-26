@@ -1,16 +1,68 @@
+# Brothers Gym Kazanlak - Robots.txt for Optimal SEO
+
+# Global settings
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+# Major Search Engines - Full Access
 User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
 Allow: /
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Social Media Bots
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: facebookcatalog
 Allow: /
 
+User-agent: Facebot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Image Search Optimization
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /gallery/
+
+# Disallow admin or sensitive paths (if any in future)
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap Location
 Sitemap: https://brothersgym-kazanlak.bg/sitemap.xml
+
+# Host Directive (for Yandex)
+Host: https://brothersgym-kazanlak.bg

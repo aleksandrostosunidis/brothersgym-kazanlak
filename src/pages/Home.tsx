@@ -4,13 +4,56 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Dumbbell, Users, Trophy, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
-import { getLocalBusinessSchema, getGymPageSchema } from '@/lib/structuredData';
+import { 
+  getLocalBusinessSchema, 
+  getGymPageSchema, 
+  getOrganizationSchema, 
+  getWebSiteSchema,
+  getFAQSchema 
+} from '@/lib/structuredData';
 import heroImage from '@/assets/hero-banner.png';
 import mmaImage from '@/assets/mma-athlete.jpg';
 import fitnessImage from '@/assets/fitness-gym.jpg';
 
 const Home = () => {
   const { language } = useLanguage();
+
+  // FAQ Schema for SEO
+  const faqData = language === 'bg' ? [
+    {
+      question: "Какви услуги предлага Brothers Gym Казанлък?",
+      answer: "Brothers Gym Казанлък предлага фитнес тренировки, ММА (Mixed Martial Arts), персонални тренировки, групови тренировки, кикбокс, бокс, кросфит, хранителни планове и VIP треньорски сесии."
+    },
+    {
+      question: "Приемате ли Мултиспорт карти?",
+      answer: "Да, приемаме Мултиспорт карти за всички наши услуги."
+    },
+    {
+      question: "Какви са работните часове на залата?",
+      answer: "Работим понеделник до петък от 07:30 до 21:30 часа, и събота-неделя от 09:00 до 20:00 часа."
+    },
+    {
+      question: "Има ли възможност за персонални тренировки?",
+      answer: "Да, предлагаме персонални тренировки с нашите експертни треньори в различни дисциплини включително ММА, бокс, фитнес и кросфит."
+    }
+  ] : [
+    {
+      question: "What services does Brothers Gym Kazanlak offer?",
+      answer: "Brothers Gym Kazanlak offers fitness training, MMA (Mixed Martial Arts), personal training, group training, kickboxing, boxing, CrossFit, nutrition plans, and VIP training sessions."
+    },
+    {
+      question: "Do you accept Multisport cards?",
+      answer: "Yes, we accept Multisport cards for all our services."
+    },
+    {
+      question: "What are the gym's opening hours?",
+      answer: "We are open Monday to Friday from 07:30 to 21:30, and Saturday-Sunday from 09:00 to 20:00."
+    },
+    {
+      question: "Are personal training sessions available?",
+      answer: "Yes, we offer personal training sessions with our expert coaches in various disciplines including MMA, boxing, fitness, and CrossFit."
+    }
+  ];
 
   const features = [
     {
@@ -48,11 +91,22 @@ const Home = () => {
       <SEO 
         title={language === 'bg' ? 'Фитнес зала и ММА център в Казанлък' : 'Fitness Gym and MMA Center in Kazanlak'}
         description={language === 'bg' 
-          ? 'Brothers Gym Казанлък - професионална фитнес зала и ММА център. Модерно оборудване, експертни треньори, персонални тренировки. Приемаме Мултиспорт карти. Телефон: 089 678 0067, 089 445 0256'
-          : 'Brothers Gym Kazanlak - professional fitness gym and MMA center. Modern equipment, expert coaches, personal training. We accept Multisport cards. Phone: 089 678 0067, 089 445 0256'}
-        keywords="Brothers Gym Казанлък, фитнес зала Казанлък, ММА Казанлък, спортна зала Казанлък, фитнес Казанлък, мултиспорт Казанлък, персонални тренировки Казанлък, Brothers GYM"
+          ? 'Brothers Gym Казанлък - №1 професионална фитнес зала и ММА център в региона. Модерно оборудване, шампионски треньори, персонални тренировки. Приемаме Мултиспорт карти. ☎ 089 678 0067, 089 445 0256. Адрес: ул. Искра 12, Казанлък'
+          : 'Brothers Gym Kazanlak - #1 professional fitness gym and MMA center in the region. Modern equipment, champion coaches, personal training. We accept Multisport cards. ☎ 089 678 0067, 089 445 0256. Address: ul. Iskra 12, Kazanlak'}
+        keywords="Brothers Gym Казанлък, фитнес зала Казанлък, ММА Казанлък, спортна зала Казанлък, фитнес Казанлък, мултиспорт Казанлък, персонални тренировки Казанлък, кикбокс Казанлък, бокс Казанлък, кросфит Казанлък, gym kazanlak, mma kazanlak, fitness kazanlak, Brothers GYM, спортна зала Стара Загора, тренировки Казанлък"
         canonicalUrl="/"
-        structuredData={[getLocalBusinessSchema(), getGymPageSchema()]}
+        structuredData={[
+          getOrganizationSchema(),
+          getLocalBusinessSchema(), 
+          getGymPageSchema(),
+          getWebSiteSchema(),
+          getFAQSchema(faqData)
+        ]}
+        alternateLanguages={[
+          { lang: 'bg', url: '/' },
+          { lang: 'en', url: '/' },
+          { lang: 'x-default', url: '/' }
+        ]}
       />
       <div className="min-h-screen">
         {/* Hero Section */}

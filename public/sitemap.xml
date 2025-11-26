@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Homepage -->
   <url>
     <loc>https://brothersgym-kazanlak.bg/</loc>
     <lastmod>2025-01-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/" />
+    <image:image>
+      <image:loc>https://brothersgym-kazanlak.bg/og-image.jpg</image:loc>
+      <image:title>Brothers Gym Казанлък - MMA, Fitness & Personal Training</image:title>
+    </image:image>
   </url>
 
   <!-- About Page -->
@@ -17,9 +23,10 @@
     <loc>https://brothersgym-kazanlak.bg/about</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/about" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/about" />
   </url>
 
   <!-- Team Page -->
@@ -27,19 +34,21 @@
     <loc>https://brothersgym-kazanlak.bg/team</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/team" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/team" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/team" />
   </url>
 
   <!-- Services Page -->
   <url>
     <loc>https://brothersgym-kazanlak.bg/services</loc>
     <lastmod>2025-01-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/services" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/services" />
   </url>
 
   <!-- Events Page -->
@@ -47,9 +56,10 @@
     <loc>https://brothersgym-kazanlak.bg/events</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/events" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/events" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/events" />
   </url>
 
   <!-- Contact Page -->
@@ -60,26 +70,29 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/contact" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/contact" />
   </url>
 
   <!-- Shop Page -->
   <url>
     <loc>https://brothersgym-kazanlak.bg/shop</loc>
     <lastmod>2025-01-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/shop" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/shop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/shop" />
   </url>
 
   <!-- Gallery Page -->
   <url>
     <loc>https://brothersgym-kazanlak.bg/gallery</loc>
     <lastmod>2025-01-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/gallery" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/gallery" />
   </url>
 
   <!-- Wall of Fame Page -->
@@ -87,9 +100,10 @@
     <loc>https://brothersgym-kazanlak.bg/wall-of-fame</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/wall-of-fame" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/wall-of-fame" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/wall-of-fame" />
   </url>
 
   <!-- Reviews Page -->
@@ -97,9 +111,10 @@
     <loc>https://brothersgym-kazanlak.bg/reviews</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/reviews" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/reviews" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/reviews" />
   </url>
 
   <!-- Partners Page -->
@@ -110,16 +125,18 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/partners" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/partners" />
   </url>
 
   <!-- Bar Page -->
   <url>
     <loc>https://brothersgym-kazanlak.bg/bar</loc>
     <lastmod>2025-01-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/bar" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/bar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/bar" />
   </url>
 
   <!-- Developer Page -->
@@ -130,6 +147,7 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="bg" href="https://brothersgym-kazanlak.bg/developer" />
     <xhtml:link rel="alternate" hreflang="en" href="https://brothersgym-kazanlak.bg/developer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brothersgym-kazanlak.bg/developer" />
   </url>
 
 </urlset>

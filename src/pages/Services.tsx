@@ -1,6 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
-import { getLocalBusinessSchema, getBreadcrumbSchema } from '@/lib/structuredData';
+import { 
+  getLocalBusinessSchema, 
+  getBreadcrumbSchema,
+  getServiceSchema,
+  getFAQSchema 
+} from '@/lib/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Dumbbell, Swords, Zap, User, Info } from 'lucide-react';
@@ -8,21 +13,78 @@ import { Dumbbell, Swords, Zap, User, Info } from 'lucide-react';
 const Services = () => {
   const { language } = useLanguage();
 
+  const faqData = language === 'bg' ? [
+    {
+      question: "Колко струва месечна карта за фитнес?",
+      answer: "Месечната карта за фитнес е 50 лв за лица над 18 години и 40 лв за младежи под 18 години."
+    },
+    {
+      question: "Какви видове ММА тренировки предлагате?",
+      answer: "Предлагаме детски ММА групи, юношески тренировки и възрастни ММА тренировки с различни графици и цени."
+    },
+    {
+      question: "Има ли отстъпки за студенти?",
+      answer: "Да, имаме специални цени за лица под 18 години за всички наши услуги."
+    },
+    {
+      question: "Какво включват VIP треньорските сесии?",
+      answer: "VIP сесиите включват бокс, кикбокс, ММА, борба и грепълинг, кондиционни тренировки, силови тренировки, кросфит, рехабилитация след травми и NFC за гръбначен стълб."
+    }
+  ] : [
+    {
+      question: "How much does a monthly fitness card cost?",
+      answer: "Monthly fitness card is 50 BGN for adults over 18 and 40 BGN for youth under 18."
+    },
+    {
+      question: "What types of MMA training do you offer?",
+      answer: "We offer kids MMA groups, youth training, and adult MMA training with different schedules and prices."
+    },
+    {
+      question: "Are there student discounts?",
+      answer: "Yes, we have special prices for people under 18 years old for all our services."
+    },
+    {
+      question: "What do VIP training sessions include?",
+      answer: "VIP sessions include boxing, kickboxing, MMA, wrestling and grappling, conditioning training, strength training, CrossFit, post-injury rehabilitation, and NFC for spine health."
+    }
+  ];
+
   return (
     <>
       <SEO 
         title={language === 'bg' ? 'Услуги и Цени - Фитнес и ММА' : 'Services & Pricing - Fitness and MMA'}
         description={language === 'bg'
-          ? 'Цени на услуги в Brothers Gym Казанлък: Фитнес карти от 50 лв, ММА тренировки от 80 лв, персонални тренировки, хранителни планове. Приемаме Мултиспорт карти. Телефон: 089 678 0067'
-          : 'Brothers Gym Kazanlak prices: Fitness cards from 50 BGN, MMA training from 80 BGN, personal training, nutrition plans. We accept Multisport cards. Phone: 089 678 0067'}
-        keywords="цени фитнес Казанлък, ММА цени Казанлък, абонамент фитнес Казанлък, персонални тренировки цени, мултиспорт Казанлък, Brothers Gym цени"
+          ? 'Пълна ценова листа на Brothers Gym Казанлък: Фитнес карти от 50 лв, ММА тренировки от 80 лв, персонални тренировки, VIP сесии, хранителни планове. Приемаме Мултиспорт карти. ☎ 089 678 0067, 089 445 0256'
+          : 'Complete price list of Brothers Gym Kazanlak: Fitness cards from 50 BGN, MMA training from 80 BGN, personal training, VIP sessions, nutrition plans. We accept Multisport cards. ☎ 089 678 0067, 089 445 0256'}
+        keywords="цени фитнес Казанлък, ММА цени Казанлък, абонамент фитнес Казанлък, персонални тренировки цени, мултиспорт Казанлък, Brothers Gym цени, фитнес карта Казанлък, спортна зала цени, кикбокс цени Казанлък, бокс тренировки цени, vip тренировки Казанлък"
         canonicalUrl="/services"
         structuredData={[
           getLocalBusinessSchema(),
           getBreadcrumbSchema([
-            { name: 'Начало', url: '/' },
-            { name: 'Услуги и Цени', url: '/services' }
-          ])
+            { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
+            { name: language === 'bg' ? 'Услуги и Цени' : 'Services', url: '/services' }
+          ]),
+          getServiceSchema(
+            language === 'bg' ? 'Фитнес Тренировки' : 'Fitness Training',
+            language === 'bg' ? 'Професионални фитнес тренировки с модерно оборудване' : 'Professional fitness training with modern equipment',
+            '50'
+          ),
+          getServiceSchema(
+            language === 'bg' ? 'ММА Тренировки' : 'MMA Training',
+            language === 'bg' ? 'Mixed Martial Arts тренировки с шампионски треньори' : 'Mixed Martial Arts training with champion coaches',
+            '80'
+          ),
+          getServiceSchema(
+            language === 'bg' ? 'Персонални Тренировки' : 'Personal Training',
+            language === 'bg' ? 'Индивидуални тренировки със специализиран треньор' : 'Individual training with specialized coach',
+            '20'
+          ),
+          getFAQSchema(faqData)
+        ]}
+        alternateLanguages={[
+          { lang: 'bg', url: '/services' },
+          { lang: 'en', url: '/services' },
+          { lang: 'x-default', url: '/services' }
         ]}
       />
       <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
