@@ -2,3 +2,12 @@ project_id = "kvgzaoiyyqxdqvyqdpfx"
 
 [functions.submit-review]
 verify_jwt = false
+
+[functions.submit-blog]
+verify_jwt = false
+
+[functions.rate-blog]
+verify_jwt = false
+
+[functions.generate-sitemap]
+verify_jwt = false
