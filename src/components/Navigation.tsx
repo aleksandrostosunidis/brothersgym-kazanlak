@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -12,30 +13,31 @@ import logo from '@/assets/brothers-gym-logo.jpg';
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const mainNavItems = [
-    { label: 'Начало', path: '/' },
-    { label: 'За нас', path: '/about' },
-    { label: 'Екип', path: '/team' },
-    { label: 'Услуги', path: '/services' },
-    { label: 'Събития', path: '/events' },
-    { label: 'Контакти', path: '/contact' },
+    { label: t('nav.home'), path: '/' },
+    { label: t('nav.about'), path: '/about' },
+    { label: t('nav.team'), path: '/team' },
+    { label: t('nav.services'), path: '/services' },
+    { label: t('nav.events'), path: '/events' },
+    { label: t('nav.contact'), path: '/contact' },
   ];
 
   const dropdownItems = [
-    { label: 'Блог', path: '/blog' },
-    { label: 'График', path: '/schedule' },
-    { label: 'FAQ', path: '/faq' },
-    { label: 'Програми', path: '/guides' },
-    { label: 'Видеа', path: '/videos' },
-    { label: 'Калкулатори', path: '/tools' },
-    { label: 'Магазин', path: '/shop' },
-    { label: 'Галерия', path: '/gallery' },
-    { label: 'Стена на славата', path: '/wall-of-fame' },
-    { label: 'Ревюта', path: '/reviews' },
-    { label: 'Партньори', path: '/partners' },
-    { label: 'Бар', path: '/bar' },
-    { label: 'Създател', path: '/developer' },
+    { label: language === 'bg' ? 'Блог' : 'Blog', path: '/blog' },
+    { label: language === 'bg' ? 'График' : 'Schedule', path: '/schedule' },
+    { label: t('nav.faq'), path: '/faq' },
+    { label: language === 'bg' ? 'Програми' : 'Guides', path: '/guides' },
+    { label: language === 'bg' ? 'Видеа' : 'Videos', path: '/videos' },
+    { label: language === 'bg' ? 'Калкулатори' : 'Tools', path: '/tools' },
+    { label: t('nav.shop'), path: '/shop' },
+    { label: t('nav.gallery'), path: '/gallery' },
+    { label: t('nav.walloffame'), path: '/wall-of-fame' },
+    { label: t('nav.reviews'), path: '/reviews' },
+    { label: t('nav.partners'), path: '/partners' },
+    { label: t('nav.bar'), path: '/bar' },
+    { label: t('nav.developer'), path: '/developer' },
   ];
 
   return (
@@ -70,7 +72,7 @@ export const Navigation = () => {
             {/* More Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="px-4 py-2 text-foreground hover:text-primary transition-colors font-medium flex items-center">
-                Още
+                {language === 'bg' ? 'Още' : 'More'}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48">
@@ -85,8 +87,18 @@ export const Navigation = () => {
             </DropdownMenu>
           </div>
 
-          {/* Mobile Menu */}
-          <div className="flex items-center">
+          {/* Language Switcher & Mobile Menu */}
+          <div className="flex items-center space-x-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setLanguage(language === 'bg' ? 'en' : 'bg')}
+              className="hidden sm:flex items-center"
+            >
+              <Globe className="h-4 w-4 mr-2" />
+              {language.toUpperCase()}
+            </Button>
+
             <Button
               variant="ghost"
               size="icon"
@@ -123,6 +135,18 @@ export const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setLanguage(language === 'bg' ? 'en' : 'bg');
+                  setMobileMenuOpen(false);
+                }}
+                className="mx-4 mt-4"
+              >
+                <Globe className="h-4 w-4 mr-2" />
+                {language === 'bg' ? 'Switch to English' : 'Превключи на Български'}
+              </Button>
             </div>
           </div>
         )}
