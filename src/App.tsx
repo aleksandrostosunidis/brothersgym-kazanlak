@@ -26,6 +26,7 @@ import FAQ from "./pages/FAQ";
 import Guides from "./pages/Guides";
 import Videos from "./pages/Videos";
 import Tools from "./pages/Tools";
+import Moderation from "./pages/Moderation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -66,6 +67,7 @@ const App = () => (
                   <Route path="/guides" element={<Guides />} />
                   <Route path="/videos" element={<Videos />} />
                   <Route path="/tools" element={<Tools />} />
+                  <Route path="/moderation" element={<Moderation />} />
                   <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

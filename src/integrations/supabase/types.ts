@@ -98,6 +98,54 @@ export type Database = {
           },
         ]
       }
+      blog_reports: {
+        Row: {
+          blog_post_id: string
+          created_at: string
+          details: string | null
+          id: string
+          reason: string
+          reporter_ip: string
+          resolved_at: string | null
+          status: string
+        }
+        Insert: {
+          blog_post_id: string
+          created_at?: string
+          details?: string | null
+          id?: string
+          reason: string
+          reporter_ip: string
+          resolved_at?: string | null
+          status?: string
+        }
+        Update: {
+          blog_post_id?: string
+          created_at?: string
+          details?: string | null
+          id?: string
+          reason?: string
+          reporter_ip?: string
+          resolved_at?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_reports_blog_post_id_fkey"
+            columns: ["blog_post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "blog_reports_blog_post_id_fkey"
+            columns: ["blog_post_id"]
+            isOneToOne: false
+            referencedRelation: "public_blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reviews: {
         Row: {
           comment: string
@@ -174,6 +222,51 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: []
+      }
+      public_blog_reports: {
+        Row: {
+          blog_post_id: string | null
+          created_at: string | null
+          details: string | null
+          id: string | null
+          reason: string | null
+          resolved_at: string | null
+          status: string | null
+        }
+        Insert: {
+          blog_post_id?: string | null
+          created_at?: string | null
+          details?: string | null
+          id?: string | null
+          reason?: string | null
+          resolved_at?: string | null
+          status?: string | null
+        }
+        Update: {
+          blog_post_id?: string | null
+          created_at?: string | null
+          details?: string | null
+          id?: string | null
+          reason?: string | null
+          resolved_at?: string | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_reports_blog_post_id_fkey"
+            columns: ["blog_post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "blog_reports_blog_post_id_fkey"
+            columns: ["blog_post_id"]
+            isOneToOne: false
+            referencedRelation: "public_blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       public_reviews: {
         Row: {
