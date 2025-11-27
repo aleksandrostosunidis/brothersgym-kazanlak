@@ -7,47 +7,47 @@ import { getBreadcrumbSchema, getEventSchema } from "@/lib/structuredData";
 
 const schedule = {
   "Понеделник": [
-    { time: "07:00 - 08:00", activity: "Functional Training", coach: "Йордан Кукушев", level: "Всички нива", type: "fitness" },
-    { time: "09:00 - 10:00", activity: "Кикбокс - Деца", coach: "Тенчо Караенев", level: "Деца 6-12 год", type: "kids" },
-    { time: "17:00 - 18:00", activity: "ММА - Юноши", coach: "Дориан Анев", level: "Юноши 13-18 год", type: "teens" },
-    { time: "18:30 - 20:00", activity: "ММА - Възрастни", coach: "Дориан Анев", level: "Напреднали", type: "adults" },
-    { time: "20:00 - 21:00", activity: "Свободна зала", coach: "-", level: "Всички", type: "open" }
+    { time: "Soon", activity: "Functional Training", coach: "Soon", level: "Всички нива", type: "fitness" },
+    { time: "Soon", activity: "Кикбокс - Деца", coach: "Soon", level: "Деца 6-12 год", type: "kids" },
+    { time: "Soon", activity: "ММА - Юноши", coach: "Soon", level: "Юноши 13-18 год", type: "teens" },
+    { time: "Soon", activity: "ММА - Възрастни", coach: "Soon", level: "Напреднали", type: "adults" },
+    { time: "Soon", activity: "Свободна зала", coach: "Soon", level: "Всички", type: "open" }
   ],
   "Вторник": [
-    { time: "07:00 - 08:00", activity: "Силова тренировка", coach: "Йордан Кукушев", level: "Всички нива", type: "fitness" },
-    { time: "09:00 - 10:00", activity: "ММА - Деца", coach: "Дориан Анев", level: "Деца 6-12 год", type: "kids" },
-    { time: "17:00 - 18:00", activity: "Бокс - Юноши", coach: "Тенчо Караенев", level: "Юноши 13-18 год", type: "teens" },
-    { time: "18:30 - 20:00", activity: "Кикбокс - Възрастни", coach: "Тенчо Караенев", level: "Напреднали", type: "adults" },
-    { time: "20:00 - 21:00", activity: "Свободна зала", coach: "-", level: "Всички", type: "open" }
+    { time: "Soon", activity: "Силова тренировка", coach: "Soon", level: "Всички нива", type: "fitness" },
+    { time: "Soon", activity: "ММА - Деца", coach: "Soon", level: "Деца 6-12 год", type: "kids" },
+    { time: "Soon", activity: "Бокс - Юноши", coach: "Soon", level: "Юноши 13-18 год", type: "teens" },
+    { time: "Soon", activity: "Кикбокс - Възрастни", coach: "Soon", level: "Напреднали", type: "adults" },
+    { time: "Soon", activity: "Свободна зала", coach: "Soon", level: "Всички", type: "open" }
   ],
   "Сряда": [
-    { time: "07:00 - 08:00", activity: "Кондиционна тренировка", coach: "Йордан Кукушев", level: "Всички нива", type: "fitness" },
-    { time: "09:00 - 10:00", activity: "Кикбокс - Деца", coach: "Тенчо Караенев", level: "Деца 6-12 год", type: "kids" },
-    { time: "17:00 - 18:00", activity: "ММА - Юноши", coach: "Дориан Анев", level: "Юноши 13-18 год", type: "teens" },
-    { time: "18:30 - 20:00", activity: "ММА - Възрастни", coach: "Дориан Анев", level: "Напреднали", type: "adults" },
-    { time: "20:00 - 21:00", activity: "Свободна зала", coach: "-", level: "Всички", type: "open" }
+    { time: "Soon", activity: "Кондиционна тренировка", coach: "Soon", level: "Всички нива", type: "fitness" },
+    { time: "Soon", activity: "Кикбокс - Деца", coach: "Soon", level: "Деца 6-12 год", type: "kids" },
+    { time: "Soon", activity: "ММА - Юноши", coach: "Soon", level: "Юноши 13-18 год", type: "teens" },
+    { time: "Soon", activity: "ММА - Възрастни", coach: "Soon", level: "Напреднали", type: "adults" },
+    { time: "Soon", activity: "Свободна зала", coach: "Soon", level: "Всички", type: "open" }
   ],
   "Четвъртък": [
-    { time: "07:00 - 08:00", activity: "Functional Training", coach: "Йордан Кукушев", level: "Всички нива", type: "fitness" },
-    { time: "09:00 - 10:00", activity: "ММА - Деца", coach: "Дориан Анев", level: "Деца 6-12 год", type: "kids" },
-    { time: "17:00 - 18:00", activity: "Бокс - Юноши", coach: "Тенчо Караенев", level: "Юноши 13-18 год", type: "teens" },
-    { time: "18:30 - 20:00", activity: "Кикбокс - Възрастни", coach: "Тенчо Караенев", level: "Напреднали", type: "adults" },
-    { time: "20:00 - 21:00", activity: "Свободна зала", coach: "-", level: "Всички", type: "open" }
+    { time: "Soon", activity: "Functional Training", coach: "Soon", level: "Всички нива", type: "fitness" },
+    { time: "Soon", activity: "ММА - Деца", coach: "Soon", level: "Деца 6-12 год", type: "kids" },
+    { time: "Soon", activity: "Бокс - Юноши", coach: "Soon", level: "Юноши 13-18 год", type: "teens" },
+    { time: "Soon", activity: "Кикбокс - Възрастни", coach: "Soon", level: "Напреднали", type: "adults" },
+    { time: "Soon", activity: "Свободна зала", coach: "Soon", level: "Всички", type: "open" }
   ],
   "Петък": [
-    { time: "07:00 - 08:00", activity: "Силова тренировка", coach: "Йордан Кукушев", level: "Всички нива", type: "fitness" },
-    { time: "09:00 - 10:00", activity: "Кикбокс - Деца", coach: "Тенчо Караенев", level: "Деца 6-12 год", type: "kids" },
-    { time: "17:00 - 18:00", activity: "ММА - Юноши", coach: "Дориан Анев", level: "Юноши 13-18 год", type: "teens" },
-    { time: "18:30 - 20:00", activity: "Смесени групи", coach: "Всички треньори", level: "Всички", type: "adults" },
-    { time: "20:00 - 21:00", activity: "Свободна зала", coach: "-", level: "Всички", type: "open" }
+    { time: "Soon", activity: "Силова тренировка", coach: "Soon", level: "Всички нива", type: "fitness" },
+    { time: "Soon", activity: "Кикбокс - Деца", coach: "Soon", level: "Деца 6-12 год", type: "kids" },
+    { time: "Soon", activity: "ММА - Юноши", coach: "Soon", level: "Юноши 13-18 год", type: "teens" },
+    { time: "Soon", activity: "Смесени групи", coach: "Soon", level: "Всички", type: "adults" },
+    { time: "Soon", activity: "Свободна зала", coach: "Soon", level: "Всички", type: "open" }
   ],
   "Събота": [
-    { time: "09:00 - 10:30", activity: "ММА - Деца", coach: "Дориан Анев", level: "Деца 6-12 год", type: "kids" },
-    { time: "11:00 - 12:30", activity: "Спаринги", coach: "Всички треньори", level: "Напреднали", type: "adults" },
-    { time: "17:00 - 19:00", activity: "Свободна зала", coach: "-", level: "Всички", type: "open" }
+    { time: "Soon", activity: "ММА - Деца", coach: "Soon", level: "Деца 6-12 год", type: "kids" },
+    { time: "Soon", activity: "Спаринги", coach: "Soon", level: "Напреднали", type: "adults" },
+    { time: "Soon", activity: "Свободна зала", coach: "Soon", level: "Всички", type: "open" }
   ],
   "Неделя": [
-    { time: "10:00 - 12:00", activity: "Почивка / Персонални тренировки", coach: "По договаряне", level: "VIP", type: "vip" }
+    { time: "Soon", activity: "Почивка / Персонални тренировки", coach: "Soon", level: "VIP", type: "vip" }
   ]
 };
 
