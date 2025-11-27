@@ -505,6 +505,9 @@ export default function Blog() {
                     <div className="mt-4">
                       <div className="prose prose-sm prose-invert max-w-none">
                         <p className="text-sm sm:text-base text-foreground/90 whitespace-pre-wrap leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        <p className="text-sm sm:text-base text-foreground/90 whitespace-pre-wrap leading-relaxed mt-4">
                           {post.content}
                         </p>
                       </div>
