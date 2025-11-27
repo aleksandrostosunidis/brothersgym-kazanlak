@@ -17,8 +17,8 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: 'Дориан Анев Дерменджиев',
-      nameEn: 'Dorian Anev Dermendzhiev',
+      name: 'Дориан Дерменджиев',
+      nameEn: 'Dorian Dermendzhiev',
       gradientClass: 'text-gradient-dorian',
       photo: coachDorian,
       role: language === 'bg' ? 'Треньор по ММА и Фитнес' : 'MMA & Fitness Coach',
@@ -37,8 +37,8 @@ const Team = () => {
         { icon: Award, text: language === 'bg' ? 'Заслужил треньор (2021)' : 'Honored Coach (2021)', tier: 'honor' },
       ],
       highlights: language === 'bg'
-        ? ['ММА', 'Фитнес', 'Граплинг', 'Кондиция', 'Индивидуален подход']
-        : ['MMA', 'Fitness', 'Grappling', 'Conditioning', 'Individual Approach']
+        ? ['ММА', 'Кик-бокс', 'Кондиционна подготовка', 'Фитнес']
+        : ['MMA', 'Kickboxing', 'Conditioning', 'Fitness']
     },
     {
       name: 'Тенчо Караенев',
@@ -51,8 +51,8 @@ const Team = () => {
         ? 'Дисциплината и постоянството са ключът към успеха.'
         : 'Discipline and consistency are the keys to success.',
       bio: language === 'bg'
-        ? '31 години, родом от Стара Загора. Завършил НВУ през 2017 г. С 23 години опит в спорта - таекуондо, баскетбол, футбол, традиционен фитнес. Активен състезател по ММА (2013-2016) със златни медали от всички републикански първенства. Национален треньор и съдия по ММА.'
-        : '31 years old, from Stara Zagora. Graduated from National Military University in 2017. With 23 years of sports experience - taekwondo, basketball, football, traditional fitness. Active MMA competitor (2013-2016) with gold medals from all national championships. National MMA coach and referee.',
+        ? '31 години, родом от Стара Загора. Завършил НВУ през 2017 г. С 23 години опит в спорта - таекуондо, баскетбол, футбол, традиционен фитнес. Активен състезател по ММА (2013-2016) със златни медали от всички републикански първенства. Преминати курсове за треньор и съдия по ММА.'
+        : '31 years old, from Stara Zagora. Graduated from National Military University in 2017. With 23 years of sports experience - taekwondo, basketball, football, traditional fitness. Active MMA competitor (2013-2016) with gold medals from all national championships. Completed courses for MMA coach and referee.',
       achievements: [
         { icon: Medal, text: language === 'bg' ? '2x Световен Вицешампион' : '2x World Vice Champion', tier: 'world' },
         { icon: Medal, text: language === 'bg' ? '2x Бронз от Европейско първенство' : '2x European Bronze Medalist', tier: 'european' },
@@ -62,8 +62,8 @@ const Team = () => {
         { icon: Award, text: language === 'bg' ? 'Спортист на годината (2015)' : 'Athlete of the Year (2015)', tier: 'honor' },
       ],
       highlights: language === 'bg'
-        ? ['ММА', 'Граплинг', 'Таекуондо', 'Състезателна подготовка', 'Национален треньор']
-        : ['MMA', 'Grappling', 'Taekwondo', 'Competition Prep', 'National Coach']
+        ? ['ММА', 'Кик-бокс', 'Кондиционна подготовка', 'Фитнес']
+        : ['MMA', 'Kickboxing', 'Conditioning', 'Fitness']
     },
     {
       name: 'Йордан Кукушев',
@@ -105,7 +105,7 @@ const Team = () => {
             { name: language === 'bg' ? 'Екип' : 'Team', url: '/team' }
           ]),
           getPersonSchema(
-            'Дориан Анев Дерменджиев',
+            'Дориан Дерменджиев',
             language === 'bg' ? 'Треньор по ММА и Фитнес' : 'MMA & Fitness Coach',
             language === 'bg' 
               ? 'Вицеевропейски и 8-кратен национален шампион по ММА. Майстор на спорта (2015), Заслужил треньор (2021). Над 22 години тренировъчен опит и 8 години професионална треньорска практика.'
