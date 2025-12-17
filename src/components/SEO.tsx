@@ -15,11 +15,18 @@ interface SEOProps {
   alternateLanguages?: Array<{ lang: string; url: string }>;
 }
 
+// Always use the production domain for canonical URLs
+const SITE_URL = 'https://brothersgym-kazanlak.bg';
+
+// Check if we're on the lovable.app domain (should not be indexed)
+const isLovableDomain = typeof window !== 'undefined' && 
+  window.location.hostname.includes('lovable.app');
+
 export const SEO = ({ 
   title, 
   description, 
   keywords,
-  ogImage = 'https://brothersgym-kazanlak.bg/og-image.jpg',
+  ogImage = `${SITE_URL}/og-image.jpg`,
   canonicalUrl,
   structuredData,
   articlePublishedTime,
@@ -29,9 +36,11 @@ export const SEO = ({
   noindex = false,
   alternateLanguages
 }: SEOProps) => {
-  const siteUrl = 'https://brothersgym-kazanlak.bg';
   const fullTitle = `${title} | Brothers Gym Казанлък`;
-  const canonical = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
+  const canonical = canonicalUrl ? `${SITE_URL}${canonicalUrl}` : SITE_URL;
+  
+  // Force noindex on lovable.app domain to prevent duplicate indexing
+  const shouldNoindex = noindex || isLovableDomain;
 
   return (
     <Helmet>
@@ -41,12 +50,13 @@ export const SEO = ({
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonical} />
       
-      {/* Robots Meta */}
-      {noindex ? (
+      {/* Robots Meta - noindex for lovable.app, index for production */}
+      {shouldNoindex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
+      <meta name="googlebot" content={shouldNoindex ? "noindex, nofollow" : "index, follow"} />
       
       {/* Geo Targeting */}
       <meta name="geo.region" content="BG-26" />
@@ -56,8 +66,10 @@ export const SEO = ({
       
       {/* Language & Alternate URLs */}
       <meta httpEquiv="content-language" content="bg" />
+      <link rel="alternate" hrefLang="bg" href={canonical} />
+      <link rel="alternate" hrefLang="x-default" href={canonical} />
       {alternateLanguages && alternateLanguages.map((alt) => (
-        <link key={alt.lang} rel="alternate" hrefLang={alt.lang} href={`${siteUrl}${alt.url}`} />
+        <link key={alt.lang} rel="alternate" hrefLang={alt.lang} href={`${SITE_URL}${alt.url}`} />
       ))}
 
       {/* Open Graph */}
@@ -71,7 +83,6 @@ export const SEO = ({
       <meta property="og:image:alt" content={title} />
       <meta property="og:site_name" content="Brothers Gym Казанлък" />
       <meta property="og:locale" content="bg_BG" />
-      <meta property="og:locale:alternate" content="en_US" />
       
       {/* Article Meta Tags */}
       {articlePublishedTime && <meta property="article:published_time" content={articlePublishedTime} />}

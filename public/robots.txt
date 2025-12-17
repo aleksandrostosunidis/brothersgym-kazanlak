@@ -4,11 +4,16 @@
 # Allow all crawlers full access
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /moderation
 Crawl-delay: 0
 
 # Google
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
+Disallow: /api
 
 User-agent: Googlebot-Image
 Allow: /
@@ -48,6 +53,10 @@ Allow: /
 
 User-agent: WhatsApp
 Allow: /
+
+# Block lovable.app domain from indexing (handled via canonical)
+User-agent: *
+Disallow: /*lovable.app
 
 # Sitemap Location
 Sitemap: https://brothersgym-kazanlak.bg/sitemap.xml
