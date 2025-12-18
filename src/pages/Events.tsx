@@ -11,10 +11,8 @@ const Events = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Събития - Brothers Gym Казанлък' : 'Events - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Предстоящи събития, състезания и семинари в Brothers Gym Казанлък. Присъединете се към нашите тренировки, демонстрации и спортни събития.'
-          : 'Upcoming events, competitions, and seminars at Brothers Gym Kazanlak. Join our training sessions, demonstrations, and sports events.'}
+        title="Събития"
+        description="Предстоящи събития, състезания и семинари в Brothers Gym Казанлък. Присъединете се към нашите тренировки, демонстрации и спортни събития."
         keywords="Brothers Gym събития, ММА състезания Казанлък, фитнес събития, спортни семинари Казанлък"
         canonicalUrl="/events"
         structuredData={getBreadcrumbSchema([

@@ -143,10 +143,8 @@ const Reviews = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Ревюта - Brothers Gym Казанлък' : 'Reviews - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Прочетете отзиви за Brothers Gym Казанлък и оставете свое мнение. Споделете вашето преживяване с нашата фитнес зала и ММА център. Вашият глас е важен за нас!'
-          : 'Read reviews about Brothers Gym Kazanlak and share your opinion. Tell us about your experience with our gym and MMA center. Your voice matters to us!'}
+        title="Ревюта"
+        description="Прочетете отзиви за Brothers Gym Казанлък и оставете свое мнение. Споделете вашето преживяване с нашата фитнес зала и ММА център. Вашият глас е важен за нас!"
         keywords="ревюта Brothers Gym Казанлък, отзиви фитнес зала Казанлък, мнения за Brothers Gym, клиентски преживявания"
         canonicalUrl="/reviews"
         structuredData={getBreadcrumbSchema([

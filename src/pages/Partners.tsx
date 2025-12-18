@@ -19,10 +19,8 @@ const Partners = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Партньори - Brothers Gym Казанлък' : 'Partners - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Нашите партньори и спонсори: Damascena Complex, Sesame Casino Kazanlak, SDN Estates, Motox Bulgaria. Станете партньор на Brothers Gym.'
-          : 'Our partners and sponsors: Damascena Complex, Sesame Casino Kazanlak, SDN Estates, Motox Bulgaria. Become a Brothers Gym partner.'}
+        title="Партньори"
+        description="Нашите партньори и спонсори: Damascena Complex, Sesame Casino Kazanlak, SDN Estates, Motox Bulgaria. Станете партньор на Brothers Gym."
         keywords="Brothers Gym партньори, спонсори фитнес Казанлък, сътрудничество, бизнес партньорство"
         canonicalUrl="/partners"
         structuredData={getBreadcrumbSchema([

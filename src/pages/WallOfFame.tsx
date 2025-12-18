@@ -10,10 +10,8 @@ const WallOfFame = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Стена на славата - Brothers Gym Казанлък' : 'Wall of Fame - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Постижения, медали и успехи на нашите спортисти от Brothers Gym Казанлък. Вижте нашите шампиони и техните победи.'
-          : 'Achievements, medals, and successes of our athletes from Brothers Gym Kazanlak. See our champions and their victories.'}
+        title="Стена на славата"
+        description="Постижения, медали и успехи на нашите спортисти от Brothers Gym Казанлък. Вижте нашите шампиони и техните победи."
         keywords="Brothers Gym шампиони, ММА медалисти Казанлък, постижения, победи, спортни успехи"
         canonicalUrl="/wall-of-fame"
         structuredData={getBreadcrumbSchema([
