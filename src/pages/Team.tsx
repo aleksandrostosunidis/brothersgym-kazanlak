@@ -92,47 +92,34 @@ const Team = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Екип - Шампионски Треньори в Казанлък' : 'Team - Champion Coaches in Kazanlak'}
-        description={language === 'bg'
-          ? 'Запознайте се с нашите елитни треньори: Дориан Дерменджиев - Вицеевропейски и 8-кратен национален шампион по ММА, Майстор на спорта (2015), Заслужил треньор (2021). Тенчо Караенев - 2-кратен Световен вицешампион и 2-кратен Европейски бронзов медалист, Спортист на годината (2015). Йордан Кукушев - 40 години в спорта, 20 години треньорски опит.'
-          : 'Meet our elite coaches: Dorian Dermendzhiev - European Vice Champion and 8-time National MMA Champion, Master of Sport (2015), Honored Coach (2021). Tencho Karaenev - 2-time World Vice Champion and 2-time European bronze medalist, Athlete of the Year (2015). Yordan Kukushev - 40 years in sports, 20 years coaching experience.'}
+        title="Екип - Шампионски Треньори"
+        description="Запознайте се с нашите елитни треньори: Дориан Дерменджиев - Вицеевропейски и 8-кратен национален шампион по ММА, Майстор на спорта (2015), Заслужил треньор (2021). Тенчо Караенев - 2-кратен Световен вицешампион и 2-кратен Европейски бронзов медалист, Спортист на годината (2015). Йордан Кукушев - 40 години в спорта, 20 години треньорски опит."
         keywords="треньори Brothers Gym Казанлък, ММА треньори, фитнес треньори Казанлък, Дориан Дерменджиев, Тенчо Караенев, Йордан Кукушев, професионални бойци, шампиони ММА, Майстор на спорта, Заслужил треньор, MMA coaches Kazanlak"
         canonicalUrl="/team"
         structuredData={[
           getLocalBusinessSchema(),
           getBreadcrumbSchema([
-            { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
-            { name: language === 'bg' ? 'Екип' : 'Team', url: '/team' }
+            { name: 'Начало', url: '/' },
+            { name: 'Екип', url: '/team' }
           ]),
           getPersonSchema(
             'Дориан Дерменджиев',
-            language === 'bg' ? 'Треньор по ММА и Фитнес' : 'MMA & Fitness Coach',
-            language === 'bg' 
-              ? 'Вицеевропейски и 8-кратен национален шампион по ММА. Майстор на спорта (2015), Заслужил треньор (2021). Над 22 години тренировъчен опит и 8 години професионална треньорска практика.'
-              : 'European Vice Champion and 8-time National MMA Champion. Master of Sport (2015), Honored Coach (2021). Over 22 years training experience and 8 years professional coaching.',
+            'Треньор по ММА и Фитнес',
+            'Вицеевропейски и 8-кратен национален шампион по ММА. Майстор на спорта (2015), Заслужил треньор (2021). Над 22 години тренировъчен опит и 8 години професионална треньорска практика.',
             'https://brothersgym-kazanlak.bg/coach-dorian.jpg'
           ),
           getPersonSchema(
             'Тенчо Караенев',
-            language === 'bg' ? 'Треньор по ММА' : 'MMA Coach',
-            language === 'bg'
-              ? '2-кратен Световен вицешампион и 2-кратен Европейски бронзов медалист по ММА. Майстор на спорта (2015), Заслужил треньор (2021). Спортист на годината (2015). 23 години опит в спорта.'
-              : '2-time World Vice Champion and 2-time European bronze medalist in MMA. Master of Sport (2015), Honored Coach (2021). Athlete of the Year (2015). 23 years in sports.',
+            'Треньор по ММА',
+            '2-кратен Световен вицешампион и 2-кратен Европейски бронзов медалист по ММА. Майстор на спорта (2015), Заслужил треньор (2021). Спортист на годината (2015). 23 години опит в спорта.',
             'https://brothersgym-kazanlak.bg/coach-tencho.jpg'
           ),
           getPersonSchema(
             'Йордан Кукушев',
-            language === 'bg' ? 'Треньор по Борба, Джудо, Бокс и Тай Бокс' : 'Wrestling, Judo, Boxing and Thai Boxing Coach',
-            language === 'bg'
-              ? '51 години, 40 години в спорта, 20 години треньорски опит в борба, джудо, бокс, тай бокс и други дисциплини. Мисия: да върне добрата усещане за живот чрез тренировъчни практики.'
-              : '51 years old, 40 years in sports, 20 years coaching experience in wrestling, judo, boxing, Thai boxing and other disciplines. Mission: to restore good feelings for life through training practices.',
+            'Треньор по Борба, Джудо, Бокс и Тай Бокс',
+            '51 години, 40 години в спорта, 20 години треньорски опит в борба, джудо, бокс, тай бокс и други дисциплини. Мисия: да върне добрата усещане за живот чрез тренировъчни практики.',
             'https://brothersgym-kazanlak.bg/coach-yordan.jpg'
           )
-        ]}
-        alternateLanguages={[
-          { lang: 'bg', url: '/team' },
-          { lang: 'en', url: '/team' },
-          { lang: 'x-default', url: '/team' }
         ]}
       />
       <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">

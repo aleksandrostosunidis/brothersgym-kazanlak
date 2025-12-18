@@ -12,7 +12,6 @@ interface SEOProps {
   articleAuthor?: string;
   ogType?: string;
   noindex?: boolean;
-  alternateLanguages?: Array<{ lang: string; url: string }>;
 }
 
 // Always use the production domain for canonical URLs
@@ -33,8 +32,7 @@ export const SEO = ({
   articleModifiedTime,
   articleAuthor,
   ogType = 'website',
-  noindex = false,
-  alternateLanguages
+  noindex = false
 }: SEOProps) => {
   const fullTitle = `${title} | Brothers Gym Казанлък`;
   const canonical = canonicalUrl ? `${SITE_URL}${canonicalUrl}` : SITE_URL;
@@ -64,13 +62,10 @@ export const SEO = ({
       <meta name="geo.position" content="42.6167;25.4000" />
       <meta name="ICBM" content="42.6167, 25.4000" />
       
-      {/* Language & Alternate URLs */}
+      {/* Language */}
       <meta httpEquiv="content-language" content="bg" />
       <link rel="alternate" hrefLang="bg" href={canonical} />
       <link rel="alternate" hrefLang="x-default" href={canonical} />
-      {alternateLanguages && alternateLanguages.map((alt) => (
-        <link key={alt.lang} rel="alternate" hrefLang={alt.lang} href={`${SITE_URL}${alt.url}`} />
-      ))}
 
       {/* Open Graph */}
       <meta property="og:type" content={ogType} />

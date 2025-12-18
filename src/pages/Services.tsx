@@ -52,39 +52,32 @@ const Services = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Услуги и Цени - Фитнес и ММА' : 'Services & Pricing - Fitness and MMA'}
-        description={language === 'bg'
-          ? 'Пълна ценова листа на Brothers Gym Казанлък: Фитнес карти от 50 лв, ММА тренировки от 80 лв, персонални тренировки, VIP сесии, хранителни планове. Приемаме Мултиспорт карти. ☎ 089 678 0067, 089 445 0256'
-          : 'Complete price list of Brothers Gym Kazanlak: Fitness cards from 50 BGN, MMA training from 80 BGN, personal training, VIP sessions, nutrition plans. We accept Multisport cards. ☎ 089 678 0067, 089 445 0256'}
+        title="Услуги и Цени - Фитнес и ММА"
+        description="Пълна ценова листа на Brothers Gym Казанлък: Фитнес карти от 50 лв, ММА тренировки от 80 лв, персонални тренировки, VIP сесии, хранителни планове. Приемаме Мултиспорт карти. ☎ 089 678 0067, 089 445 0256"
         keywords="цени фитнес Казанлък, ММА цени Казанлък, абонамент фитнес Казанлък, персонални тренировки цени, мултиспорт Казанлък, Brothers Gym цени, фитнес карта Казанлък, спортна зала цени, кикбокс цени Казанлък, бокс тренировки цени, vip тренировки Казанлък"
         canonicalUrl="/services"
         structuredData={[
           getLocalBusinessSchema(),
           getBreadcrumbSchema([
-            { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
-            { name: language === 'bg' ? 'Услуги и Цени' : 'Services', url: '/services' }
+            { name: 'Начало', url: '/' },
+            { name: 'Услуги и Цени', url: '/services' }
           ]),
           getServiceSchema(
-            language === 'bg' ? 'Фитнес Тренировки' : 'Fitness Training',
-            language === 'bg' ? 'Професионални фитнес тренировки с модерно оборудване' : 'Professional fitness training with modern equipment',
+            'Фитнес Тренировки',
+            'Професионални фитнес тренировки с модерно оборудване',
             '50'
           ),
           getServiceSchema(
-            language === 'bg' ? 'ММА Тренировки' : 'MMA Training',
-            language === 'bg' ? 'Mixed Martial Arts тренировки с шампионски треньори' : 'Mixed Martial Arts training with champion coaches',
+            'ММА Тренировки',
+            'Mixed Martial Arts тренировки с шампионски треньори',
             '80'
           ),
           getServiceSchema(
-            language === 'bg' ? 'Персонални Тренировки' : 'Personal Training',
-            language === 'bg' ? 'Индивидуални тренировки със специализиран треньор' : 'Individual training with specialized coach',
+            'Персонални Тренировки',
+            'Индивидуални тренировки със специализиран треньор',
             '20'
           ),
           getFAQSchema(faqData)
-        ]}
-        alternateLanguages={[
-          { lang: 'bg', url: '/services' },
-          { lang: 'en', url: '/services' },
-          { lang: 'x-default', url: '/services' }
         ]}
       />
       <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">

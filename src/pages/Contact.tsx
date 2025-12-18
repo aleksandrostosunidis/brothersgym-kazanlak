@@ -46,24 +46,17 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Контакти - Brothers Gym Казанлък' : 'Contact - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Свържете се с Brothers Gym Казанлък 📍 Адрес: ул. Искра 12 (до Club Noir), Казанлък 6100. ☎ Телефон: 089 678 0067 (Дориан), 089 445 0256 (Тенчо). ⏰ Работно време: Пон-Пет 07:30-21:30, Съб-Нед 09:00-20:00. Приемаме Мултиспорт карти.'
-          : 'Contact Brothers Gym Kazanlak 📍 Address: ul. Iskra 12 (near Club Noir), Kazanlak 6100. ☎ Phone: 089 678 0067 (Dorian), 089 445 0256 (Tencho). ⏰ Hours: Mon-Fri 07:30-21:30, Sat-Sun 09:00-20:00. We accept Multisport cards.'}
+        title="Контакти"
+        description="Свържете се с Brothers Gym Казанлък 📍 Адрес: ул. Искра 12 (до Club Noir), Казанлък 6100. ☎ Телефон: 089 678 0067 (Дориан), 089 445 0256 (Тенчо). ⏰ Работно време: Пон-Пет 07:30-21:30, Съб-Нед 09:00-20:00. Приемаме Мултиспорт карти."
         keywords="контакти Brothers Gym Казанлък, адрес Brothers Gym, телефон фитнес зала Казанлък, работно време Brothers Gym, ул. Искра 12 Казанлък, спортна зала Казанлък адрес, Brothers Gym contact, Казанлък gym phone"
         canonicalUrl="/contact"
         structuredData={[
           getLocalBusinessSchema(),
           getBreadcrumbSchema([
-            { name: language === 'bg' ? 'Начало' : 'Home', url: '/' },
-            { name: language === 'bg' ? 'Контакти' : 'Contact', url: '/contact' }
+            { name: 'Начало', url: '/' },
+            { name: 'Контакти', url: '/contact' }
           ]),
           getFAQSchema(faqItems)
-        ]}
-        alternateLanguages={[
-          { lang: 'bg', url: '/contact' },
-          { lang: 'en', url: '/contact' },
-          { lang: 'x-default', url: '/contact' }
         ]}
       />
       <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">

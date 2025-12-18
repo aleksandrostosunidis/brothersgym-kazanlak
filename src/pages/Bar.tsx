@@ -48,10 +48,8 @@ const Bar = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Бар - Brothers Gym Казанлък' : 'Bar - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Brothers Gym бар: Протеинови шейкове, енергийни напитки, протеинови барове, добавки и витамини. Всичко необходимо за тренировките ви.'
-          : 'Brothers Gym bar: Protein shakes, energy drinks, protein bars, supplements and vitamins. Everything you need for your training.'}
+        title="Бар"
+        description="Brothers Gym бар: Протеинови шейкове, енергийни напитки, протеинови барове, добавки и витамини. Всичко необходимо за тренировките ви."
         keywords="Brothers Gym бар, протеинови шейкове Казанлък, добавки фитнес, енергийни напитки"
         canonicalUrl="/bar"
         structuredData={getBreadcrumbSchema([

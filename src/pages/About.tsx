@@ -35,10 +35,8 @@ const About = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'За нас - Brothers Gym Казанлък' : 'About Us - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Brothers Gym Казанлък е професионална фитнес зала и ММА център. Тренирай с професионалисти, стани част от семейство. Модерно оборудване, опитни треньори, мотивираща атмосфера.'
-          : 'Brothers Gym Kazanlak is a professional fitness gym and MMA center. Train with professionals, become part of a family. Modern equipment, experienced coaches, motivating atmosphere.'}
+        title="За нас"
+        description="Brothers Gym Казанлък е професионална фитнес зала и ММА център. Тренирай с професионалисти, стани част от семейство. Модерно оборудване, опитни треньори, мотивираща атмосфера."
         keywords="Brothers Gym история, за нас Brothers Gym, фитнес екип Казанлък, ММА треньори Казанлък, спортна общност Казанлък"
         canonicalUrl="/about"
         structuredData={getBreadcrumbSchema([

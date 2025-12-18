@@ -47,10 +47,8 @@ const Gallery = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Галерия - Brothers Gym Казанлък' : 'Gallery - Brothers Gym Kazanlak'}
-        description={language === 'bg'
-          ? 'Галерия със снимки от Brothers Gym Казанлък: тренировки по фитнес и ММА, състезания, събития, нашата зала и екип. Вижте как изглежда да си част от нашето семейство.'
-          : 'Brothers Gym Kazanlak photo gallery: fitness and MMA training, competitions, events, our gym and team. See what it\'s like to be part of our family.'}
+        title="Галерия"
+        description="Галерия със снимки от Brothers Gym Казанлък: тренировки по фитнес и ММА, състезания, събития, нашата зала и екип. Вижте как изглежда да си част от нашето семейство."
         keywords="Brothers Gym снимки, фитнес зала Казанлък снимки, ММА тренировки снимки, Brothers Gym галерия"
         canonicalUrl="/gallery"
         structuredData={getBreadcrumbSchema([

@@ -89,10 +89,8 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title={language === 'bg' ? 'Brothers Gym Казанлък - Фитнес зала и ММА център' : 'Brothers Gym Kazanlak - Fitness Gym and MMA Center'}
-        description={language === 'bg' 
-          ? 'Професионална фитнес зала и ММА център в Казанлък с шампионски треньори. Модерно оборудване, персонални тренировки. Приемаме Мултиспорт карти.'
-          : 'Professional fitness gym and MMA center in Kazanlak with champion coaches. Modern equipment, personal training. We accept Multisport cards.'}
+        title="Начало - Фитнес зала и ММА център"
+        description="Професионална фитнес зала и ММА център в Казанлък с шампионски треньори. Модерно оборудване, персонални тренировки. Приемаме Мултиспорт карти."
         keywords="Brothers Gym Казанлък, фитнес зала Казанлък, ММА Казанлък, спортна зала Казанлък, фитнес Казанлък, мултиспорт Казанлък, персонални тренировки Казанлък, кикбокс Казанлък, бокс Казанлък, кросфит Казанлък, gym kazanlak, mma kazanlak, fitness kazanlak, Brothers GYM, спортна зала Стара Загора, тренировки Казанлък"
         canonicalUrl="/"
         structuredData={[
@@ -101,11 +99,6 @@ const Home = () => {
           getGymPageSchema(),
           getWebSiteSchema(),
           getFAQSchema(faqData)
-        ]}
-        alternateLanguages={[
-          { lang: 'bg', url: '/' },
-          { lang: 'en', url: '/' },
-          { lang: 'x-default', url: '/' }
         ]}
       />
       <div className="min-h-screen">
