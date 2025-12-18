@@ -223,7 +223,7 @@ export default function Blog() {
         title="Блог Brothers Gym Казанлък - Статии за ММА, Фитнес и Тренировки"
         description="Професионални статии и съвети за ММА, фитнес, отслабване и здравословен начин на живот от Brothers Gym Казанлък. Експертни ръководства, техники и съвети от опитни треньори."
         keywords="блог brothers gym казанлък, статии фитнес, съвети мма, тренировки ръководства, здравословен живот, упражнения, спорт казанлък, фитнес съвети, мма техники"
-        canonicalUrl="https://brothersgym-kazanlak.bg/blog"
+        canonicalUrl="/blog"
         ogImage={blogBanner}
         structuredData={[breadcrumbSchema, ...articleSchemas]}
       />

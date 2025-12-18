@@ -192,7 +192,7 @@ const Home = () => {
               <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img 
                   src={fitnessImage} 
-                  alt="Fitness" 
+                  alt="Фитнес зала Brothers Gym Казанлък с модерно оборудване за силови тренировки" 
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -219,7 +219,7 @@ const Home = () => {
               <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img 
                   src={mmaImage} 
-                  alt="MMA" 
+                  alt="ММА тренировки в Brothers Gym Казанлък с професионални треньори и шампиони" 
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

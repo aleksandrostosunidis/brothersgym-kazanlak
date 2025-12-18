@@ -12,6 +12,7 @@ export default function Developer() {
         description="Запознайте се с Александрос Тосунидис - създателя на Brothers Gym уебсайт. Специалист по киберсигурност и уеб разработка с фокус върху сигурност и производителност."
         keywords="Александрос Тосунидис, уеб разработчик Казанлък, киберсигурност, Brothers Gym разработка"
         canonicalUrl="/developer"
+        noindex={true}
         structuredData={getBreadcrumbSchema([
           { name: 'Начало', url: '/' },
           { name: 'За Разработчика', url: '/developer' }
