@@ -26,22 +26,22 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    { src: gallery7, alt: 'Brothers Gym Team Event' },
-    { src: gallery8, alt: 'Young Athlete Training' },
-    { src: gallery9, alt: 'Brothers MMA Team' },
-    { src: gallery10, alt: 'Training at Waterfall' },
-    { src: gallery11, alt: 'Competition Achievement' },
-    { src: gallery12, alt: 'Female Athlete Training' },
-    { src: gallery13, alt: 'Young Champion' },
-    { src: gallery14, alt: 'Junior Champion' },
-    { src: gallery15, alt: 'MMA Training Session' },
-    { src: gallery16, alt: 'Championship Winners' },
-    { src: gallery17, alt: 'Competition Medal Winner' },
-    { src: gallery18, alt: 'Brothers MMA Competition Team' },
-    { src: gallery19, alt: 'Double Gold Medal Winner' },
-    { src: gallery20, alt: 'Traditional Workout Demonstration' },
-    { src: gallery21, alt: 'Cultural Event Performance' },
-    { src: gallery22, alt: 'Public MMA Demonstration' },
+    { src: gallery7, alt: 'Екипно събитие на Brothers Gym Казанлък с участници от фитнес и ММА' },
+    { src: gallery8, alt: 'Млад спортист по време на тренировка по ММА в Brothers Gym' },
+    { src: gallery9, alt: 'Отборът на Brothers Gym по смесени бойни изкуства' },
+    { src: gallery10, alt: 'Тренировка на открито край водопад с екипа на Brothers Gym' },
+    { src: gallery11, alt: 'Спортист от Brothers Gym с медал от състезание по ММА' },
+    { src: gallery12, alt: 'Дама спортистка по време на силова тренировка в Brothers Gym Казанлък' },
+    { src: gallery13, alt: 'Млад шампион от детска група на Brothers Gym с награда' },
+    { src: gallery14, alt: 'Юноша шампион с медал от турнир по кикбокс' },
+    { src: gallery15, alt: 'Тренировка по ММА техники в спортна зала Brothers Gym' },
+    { src: gallery16, alt: 'Победители от състезание с треньори на Brothers Gym Казанлък' },
+    { src: gallery17, alt: 'Спортист с медал от национално състезание по бойни изкуства' },
+    { src: gallery18, alt: 'Състезателен отбор на Brothers Gym на турнир по ММА' },
+    { src: gallery19, alt: 'Двоен златен медалист от Brothers Gym на състезание' },
+    { src: gallery20, alt: 'Демонстрация на традиционни тренировъчни техники' },
+    { src: gallery21, alt: 'Културно събитие и представление организирано от Brothers Gym' },
+    { src: gallery22, alt: 'Публична демонстрация на ММА техники в Казанлък' },
   ];
 
   return (
