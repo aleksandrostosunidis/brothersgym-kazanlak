@@ -4,5 +4,24 @@
 # Redirect lovable.app domain to custom domain
 https://*.lovable.app/* https://brothersgym-kazanlak.bg/:splat 301!
 
+# Known routes - explicit handling for SEO
+/about            /index.html   200
+/team             /index.html   200
+/services         /index.html   200
+/events           /index.html   200
+/contact          /index.html   200
+/shop             /index.html   200
+/gallery          /index.html   200
+/wall-of-fame     /index.html   200
+/reviews          /index.html   200
+/partners         /index.html   200
+/bar              /index.html   200
+/blog             /index.html   200
+/schedule         /index.html   200
+/faq              /index.html   200
+/guides           /index.html   200
+/videos           /index.html   200
+/tools            /index.html   200
+
 # SPA fallback - serve index.html for all routes
 /*    /index.html   200
