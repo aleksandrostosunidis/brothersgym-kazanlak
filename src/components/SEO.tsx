@@ -17,9 +17,19 @@ interface SEOProps {
 // Always use the production domain for canonical URLs
 const SITE_URL = 'https://brothersgym-kazanlak.bg';
 
-// Check if we're on the lovable.app domain (should not be indexed)
-const isLovableDomain = typeof window !== 'undefined' && 
-  window.location.hostname.includes('lovable.app');
+const normalizeCanonicalPath = (input?: string) => {
+  if (!input) return '/';
+
+  // Accept either a path ("/blog") or full URL; always drop query/hash.
+  try {
+    const url = input.startsWith('http') ? new URL(input) : new URL(input, SITE_URL);
+    const path = url.pathname || '/';
+    return path.startsWith('/') ? path : `/${path}`;
+  } catch {
+    const pathOnly = input.split('?')[0].split('#')[0];
+    return pathOnly.startsWith('/') ? pathOnly : `/${pathOnly}`;
+  }
+};
 
 export const SEO = ({ 
   title, 
@@ -34,8 +44,13 @@ export const SEO = ({
   ogType = 'website',
   noindex = false
 }: SEOProps) => {
+  // Check if we're on the lovable.app domain (should not be indexed)
+  const isLovableDomain = typeof window !== 'undefined' && 
+    window.location.hostname.includes('lovable.app');
+
   const fullTitle = `${title} | Brothers Gym Казанлък`;
-  const canonical = canonicalUrl ? `${SITE_URL}${canonicalUrl}` : SITE_URL;
+  const canonicalPath = normalizeCanonicalPath(canonicalUrl);
+  const canonical = `${SITE_URL}${canonicalPath}`;
   
   // Force noindex on lovable.app domain to prevent duplicate indexing
   const shouldNoindex = noindex || isLovableDomain;

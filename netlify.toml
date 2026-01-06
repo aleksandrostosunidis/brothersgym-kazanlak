@@ -12,6 +12,28 @@
   status = 301
   force = true
 
+# Strip tracking parameters (canonical URLs should not include these)
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 301
+  force = true
+  query = { fbclid = "*" }
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 301
+  force = true
+  query = { gclid = "*" }
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 301
+  force = true
+  query = { utm_source = "*" }
+
 # SPA fallback - serve index.html for client-side routing
 [[redirects]]
   from = "/*"
